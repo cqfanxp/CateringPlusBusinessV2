@@ -47,6 +47,10 @@
 + (void)post:(NSString *)url parameters:(NSDictionary *)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure
 {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+//    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+//    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"text/html", @"application/json",@"*/*"]];//设置相应内容类型
     
     [manager POST:url parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {

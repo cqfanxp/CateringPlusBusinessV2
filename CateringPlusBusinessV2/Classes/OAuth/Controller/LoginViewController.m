@@ -60,7 +60,11 @@
 
 //显示键盘
 -(void)keyboardWillShow{
-    [self updateHeaderConstraint:0];
+    if (IS_IPHONE_5) {
+        [self updateHeaderConstraint:-105];
+    }else{
+        [self updateHeaderConstraint:-25];
+    }
 }
 
 //隐藏键盘

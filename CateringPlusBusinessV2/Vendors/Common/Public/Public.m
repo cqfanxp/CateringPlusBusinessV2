@@ -86,7 +86,7 @@
     NSMutableString *str = [[NSMutableString alloc] init];
     
     for ( NSString *key in dic) {
-        [str appendString:[NSString stringWithFormat:@"@%@=%@",key,dic[key]]];
+        [str appendString:[NSString stringWithFormat:@"&%@=%@",key,dic[key]]];
     }
     [str appendString:KEY];
     return str;
