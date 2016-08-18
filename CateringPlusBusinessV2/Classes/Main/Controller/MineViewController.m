@@ -16,7 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.automaticallyAdjustsScrollViewInsets = false;
+    
+    float systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    
+    if (systemVersion >= 7.0) {
+        
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        
+    }
     
     _toolTableView.delegate = self;
     _toolTableView.dataSource = self;
