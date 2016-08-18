@@ -193,8 +193,23 @@
                     <view key="view" contentMode="scaleToFill" id="ca4-g4-ynN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="hWX-uU-zdQ">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hWX-uU-zdQ" firstAttribute="leading" secondItem="ca4-g4-ynN" secondAttribute="leading" id="1UW-15-hd6"/>
+                            <constraint firstAttribute="trailing" secondItem="hWX-uU-zdQ" secondAttribute="trailing" id="Lwc-C9-kOj"/>
+                            <constraint firstItem="VrM-Db-Spe" firstAttribute="top" secondItem="hWX-uU-zdQ" secondAttribute="bottom" id="oZo-VQ-lux"/>
+                            <constraint firstItem="hWX-uU-zdQ" firstAttribute="top" secondItem="E0w-84-y3u" secondAttribute="bottom" id="oqo-jn-H58"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="toolTableView" destination="hWX-uU-zdQ" id="sIC-iL-6at"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gLO-ho-0bU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

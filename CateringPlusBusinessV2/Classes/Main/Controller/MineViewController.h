@@ -10,4 +10,6 @@
 
 @interface MineViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITableView *toolTableView;
+
 @end
