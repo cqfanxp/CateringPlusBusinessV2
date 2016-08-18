@@ -51,6 +51,15 @@
 		57A7B7E51D5EB70400BF2928 /* UIImage+MSSScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7B7D61D5EB70400BF2928 /* UIImage+MSSScale.m */; };
 		57A7B7E61D5EB70400BF2928 /* UIView+MSSLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7B7D81D5EB70400BF2928 /* UIView+MSSLayout.m */; };
 		57A7B7E91D5EC8C800BF2928 /* SubmitQualificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7B7E81D5EC8C800BF2928 /* SubmitQualificationViewController.m */; };
+		57FC38EC1D6585A8009A6C9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FC38EB1D6585A8009A6C9C /* Main.storyboard */; };
+		57FC38EF1D65867C009A6C9C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FC38EE1D65867C009A6C9C /* MainViewController.m */; };
+		57FC38F21D658691009A6C9C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FC38F11D658691009A6C9C /* HomeViewController.m */; };
+		57FC38F51D6586B1009A6C9C /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FC38F41D6586B1009A6C9C /* MineViewController.m */; };
+		57FC38F81D6586DD009A6C9C /* BusinessSchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FC38F71D6586DD009A6C9C /* BusinessSchoolViewController.m */; };
+		57FC38FD1D659BF9009A6C9C /* AppListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FC38FB1D659BF9009A6C9C /* AppListCell.m */; };
+		57FC38FE1D659BF9009A6C9C /* AppListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57FC38FC1D659BF9009A6C9C /* AppListCell.xib */; };
+		57FC39011D65A22D009A6C9C /* menu_app.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57FC39001D65A22D009A6C9C /* menu_app.plist */; };
+		57FC39051D65B634009A6C9C /* QRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FC39041D65B634009A6C9C /* QRCodeController.m */; };
 		7083580F0BD0CC785024C3D7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09919C46605366D59CD5B5E8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -155,6 +164,21 @@
 		57A7B7D81D5EB70400BF2928 /* UIView+MSSLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MSSLayout.m"; sourceTree = "<group>"; };
 		57A7B7E71D5EC8C800BF2928 /* SubmitQualificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitQualificationViewController.h; sourceTree = "<group>"; };
 		57A7B7E81D5EC8C800BF2928 /* SubmitQualificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitQualificationViewController.m; sourceTree = "<group>"; };
+		57FC38EB1D6585A8009A6C9C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		57FC38ED1D65867C009A6C9C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		57FC38EE1D65867C009A6C9C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		57FC38F01D658691009A6C9C /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		57FC38F11D658691009A6C9C /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		57FC38F31D6586B1009A6C9C /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		57FC38F41D6586B1009A6C9C /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		57FC38F61D6586DD009A6C9C /* BusinessSchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessSchoolViewController.h; sourceTree = "<group>"; };
+		57FC38F71D6586DD009A6C9C /* BusinessSchoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessSchoolViewController.m; sourceTree = "<group>"; };
+		57FC38FA1D659BF9009A6C9C /* AppListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppListCell.h; sourceTree = "<group>"; };
+		57FC38FB1D659BF9009A6C9C /* AppListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppListCell.m; sourceTree = "<group>"; };
+		57FC38FC1D659BF9009A6C9C /* AppListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppListCell.xib; sourceTree = "<group>"; };
+		57FC39001D65A22D009A6C9C /* menu_app.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = menu_app.plist; sourceTree = "<group>"; };
+		57FC39031D65B634009A6C9C /* QRCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeController.h; sourceTree = "<group>"; };
+		57FC39041D65B634009A6C9C /* QRCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeController.m; sourceTree = "<group>"; };
 		7BA17BE28F1B5BDCC19BBD13 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		844ED9BF2671BA608D20DA5B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -273,6 +297,7 @@
 				57A7B7A41D5DAC0000BF2928 /* Vendors */,
 				57A7B7891D5C15C200BF2928 /* Other */,
 				577AC5541D5C0D2C00390F62 /* Supporting Files */,
+				57FC38FF1D65A22D009A6C9C /* Data */,
 			);
 			path = CateringPlusBusinessV2;
 			sourceTree = "<group>";
@@ -376,6 +401,15 @@
 		57A7B7901D5C1EDC00BF2928 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				57FC38F91D659838009A6C9C /* Cell */,
+				57FC38ED1D65867C009A6C9C /* MainViewController.h */,
+				57FC38EE1D65867C009A6C9C /* MainViewController.m */,
+				57FC38F01D658691009A6C9C /* HomeViewController.h */,
+				57FC38F11D658691009A6C9C /* HomeViewController.m */,
+				57FC38F31D6586B1009A6C9C /* MineViewController.h */,
+				57FC38F41D6586B1009A6C9C /* MineViewController.m */,
+				57FC38F61D6586DD009A6C9C /* BusinessSchoolViewController.h */,
+				57FC38F71D6586DD009A6C9C /* BusinessSchoolViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -390,6 +424,7 @@
 		57A7B7921D5C1EDC00BF2928 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				57FC38EB1D6585A8009A6C9C /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -441,6 +476,7 @@
 		57A7B7A41D5DAC0000BF2928 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				57FC39021D65B634009A6C9C /* QRcode */,
 				572ACA091D6171ED00FDD68B /* Common */,
 				57A7B7BD1D5EB70400BF2928 /* MSSBrowse */,
 				57A7B7A51D5DAC8200BF2928 /* MHActionSheet */,
@@ -501,6 +537,33 @@
 				57A7B7D81D5EB70400BF2928 /* UIView+MSSLayout.m */,
 			);
 			path = MSSBrowse;
+			sourceTree = "<group>";
+		};
+		57FC38F91D659838009A6C9C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				57FC38FA1D659BF9009A6C9C /* AppListCell.h */,
+				57FC38FB1D659BF9009A6C9C /* AppListCell.m */,
+				57FC38FC1D659BF9009A6C9C /* AppListCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		57FC38FF1D65A22D009A6C9C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				57FC39001D65A22D009A6C9C /* menu_app.plist */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		57FC39021D65B634009A6C9C /* QRcode */ = {
+			isa = PBXGroup;
+			children = (
+				57FC39031D65B634009A6C9C /* QRCodeController.h */,
+				57FC39041D65B634009A6C9C /* QRCodeController.m */,
+			);
+			path = QRcode;
 			sourceTree = "<group>";
 		};
 		95CF737C5FD77AECE57195F6 /* Frameworks */ = {
@@ -621,6 +684,8 @@
 				57A7B7B81D5DAC8200BF2928 /* MHSheetFoot.xib in Resources */,
 				57A7B7BC1D5DAC8200BF2928 /* MHSheetView.xib in Resources */,
 				57A7B7D91D5EB70400BF2928 /* mss_browseLoading@2x.png in Resources */,
+				57FC39011D65A22D009A6C9C /* menu_app.plist in Resources */,
+				57FC38EC1D6585A8009A6C9C /* Main.storyboard in Resources */,
 				577AC5641D5C0D2C00390F62 /* LaunchScreen.storyboard in Resources */,
 				57A7B7DA1D5EB70400BF2928 /* mss_browseLoading@3x.png in Resources */,
 				572ACA161D61A86800FDD68B /* SelectInnerProductCell.xib in Resources */,
@@ -629,6 +694,7 @@
 				57A7B7B61D5DAC8200BF2928 /* MHSheetCell.xib in Resources */,
 				57A7B7A01D5C7DD700BF2928 /* Settled.storyboard in Resources */,
 				577AC5611D5C0D2C00390F62 /* Assets.xcassets in Resources */,
+				57FC38FE1D659BF9009A6C9C /* AppListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,6 +768,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57A7B7E61D5EB70400BF2928 /* UIView+MSSLayout.m in Sources */,
+				57FC38FD1D659BF9009A6C9C /* AppListCell.m in Sources */,
 				572ACA251D62E8AA00FDD68B /* UINavigationItem+BackButton.m in Sources */,
 				577AC5591D5C0D2C00390F62 /* AppDelegate.m in Sources */,
 				57A7B7DB1D5EB70400BF2928 /* MSSBrowseActionSheet.m in Sources */,
@@ -718,8 +785,10 @@
 				57A7B7BB1D5DAC8200BF2928 /* MHSheetView.m in Sources */,
 				57A7B7E31D5EB70400BF2928 /* MSSBrowseRemindView.m in Sources */,
 				572ACA081D61609F00FDD68B /* ForgotPasswordViewController.m in Sources */,
+				57FC38F21D658691009A6C9C /* HomeViewController.m in Sources */,
 				573155DE1D62FC660091A337 /* BaseViewController.m in Sources */,
 				57A7B7DE1D5EB70400BF2928 /* MSSBrowseCollectionViewCell.m in Sources */,
+				57FC38EF1D65867C009A6C9C /* MainViewController.m in Sources */,
 				57A7B7DC1D5EB70400BF2928 /* MSSBrowseActionSheetCell.m in Sources */,
 				57A7B7E01D5EB70400BF2928 /* MSSBrowseLocalViewController.m in Sources */,
 				572ACA211D62AE3800FDD68B /* NetWorkUtil.m in Sources */,
@@ -727,11 +796,14 @@
 				57A7B79E1D5C7D6B00BF2928 /* RegisteredViewController.m in Sources */,
 				57A7B7E91D5EC8C800BF2928 /* SubmitQualificationViewController.m in Sources */,
 				57A7B7DF1D5EB70400BF2928 /* MSSBrowseLoadingImageView.m in Sources */,
+				57FC39051D65B634009A6C9C /* QRCodeController.m in Sources */,
 				57A7B7B41D5DAC8200BF2928 /* MHActionSheet.m in Sources */,
+				57FC38F51D6586B1009A6C9C /* MineViewController.m in Sources */,
 				57A7B7B71D5DAC8200BF2928 /* MHSheetFoot.m in Sources */,
 				57A7B7991D5C297400BF2928 /* LoginViewController.m in Sources */,
 				57A7B7B91D5DAC8200BF2928 /* MHSheetHead.m in Sources */,
 				572ACA101D61910100FDD68B /* SelectInnerProductViewController.m in Sources */,
+				57FC38F81D6586DD009A6C9C /* BusinessSchoolViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

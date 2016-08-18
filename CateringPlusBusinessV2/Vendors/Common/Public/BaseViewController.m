@@ -12,9 +12,5 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    
-//    [self.navigationController.navigationBar setBackIndicatorImage:[UIImage imageNamed:@"back"]];
-//    [self.navigationController.navigationBar setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"back"]];
-//    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14],NSFontAttributeName, nil] forState:UIControlStateNormal];
 }
 @end
