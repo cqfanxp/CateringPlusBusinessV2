@@ -10,4 +10,7 @@
 
 @interface BusinessSchoolViewController : UIViewController
 
+
+@property (weak, nonatomic) IBOutlet UITableView *TableView;
+
 @end

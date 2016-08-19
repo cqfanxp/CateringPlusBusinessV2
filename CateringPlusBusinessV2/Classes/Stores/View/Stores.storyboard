@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--(门店管理)-->
+        <scene sceneID="e7J-3L-lcq">
+            <objects>
+                <viewController storyboardIdentifier="StoreManagementViewController" id="4ZE-oG-bTt" userLabel="(门店管理)" customClass="StoreManagementViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QuG-1D-o0M"/>
+                        <viewControllerLayoutGuide type="bottom" id="AKt-ge-DQ9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tMz-W2-8vm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="d4w-b8-c2x">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d4w-b8-c2x" firstAttribute="leading" secondItem="tMz-W2-8vm" secondAttribute="leading" id="cFd-WL-gka"/>
+                            <constraint firstItem="AKt-ge-DQ9" firstAttribute="top" secondItem="d4w-b8-c2x" secondAttribute="bottom" id="krc-wf-J95"/>
+                            <constraint firstItem="d4w-b8-c2x" firstAttribute="top" secondItem="QuG-1D-o0M" secondAttribute="bottom" id="sLr-D2-rJl"/>
+                            <constraint firstAttribute="trailing" secondItem="d4w-b8-c2x" secondAttribute="trailing" id="xq3-BD-KlF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="TableView" destination="d4w-b8-c2x" id="adr-se-bac"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4rB-Hy-6G7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="355" y="548"/>
+        </scene>
+    </scenes>
+</document>

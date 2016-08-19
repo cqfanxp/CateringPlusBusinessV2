@@ -1,22 +1,24 @@
 //
-//  BusinessSchoolViewController.m
+//  StoreManagementViewController.m
 //  CateringPlusBusinessV2
 //
-//  Created by 火爆私厨 on 16/8/18.
+//  Created by 火爆私厨 on 16/8/19.
 //  Copyright © 2016年 餐+. All rights reserved.
 //
 
-#import "BusinessSchoolViewController.h"
-#import "BusinessSchoolCell.h"
+#import "StoreManagementViewController.h"
+#import "StoreManagementCell.h"
 
-@interface BusinessSchoolViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface StoreManagementViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
-@implementation BusinessSchoolViewController
+@implementation StoreManagementViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setTitle:@"门店管理"];
     
     float systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     if (systemVersion >= 7.0) {
@@ -25,7 +27,7 @@
     
     _TableView.dataSource = self;
     _TableView.delegate = self;
-    _TableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    _TableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 #pragma mark 重写uitableview方法
@@ -34,20 +36,33 @@
     return 2;
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    BusinessSchoolCell *cell = [[BusinessSchoolCell alloc] cellWithTableView:tableView text:@"美食"];;
+    StoreManagementCell *cell = [[StoreManagementCell alloc] cellWithTableView:tableView text:@"美食"];;
     
     return cell;
 }
 
 #pragma mark 设置每行的高度
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 150;
+    return 100;
 }
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 0.00001;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.00001;
+}
+
 #pragma mark 选中行事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    
 }
 
 

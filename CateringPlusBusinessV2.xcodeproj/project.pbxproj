@@ -51,6 +51,7 @@
 		57A7B7E51D5EB70400BF2928 /* UIImage+MSSScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7B7D61D5EB70400BF2928 /* UIImage+MSSScale.m */; };
 		57A7B7E61D5EB70400BF2928 /* UIView+MSSLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7B7D81D5EB70400BF2928 /* UIView+MSSLayout.m */; };
 		57A7B7E91D5EC8C800BF2928 /* SubmitQualificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7B7E81D5EC8C800BF2928 /* SubmitQualificationViewController.m */; };
+		57DDA0BE1D66F4B900F3EC3D /* FightAloneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DDA0BD1D66F4B900F3EC3D /* FightAloneViewController.m */; };
 		57FC38EC1D6585A8009A6C9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FC38EB1D6585A8009A6C9C /* Main.storyboard */; };
 		57FC38EF1D65867C009A6C9C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FC38EE1D65867C009A6C9C /* MainViewController.m */; };
 		57FC38F21D658691009A6C9C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FC38F11D658691009A6C9C /* HomeViewController.m */; };
@@ -60,6 +61,13 @@
 		57FC38FE1D659BF9009A6C9C /* AppListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57FC38FC1D659BF9009A6C9C /* AppListCell.xib */; };
 		57FC39011D65A22D009A6C9C /* menu_app.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57FC39001D65A22D009A6C9C /* menu_app.plist */; };
 		57FC39051D65B634009A6C9C /* QRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FC39041D65B634009A6C9C /* QRCodeController.m */; };
+		57FC39071D66987C009A6C9C /* mine_tool.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57FC39061D66987C009A6C9C /* mine_tool.plist */; };
+		57FC390B1D66ACEE009A6C9C /* BusinessSchoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FC39091D66ACEE009A6C9C /* BusinessSchoolCell.m */; };
+		57FC390C1D66ACEE009A6C9C /* BusinessSchoolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57FC390A1D66ACEE009A6C9C /* BusinessSchoolCell.xib */; };
+		57FC39161D66D93A009A6C9C /* StoreManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FC39151D66D93A009A6C9C /* StoreManagementViewController.m */; };
+		57FC39181D66D949009A6C9C /* Stores.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FC39171D66D949009A6C9C /* Stores.storyboard */; };
+		57FC39221D66DAEA009A6C9C /* StoreManagementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FC39201D66DAEA009A6C9C /* StoreManagementCell.m */; };
+		57FC39231D66DAEA009A6C9C /* StoreManagementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57FC39211D66DAEA009A6C9C /* StoreManagementCell.xib */; };
 		7083580F0BD0CC785024C3D7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09919C46605366D59CD5B5E8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -164,6 +172,8 @@
 		57A7B7D81D5EB70400BF2928 /* UIView+MSSLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MSSLayout.m"; sourceTree = "<group>"; };
 		57A7B7E71D5EC8C800BF2928 /* SubmitQualificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitQualificationViewController.h; sourceTree = "<group>"; };
 		57A7B7E81D5EC8C800BF2928 /* SubmitQualificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitQualificationViewController.m; sourceTree = "<group>"; };
+		57DDA0BC1D66F4B900F3EC3D /* FightAloneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FightAloneViewController.h; sourceTree = "<group>"; };
+		57DDA0BD1D66F4B900F3EC3D /* FightAloneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FightAloneViewController.m; sourceTree = "<group>"; };
 		57FC38EB1D6585A8009A6C9C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		57FC38ED1D65867C009A6C9C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		57FC38EE1D65867C009A6C9C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
@@ -179,6 +189,16 @@
 		57FC39001D65A22D009A6C9C /* menu_app.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = menu_app.plist; sourceTree = "<group>"; };
 		57FC39031D65B634009A6C9C /* QRCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeController.h; sourceTree = "<group>"; };
 		57FC39041D65B634009A6C9C /* QRCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeController.m; sourceTree = "<group>"; };
+		57FC39061D66987C009A6C9C /* mine_tool.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mine_tool.plist; sourceTree = "<group>"; };
+		57FC39081D66ACEE009A6C9C /* BusinessSchoolCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessSchoolCell.h; sourceTree = "<group>"; };
+		57FC39091D66ACEE009A6C9C /* BusinessSchoolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessSchoolCell.m; sourceTree = "<group>"; };
+		57FC390A1D66ACEE009A6C9C /* BusinessSchoolCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusinessSchoolCell.xib; sourceTree = "<group>"; };
+		57FC39141D66D93A009A6C9C /* StoreManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreManagementViewController.h; sourceTree = "<group>"; };
+		57FC39151D66D93A009A6C9C /* StoreManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreManagementViewController.m; sourceTree = "<group>"; };
+		57FC39171D66D949009A6C9C /* Stores.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stores.storyboard; sourceTree = "<group>"; };
+		57FC391F1D66DAEA009A6C9C /* StoreManagementCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreManagementCell.h; sourceTree = "<group>"; };
+		57FC39201D66DAEA009A6C9C /* StoreManagementCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreManagementCell.m; sourceTree = "<group>"; };
+		57FC39211D66DAEA009A6C9C /* StoreManagementCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreManagementCell.xib; sourceTree = "<group>"; };
 		7BA17BE28F1B5BDCC19BBD13 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		844ED9BF2671BA608D20DA5B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -343,6 +363,9 @@
 		57A7B78A1D5C1E2C00BF2928 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				57DDA0B41D66F3D700F3EC3D /* Activity(活动) */,
+				57DDA0B81D66F3D700F3EC3D /* PackageManagement(套餐管理) */,
+				57FC390D1D66D8EA009A6C9C /* Stores(门店管理) */,
 				57A7B78F1D5C1EDC00BF2928 /* Main(主页) */,
 				57A7B7931D5C1EDC00BF2928 /* Settled(入驻) */,
 				57A7B78B1D5C1E2C00BF2928 /* OAuth(授权) */,
@@ -539,12 +562,81 @@
 			path = MSSBrowse;
 			sourceTree = "<group>";
 		};
+		57DDA0B41D66F3D700F3EC3D /* Activity(活动) */ = {
+			isa = PBXGroup;
+			children = (
+				57DDA0B51D66F3D700F3EC3D /* Controller */,
+				57DDA0B61D66F3D700F3EC3D /* Model */,
+				57DDA0B71D66F3D700F3EC3D /* View */,
+			);
+			name = "Activity(活动)";
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		57DDA0B51D66F3D700F3EC3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				57DDA0BC1D66F4B900F3EC3D /* FightAloneViewController.h */,
+				57DDA0BD1D66F4B900F3EC3D /* FightAloneViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		57DDA0B61D66F3D700F3EC3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		57DDA0B71D66F3D700F3EC3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		57DDA0B81D66F3D700F3EC3D /* PackageManagement(套餐管理) */ = {
+			isa = PBXGroup;
+			children = (
+				57DDA0B91D66F3D700F3EC3D /* Controller */,
+				57DDA0BA1D66F3D700F3EC3D /* Model */,
+				57DDA0BB1D66F3D700F3EC3D /* View */,
+			);
+			name = "PackageManagement(套餐管理)";
+			path = PackageManagement;
+			sourceTree = "<group>";
+		};
+		57DDA0B91D66F3D700F3EC3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		57DDA0BA1D66F3D700F3EC3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		57DDA0BB1D66F3D700F3EC3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		57FC38F91D659838009A6C9C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				57FC38FA1D659BF9009A6C9C /* AppListCell.h */,
 				57FC38FB1D659BF9009A6C9C /* AppListCell.m */,
 				57FC38FC1D659BF9009A6C9C /* AppListCell.xib */,
+				57FC39081D66ACEE009A6C9C /* BusinessSchoolCell.h */,
+				57FC39091D66ACEE009A6C9C /* BusinessSchoolCell.m */,
+				57FC390A1D66ACEE009A6C9C /* BusinessSchoolCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -552,6 +644,7 @@
 		57FC38FF1D65A22D009A6C9C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				57FC39061D66987C009A6C9C /* mine_tool.plist */,
 				57FC39001D65A22D009A6C9C /* menu_app.plist */,
 			);
 			path = Data;
@@ -564,6 +657,52 @@
 				57FC39041D65B634009A6C9C /* QRCodeController.m */,
 			);
 			path = QRcode;
+			sourceTree = "<group>";
+		};
+		57FC390D1D66D8EA009A6C9C /* Stores(门店管理) */ = {
+			isa = PBXGroup;
+			children = (
+				57FC39111D66D918009A6C9C /* Controller */,
+				57FC39121D66D918009A6C9C /* Model */,
+				57FC39131D66D918009A6C9C /* View */,
+			);
+			name = "Stores(门店管理)";
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		57FC39111D66D918009A6C9C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				57FC391E1D66DADD009A6C9C /* Cell */,
+				57FC39141D66D93A009A6C9C /* StoreManagementViewController.h */,
+				57FC39151D66D93A009A6C9C /* StoreManagementViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		57FC39121D66D918009A6C9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		57FC39131D66D918009A6C9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57FC39171D66D949009A6C9C /* Stores.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		57FC391E1D66DADD009A6C9C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				57FC391F1D66DAEA009A6C9C /* StoreManagementCell.h */,
+				57FC39201D66DAEA009A6C9C /* StoreManagementCell.m */,
+				57FC39211D66DAEA009A6C9C /* StoreManagementCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		95CF737C5FD77AECE57195F6 /* Frameworks */ = {
@@ -683,6 +822,8 @@
 			files = (
 				57A7B7B81D5DAC8200BF2928 /* MHSheetFoot.xib in Resources */,
 				57A7B7BC1D5DAC8200BF2928 /* MHSheetView.xib in Resources */,
+				57FC39231D66DAEA009A6C9C /* StoreManagementCell.xib in Resources */,
+				57FC39071D66987C009A6C9C /* mine_tool.plist in Resources */,
 				57A7B7D91D5EB70400BF2928 /* mss_browseLoading@2x.png in Resources */,
 				57FC39011D65A22D009A6C9C /* menu_app.plist in Resources */,
 				57FC38EC1D6585A8009A6C9C /* Main.storyboard in Resources */,
@@ -691,6 +832,8 @@
 				572ACA161D61A86800FDD68B /* SelectInnerProductCell.xib in Resources */,
 				57A7B7BA1D5DAC8200BF2928 /* MHSheetHead.xib in Resources */,
 				57A7B79B1D5C299600BF2928 /* OAuth.storyboard in Resources */,
+				57FC39181D66D949009A6C9C /* Stores.storyboard in Resources */,
+				57FC390C1D66ACEE009A6C9C /* BusinessSchoolCell.xib in Resources */,
 				57A7B7B61D5DAC8200BF2928 /* MHSheetCell.xib in Resources */,
 				57A7B7A01D5C7DD700BF2928 /* Settled.storyboard in Resources */,
 				577AC5611D5C0D2C00390F62 /* Assets.xcassets in Resources */,
@@ -785,11 +928,15 @@
 				57A7B7BB1D5DAC8200BF2928 /* MHSheetView.m in Sources */,
 				57A7B7E31D5EB70400BF2928 /* MSSBrowseRemindView.m in Sources */,
 				572ACA081D61609F00FDD68B /* ForgotPasswordViewController.m in Sources */,
+				57FC39221D66DAEA009A6C9C /* StoreManagementCell.m in Sources */,
 				57FC38F21D658691009A6C9C /* HomeViewController.m in Sources */,
 				573155DE1D62FC660091A337 /* BaseViewController.m in Sources */,
 				57A7B7DE1D5EB70400BF2928 /* MSSBrowseCollectionViewCell.m in Sources */,
 				57FC38EF1D65867C009A6C9C /* MainViewController.m in Sources */,
 				57A7B7DC1D5EB70400BF2928 /* MSSBrowseActionSheetCell.m in Sources */,
+				57FC390B1D66ACEE009A6C9C /* BusinessSchoolCell.m in Sources */,
+				57FC39161D66D93A009A6C9C /* StoreManagementViewController.m in Sources */,
+				57DDA0BE1D66F4B900F3EC3D /* FightAloneViewController.m in Sources */,
 				57A7B7E01D5EB70400BF2928 /* MSSBrowseLocalViewController.m in Sources */,
 				572ACA211D62AE3800FDD68B /* NetWorkUtil.m in Sources */,
 				577AC5561D5C0D2C00390F62 /* main.m in Sources */,
