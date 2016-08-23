@@ -11,6 +11,7 @@
 #import "PrefixHeader.h"
 #import "AppListCell.h"
 #import "QRCodeController.h"
+#import "StoreManagementViewController.h"
 
 @interface HomeViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>{
     //应用数据
@@ -171,6 +172,17 @@
     cell.nameLabel.text = item[@"name"];
     cell.iconImg.image = [UIImage imageNamed:item[@"icon"]];
     return cell;
+}
+
+#pragma mark 选中 跳转
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *item  = [_comPetenceData objectAtIndex:indexPath.row];
+    
+    if (item[@"isStoryboard"]) {
+      UIViewController *viewController = [Public getStoryBoardByController:item[@"storyboard"] storyboardId:item[@"storyboardId"]];
+      [viewController setTitle:item[@"name"]];
+      [self.navigationController pushViewController:viewController animated:YES];
+    }
 }
 
 

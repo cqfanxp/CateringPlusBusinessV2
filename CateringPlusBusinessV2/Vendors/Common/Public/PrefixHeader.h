@@ -9,6 +9,7 @@
 //**************调试和发布版本之间的设置*****************
 
 #import "UINavigationItem+BackButton.h"
+#import "CALayer+XibConfiguration.h"
 #import "BaseViewController.h"
 #import "Public.h"
 

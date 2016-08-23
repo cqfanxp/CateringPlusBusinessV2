@@ -17,8 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    [self.navigationController setNavigationBarHidden:NO animated:NO];
     
-    [self setTitle:@"门店管理"];
+//    [self setTitle:@"门店管理"];
     
     float systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     if (systemVersion >= 7.0) {
@@ -28,6 +29,10 @@
     _TableView.dataSource = self;
     _TableView.delegate = self;
 //    _TableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 #pragma mark 重写uitableview方法

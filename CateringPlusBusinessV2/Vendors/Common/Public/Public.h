@@ -20,5 +20,4 @@
 
 #pragma mark 根据参数加密
 +(NSString *) paramsMd5:(NSDictionary *) params;
-
 @end

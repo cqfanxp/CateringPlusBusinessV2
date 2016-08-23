@@ -3,136 +3,130 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>Competence</key>
-		<string>10201001,10201002,10201003,10201004</string>
 		<key>sequence</key>
 		<string>1</string>
 		<key>name</key>
 		<string>门店管理</string>
-		<key>number</key>
-		<string>1005</string>
 		<key>icon</key>
 		<string>store</string>
-		<key>controller</key>
-		<string>LookingForTalentViewController</string>
+		<key>isStoryboard</key>
+		<true/>
+		<key>storyboard</key>
+		<string>Stores</string>
+		<key>storyboardId</key>
+		<string>StoreManagementViewController</string>
 	</dict>
 	<dict>
-		<key>Competence</key>
-		<string>10201001,10201002,10201003,10201004</string>
 		<key>sequence</key>
 		<string>2</string>
 		<key>name</key>
 		<string>商品管理</string>
-		<key>number</key>
-		<string>1005</string>
 		<key>icon</key>
 		<string>commodity</string>
-		<key>controller</key>
-		<string>LookingForTalentViewController</string>
+		<key>isStoryboard</key>
+		<true/>
+		<key>storyboard</key>
+		<string>PackageManagement</string>
+		<key>storyboardId</key>
+		<string>PackageListViewController</string>
 	</dict>
 	<dict>
-		<key>Competence</key>
-		<string>10201001,10201002,10201003,10201004</string>
 		<key>sequence</key>
 		<string>3</string>
 		<key>name</key>
 		<string>拼单</string>
-		<key>number</key>
-		<string>1005</string>
 		<key>icon</key>
 		<string>Fight-alone</string>
-		<key>controller</key>
-		<string>LookingForTalentViewController</string>
+		<key>isStoryboard</key>
+		<true/>
+		<key>storyboard</key>
+		<string>Activity</string>
+		<key>storyboardId</key>
+		<string>ActivityListViewController</string>
 	</dict>
 	<dict>
-		<key>Competence</key>
-		<string>10201001,10201002,10201003,10201004</string>
 		<key>sequence</key>
 		<string>4</string>
 		<key>name</key>
 		<string>好有帮帮砍</string>
-		<key>number</key>
-		<string>1005</string>
 		<key>icon</key>
 		<string>friend-0</string>
-		<key>controller</key>
-		<string>LookingForTalentViewController</string>
+		<key>isStoryboard</key>
+		<true/>
+		<key>storyboard</key>
+		<string>Activity</string>
+		<key>storyboardId</key>
+		<string>ActivityListViewController</string>
 	</dict>
 	<dict>
-		<key>Competence</key>
-		<string>10201001,10201002,10201003,10201004</string>
 		<key>sequence</key>
 		<string>5</string>
 		<key>name</key>
 		<string>折扣卷</string>
-		<key>number</key>
-		<string>1005</string>
 		<key>icon</key>
 		<string>discount</string>
-		<key>controller</key>
-		<string>ChefInformationViewController</string>
+		<key>isStoryboard</key>
+		<true/>
+		<key>storyboard</key>
+		<string>Activity</string>
+		<key>storyboardId</key>
+		<string>ActivityListViewController</string>
 	</dict>
 	<dict>
-		<key>Competence</key>
-		<string>10201001,10201002,10201003,10201004</string>
 		<key>name</key>
 		<string>抵扣卷</string>
-		<key>number</key>
-		<string>1001</string>
 		<key>icon</key>
 		<string>Deductible</string>
-		<key>controller</key>
-		<string>SpreadLIstViewController</string>
 		<key>sequence</key>
 		<string>6</string>
+		<key>isStoryboard</key>
+		<true/>
+		<key>storyboard</key>
+		<string>Activity</string>
+		<key>storyboardId</key>
+		<string>ActivityListViewController</string>
 	</dict>
 	<dict>
-		<key>Competence</key>
-		<string>10201001</string>
 		<key>sequence</key>
 		<string>7</string>
 		<key>name</key>
 		<string>限时优惠</string>
-		<key>number</key>
-		<string>1002</string>
 		<key>icon</key>
 		<string>only_time</string>
-		<key>isLogin</key>
+		<key>isStoryboard</key>
 		<true/>
-		<key>controller</key>
-		<string>ManagementViewController</string>
+		<key>storyboard</key>
+		<string>Activity</string>
+		<key>storyboardId</key>
+		<string>ActivityListViewController</string>
 	</dict>
 	<dict>
-		<key>Competence</key>
-		<string>10201001,10201002,10201003,10201004</string>
 		<key>sequence</key>
 		<string>8</string>
 		<key>name</key>
 		<string>消费满减</string>
-		<key>number</key>
-		<string>1004</string>
 		<key>icon</key>
 		<string>spelling</string>
-		<key>isLogin</key>
+		<key>isStoryboard</key>
 		<true/>
-		<key>controller</key>
-		<string>OverviewViewController</string>
+		<key>storyboard</key>
+		<string>Activity</string>
+		<key>storyboardId</key>
+		<string>ActivityListViewController</string>
 	</dict>
 	<dict>
-		<key>Competence</key>
-		<string>10201001,10201002,10201003,10201004</string>
 		<key>sequence</key>
 		<string>9</string>
 		<key>name</key>
 		<string>自定义活动</string>
-		<key>number</key>
-		<string>1004</string>
 		<key>icon</key>
 		<string>custom</string>
-		<key>isLogin</key>
+		<key>isStoryboard</key>
 		<true/>
-		<key>controller</key>
-		<string></string>
+		<key>storyboard</key>
+		<string>Activity</string>
+		<key>storyboardId</key>
+		<string>ActivityListViewController</string>
 	</dict>
 </array>
 </plist>

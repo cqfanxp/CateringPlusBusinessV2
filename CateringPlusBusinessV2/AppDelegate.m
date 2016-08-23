@@ -56,50 +56,50 @@
     
     
     //1。创建管理者对象
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
 //    manager.requestSerializer = [AFJSONRequestSerializer serializer];
 //    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"text/html", @"application/json",@"*/*"]];//设置相应内容类型
-    //2.上传文件
-        NSMutableDictionary *parame = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"admin",@"userName",
-                             @"123456",@"password",nil];
-        NSString *result = [Public paramsMd5:parame];
-        [parame setObject:result forKey:@"sign"];
-    
-    NSString *urlString = @"http://192.168.1.124/api/Test";
-    [manager POST:urlString parameters:parame constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        //上传文件参数
-        UIImage *iamge = [UIImage imageNamed:@"settledProcess"];
-        NSData *data = UIImagePNGRepresentation(iamge);
-        //这个就是参数
-        [formData appendPartWithFileData:data name:@"file" fileName:@"123.png" mimeType:@"image/png"];
-        
-    } progress:^(NSProgress * _Nonnull uploadProgress) {
-        
-        //打印下上传进度
-        NSLog(@"%lf",1.0 *uploadProgress.completedUnitCount / uploadProgress.totalUnitCount);
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        //请求成功
-        NSLog(@"请求成功：%@",responseObject);
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-        //请求失败
-        NSLog(@"请求失败：%@",error);
-    }];
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"text/html", @"application/json",@"*/*"]];//设置相应内容类型
+//    //2.上传文件
+//        NSMutableDictionary *parame = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"admin",@"userName",
+//                             @"123456",@"password",nil];
+//        NSString *result = [Public paramsMd5:parame];
+//        [parame setObject:result forKey:@"sign"];
+//    
+//    NSString *urlString = @"http://192.168.1.124/api/Test";
+//    [manager POST:urlString parameters:parame constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+//        //上传文件参数
+//        UIImage *iamge = [UIImage imageNamed:@"settledProcess"];
+//        NSData *data = UIImagePNGRepresentation(iamge);
+//        //这个就是参数
+//        [formData appendPartWithFileData:data name:@"file" fileName:@"123.png" mimeType:@"image/png"];
+//        
+//    } progress:^(NSProgress * _Nonnull uploadProgress) {
+//        
+//        //打印下上传进度
+//        NSLog(@"%lf",1.0 *uploadProgress.completedUnitCount / uploadProgress.totalUnitCount);
+//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        
+//        //请求成功
+//        NSLog(@"请求成功：%@",responseObject);
+//        
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        
+//        //请求失败
+//        NSLog(@"请求失败：%@",error);
+//    }];
     
     
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    UIViewController *viewController = [Public getStoryBoardByController:@"Stores" storyboardId:@"StoreManagementViewController"];
-//    MainViewController *viewController = [[MainViewController alloc] init];
-    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:viewController];
+//    UIViewController *viewController = [Public getStoryBoardByController:@"Activity" storyboardId:@"ActivityListViewController"];
+    MainViewController *viewController = [[MainViewController alloc] init];
+//    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:viewController];
     
-    self.window.rootViewController = navigation;
+    self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
     
     //设置UINavigationBar样式
@@ -110,7 +110,7 @@
 //    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGB(51,51,51), UITextAttributeTextColor, nil] forState:UIControlStateNormal];
     
     [[UITabBarItem appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGB(102,102,102),UITextAttributeTextColor,nil]forState:UIControlStateNormal];
-    
+
     [[UITabBarItem appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGB(51,51,51),UITextAttributeTextColor,nil]forState:UIControlStateSelected];
 }
 

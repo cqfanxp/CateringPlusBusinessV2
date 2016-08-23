@@ -54,9 +54,9 @@
     item3.image = [[UIImage imageNamed:@"mine_black"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
-}
+//-(void)viewWillAppear:(BOOL)animated{
+//    [self.navigationController setNavigationBarHidden:YES animated:NO];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

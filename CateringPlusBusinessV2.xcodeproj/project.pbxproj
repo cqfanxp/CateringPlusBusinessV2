@@ -51,7 +51,18 @@
 		57A7B7E51D5EB70400BF2928 /* UIImage+MSSScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7B7D61D5EB70400BF2928 /* UIImage+MSSScale.m */; };
 		57A7B7E61D5EB70400BF2928 /* UIView+MSSLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7B7D81D5EB70400BF2928 /* UIView+MSSLayout.m */; };
 		57A7B7E91D5EC8C800BF2928 /* SubmitQualificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A7B7E81D5EC8C800BF2928 /* SubmitQualificationViewController.m */; };
-		57DDA0BE1D66F4B900F3EC3D /* FightAloneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DDA0BD1D66F4B900F3EC3D /* FightAloneViewController.m */; };
+		57E213C01D6A90AA0003BB07 /* PackageManagement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E213BF1D6A90AA0003BB07 /* PackageManagement.storyboard */; };
+		57E213C31D6A911C0003BB07 /* PackageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E213C21D6A911C0003BB07 /* PackageListViewController.m */; };
+		57E213C61D6A91FA0003BB07 /* PackageEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E213C51D6A91FA0003BB07 /* PackageEditViewController.m */; };
+		57E213CB1D6A93750003BB07 /* PackageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E213C91D6A93750003BB07 /* PackageListCell.m */; };
+		57E213CC1D6A93750003BB07 /* PackageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E213CA1D6A93750003BB07 /* PackageListCell.xib */; };
+		57E213CF1D6AA0A80003BB07 /* ActivityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E213CE1D6AA0A80003BB07 /* ActivityListViewController.m */; };
+		57E213D11D6AA0C10003BB07 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E213D01D6AA0C10003BB07 /* Activity.storyboard */; };
+		57E213D61D6AA3B00003BB07 /* ActivityListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E213D41D6AA3B00003BB07 /* ActivityListCell.m */; };
+		57E213D71D6AA3B00003BB07 /* ActivityListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E213D51D6AA3B00003BB07 /* ActivityListCell.xib */; };
+		57E213DA1D6ACC780003BB07 /* CALayer+XibConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E213D91D6ACC780003BB07 /* CALayer+XibConfiguration.m */; };
+		57E213DD1D6AD97A0003BB07 /* ActivityEdit.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E213DC1D6AD97A0003BB07 /* ActivityEdit.m */; };
+		57E213E01D6AEC4C0003BB07 /* FeaturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E213DF1D6AEC4C0003BB07 /* FeaturesViewController.m */; };
 		57FC38EC1D6585A8009A6C9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FC38EB1D6585A8009A6C9C /* Main.storyboard */; };
 		57FC38EF1D65867C009A6C9C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FC38EE1D65867C009A6C9C /* MainViewController.m */; };
 		57FC38F21D658691009A6C9C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FC38F11D658691009A6C9C /* HomeViewController.m */; };
@@ -172,8 +183,26 @@
 		57A7B7D81D5EB70400BF2928 /* UIView+MSSLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MSSLayout.m"; sourceTree = "<group>"; };
 		57A7B7E71D5EC8C800BF2928 /* SubmitQualificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitQualificationViewController.h; sourceTree = "<group>"; };
 		57A7B7E81D5EC8C800BF2928 /* SubmitQualificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitQualificationViewController.m; sourceTree = "<group>"; };
-		57DDA0BC1D66F4B900F3EC3D /* FightAloneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FightAloneViewController.h; sourceTree = "<group>"; };
-		57DDA0BD1D66F4B900F3EC3D /* FightAloneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FightAloneViewController.m; sourceTree = "<group>"; };
+		57E213BF1D6A90AA0003BB07 /* PackageManagement.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PackageManagement.storyboard; sourceTree = "<group>"; };
+		57E213C11D6A911C0003BB07 /* PackageListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageListViewController.h; sourceTree = "<group>"; };
+		57E213C21D6A911C0003BB07 /* PackageListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageListViewController.m; sourceTree = "<group>"; };
+		57E213C41D6A91FA0003BB07 /* PackageEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageEditViewController.h; sourceTree = "<group>"; };
+		57E213C51D6A91FA0003BB07 /* PackageEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageEditViewController.m; sourceTree = "<group>"; };
+		57E213C81D6A93750003BB07 /* PackageListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageListCell.h; sourceTree = "<group>"; };
+		57E213C91D6A93750003BB07 /* PackageListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageListCell.m; sourceTree = "<group>"; };
+		57E213CA1D6A93750003BB07 /* PackageListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PackageListCell.xib; sourceTree = "<group>"; };
+		57E213CD1D6AA0A80003BB07 /* ActivityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityListViewController.h; sourceTree = "<group>"; };
+		57E213CE1D6AA0A80003BB07 /* ActivityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityListViewController.m; sourceTree = "<group>"; };
+		57E213D01D6AA0C10003BB07 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
+		57E213D31D6AA3B00003BB07 /* ActivityListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityListCell.h; sourceTree = "<group>"; };
+		57E213D41D6AA3B00003BB07 /* ActivityListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityListCell.m; sourceTree = "<group>"; };
+		57E213D51D6AA3B00003BB07 /* ActivityListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityListCell.xib; sourceTree = "<group>"; };
+		57E213D81D6ACC780003BB07 /* CALayer+XibConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+XibConfiguration.h"; sourceTree = "<group>"; };
+		57E213D91D6ACC780003BB07 /* CALayer+XibConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+XibConfiguration.m"; sourceTree = "<group>"; };
+		57E213DB1D6AD97A0003BB07 /* ActivityEdit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityEdit.h; sourceTree = "<group>"; };
+		57E213DC1D6AD97A0003BB07 /* ActivityEdit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityEdit.m; sourceTree = "<group>"; };
+		57E213DE1D6AEC4C0003BB07 /* FeaturesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturesViewController.h; sourceTree = "<group>"; };
+		57E213DF1D6AEC4C0003BB07 /* FeaturesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturesViewController.m; sourceTree = "<group>"; };
 		57FC38EB1D6585A8009A6C9C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		57FC38ED1D65867C009A6C9C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		57FC38EE1D65867C009A6C9C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
@@ -256,6 +285,8 @@
 				572ACA171D61ACDA00FDD68B /* PrefixHeader.h */,
 				573155DC1D62FC660091A337 /* BaseViewController.h */,
 				573155DD1D62FC660091A337 /* BaseViewController.m */,
+				57E213DE1D6AEC4C0003BB07 /* FeaturesViewController.h */,
+				57E213DF1D6AEC4C0003BB07 /* FeaturesViewController.m */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -284,6 +315,8 @@
 			children = (
 				572ACA231D62E8AA00FDD68B /* UINavigationItem+BackButton.h */,
 				572ACA241D62E8AA00FDD68B /* UINavigationItem+BackButton.m */,
+				57E213D81D6ACC780003BB07 /* CALayer+XibConfiguration.h */,
+				57E213D91D6ACC780003BB07 /* CALayer+XibConfiguration.m */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -576,8 +609,11 @@
 		57DDA0B51D66F3D700F3EC3D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				57DDA0BC1D66F4B900F3EC3D /* FightAloneViewController.h */,
-				57DDA0BD1D66F4B900F3EC3D /* FightAloneViewController.m */,
+				57E213D21D6AA37F0003BB07 /* Cell */,
+				57E213CD1D6AA0A80003BB07 /* ActivityListViewController.h */,
+				57E213CE1D6AA0A80003BB07 /* ActivityListViewController.m */,
+				57E213DB1D6AD97A0003BB07 /* ActivityEdit.h */,
+				57E213DC1D6AD97A0003BB07 /* ActivityEdit.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -592,6 +628,7 @@
 		57DDA0B71D66F3D700F3EC3D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				57E213D01D6AA0C10003BB07 /* Activity.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -610,6 +647,11 @@
 		57DDA0B91D66F3D700F3EC3D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				57E213C71D6A93490003BB07 /* Cell */,
+				57E213C11D6A911C0003BB07 /* PackageListViewController.h */,
+				57E213C21D6A911C0003BB07 /* PackageListViewController.m */,
+				57E213C41D6A91FA0003BB07 /* PackageEditViewController.h */,
+				57E213C51D6A91FA0003BB07 /* PackageEditViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -624,8 +666,29 @@
 		57DDA0BB1D66F3D700F3EC3D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				57E213BF1D6A90AA0003BB07 /* PackageManagement.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		57E213C71D6A93490003BB07 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				57E213C81D6A93750003BB07 /* PackageListCell.h */,
+				57E213C91D6A93750003BB07 /* PackageListCell.m */,
+				57E213CA1D6A93750003BB07 /* PackageListCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		57E213D21D6AA37F0003BB07 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				57E213D31D6AA3B00003BB07 /* ActivityListCell.h */,
+				57E213D41D6AA3B00003BB07 /* ActivityListCell.m */,
+				57E213D51D6AA3B00003BB07 /* ActivityListCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		57FC38F91D659838009A6C9C /* Cell */ = {
@@ -824,12 +887,16 @@
 				57A7B7BC1D5DAC8200BF2928 /* MHSheetView.xib in Resources */,
 				57FC39231D66DAEA009A6C9C /* StoreManagementCell.xib in Resources */,
 				57FC39071D66987C009A6C9C /* mine_tool.plist in Resources */,
+				57E213D11D6AA0C10003BB07 /* Activity.storyboard in Resources */,
 				57A7B7D91D5EB70400BF2928 /* mss_browseLoading@2x.png in Resources */,
 				57FC39011D65A22D009A6C9C /* menu_app.plist in Resources */,
 				57FC38EC1D6585A8009A6C9C /* Main.storyboard in Resources */,
+				57E213D71D6AA3B00003BB07 /* ActivityListCell.xib in Resources */,
 				577AC5641D5C0D2C00390F62 /* LaunchScreen.storyboard in Resources */,
+				57E213CC1D6A93750003BB07 /* PackageListCell.xib in Resources */,
 				57A7B7DA1D5EB70400BF2928 /* mss_browseLoading@3x.png in Resources */,
 				572ACA161D61A86800FDD68B /* SelectInnerProductCell.xib in Resources */,
+				57E213C01D6A90AA0003BB07 /* PackageManagement.storyboard in Resources */,
 				57A7B7BA1D5DAC8200BF2928 /* MHSheetHead.xib in Resources */,
 				57A7B79B1D5C299600BF2928 /* OAuth.storyboard in Resources */,
 				57FC39181D66D949009A6C9C /* Stores.storyboard in Resources */,
@@ -921,11 +988,13 @@
 				572ACA151D61A86800FDD68B /* SelectInnerProductCell.m in Sources */,
 				57A7B7E41D5EB70400BF2928 /* MSSBrowseZoomScrollView.m in Sources */,
 				57A7B7E21D5EB70400BF2928 /* MSSBrowseNetworkViewController.m in Sources */,
+				57E213C31D6A911C0003BB07 /* PackageListViewController.m in Sources */,
 				57A7B7A31D5C9B8100BF2928 /* ImproveStoreInformationViewController.m in Sources */,
 				572ACA0D1D61724000FDD68B /* Public.m in Sources */,
 				57A7B7E11D5EB70400BF2928 /* MSSBrowseModel.m in Sources */,
 				57A7B7E51D5EB70400BF2928 /* UIImage+MSSScale.m in Sources */,
 				57A7B7BB1D5DAC8200BF2928 /* MHSheetView.m in Sources */,
+				57E213E01D6AEC4C0003BB07 /* FeaturesViewController.m in Sources */,
 				57A7B7E31D5EB70400BF2928 /* MSSBrowseRemindView.m in Sources */,
 				572ACA081D61609F00FDD68B /* ForgotPasswordViewController.m in Sources */,
 				57FC39221D66DAEA009A6C9C /* StoreManagementCell.m in Sources */,
@@ -933,16 +1002,20 @@
 				573155DE1D62FC660091A337 /* BaseViewController.m in Sources */,
 				57A7B7DE1D5EB70400BF2928 /* MSSBrowseCollectionViewCell.m in Sources */,
 				57FC38EF1D65867C009A6C9C /* MainViewController.m in Sources */,
+				57E213DA1D6ACC780003BB07 /* CALayer+XibConfiguration.m in Sources */,
 				57A7B7DC1D5EB70400BF2928 /* MSSBrowseActionSheetCell.m in Sources */,
 				57FC390B1D66ACEE009A6C9C /* BusinessSchoolCell.m in Sources */,
 				57FC39161D66D93A009A6C9C /* StoreManagementViewController.m in Sources */,
-				57DDA0BE1D66F4B900F3EC3D /* FightAloneViewController.m in Sources */,
+				57E213CB1D6A93750003BB07 /* PackageListCell.m in Sources */,
 				57A7B7E01D5EB70400BF2928 /* MSSBrowseLocalViewController.m in Sources */,
+				57E213D61D6AA3B00003BB07 /* ActivityListCell.m in Sources */,
 				572ACA211D62AE3800FDD68B /* NetWorkUtil.m in Sources */,
 				577AC5561D5C0D2C00390F62 /* main.m in Sources */,
+				57E213CF1D6AA0A80003BB07 /* ActivityListViewController.m in Sources */,
 				57A7B79E1D5C7D6B00BF2928 /* RegisteredViewController.m in Sources */,
 				57A7B7E91D5EC8C800BF2928 /* SubmitQualificationViewController.m in Sources */,
 				57A7B7DF1D5EB70400BF2928 /* MSSBrowseLoadingImageView.m in Sources */,
+				57E213DD1D6AD97A0003BB07 /* ActivityEdit.m in Sources */,
 				57FC39051D65B634009A6C9C /* QRCodeController.m in Sources */,
 				57A7B7B41D5DAC8200BF2928 /* MHActionSheet.m in Sources */,
 				57FC38F51D6586B1009A6C9C /* MineViewController.m in Sources */,
@@ -951,6 +1024,7 @@
 				57A7B7B91D5DAC8200BF2928 /* MHSheetHead.m in Sources */,
 				572ACA101D61910100FDD68B /* SelectInnerProductViewController.m in Sources */,
 				57FC38F81D6586DD009A6C9C /* BusinessSchoolViewController.m in Sources */,
+				57E213C61D6A91FA0003BB07 /* PackageEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Hv-1D-3fT" userLabel="View1">
-                                <rect key="frame" x="0.0" y="20" width="600" height="185"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="185"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fm-nZ-q1J" userLabel="View1">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="85"/>
@@ -120,7 +120,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTW-sD-Rk6" userLabel="View2">
-                                <rect key="frame" x="0.0" y="205" width="600" height="37"/>
+                                <rect key="frame" x="0.0" y="185" width="600" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提醒：今日已完成8个订单验证" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHN-GV-NWw">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="37"/>
@@ -139,7 +139,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hp9-24-t53">
-                                <rect key="frame" x="0.0" y="242" width="600" height="358"/>
+                                <rect key="frame" x="0.0" y="222" width="600" height="378"/>
                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="0.0" id="gQd-am-e2X">
                                     <size key="itemSize" width="0.0" height="0.0"/>
@@ -150,7 +150,7 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x2c-qn-IyD" userLabel="View-line">
-                                <rect key="frame" x="0.0" y="242" width="600" height="1"/>
+                                <rect key="frame" x="0.0" y="222" width="600" height="1"/>
                                 <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="ok0-yy-XbQ"/>
@@ -166,7 +166,7 @@
                             <constraint firstAttribute="trailing" secondItem="2Hv-1D-3fT" secondAttribute="trailing" id="Fhj-9t-JsQ"/>
                             <constraint firstItem="x2c-qn-IyD" firstAttribute="leading" secondItem="h81-i2-9BI" secondAttribute="leading" id="Hku-Tv-wKg"/>
                             <constraint firstItem="PTW-sD-Rk6" firstAttribute="leading" secondItem="h81-i2-9BI" secondAttribute="leading" id="NS1-IF-22M"/>
-                            <constraint firstItem="2Hv-1D-3fT" firstAttribute="top" secondItem="XIU-xE-e8x" secondAttribute="bottom" id="RgJ-pD-Rz9"/>
+                            <constraint firstItem="2Hv-1D-3fT" firstAttribute="top" secondItem="XIU-xE-e8x" secondAttribute="bottom" constant="-20" id="Nxe-69-UAa"/>
                             <constraint firstItem="2Hv-1D-3fT" firstAttribute="leading" secondItem="h81-i2-9BI" secondAttribute="leading" id="fYF-HP-CfI"/>
                             <constraint firstAttribute="trailing" secondItem="x2c-qn-IyD" secondAttribute="trailing" id="h1M-CL-rMN"/>
                             <constraint firstAttribute="trailing" secondItem="Hp9-24-t53" secondAttribute="trailing" id="q02-j1-sdp"/>

@@ -1,18 +1,18 @@
 //
-//  FightAloneViewController.m
+//  PackageEditViewController.m
 //  CateringPlusBusinessV2
 //
-//  Created by 火爆私厨 on 16/8/19.
+//  Created by 火爆私厨 on 16/8/22.
 //  Copyright © 2016年 餐+. All rights reserved.
 //
 
-#import "FightAloneViewController.h"
+#import "PackageEditViewController.h"
 
-@interface FightAloneViewController ()
+@interface PackageEditViewController ()
 
 @end
 
-@implementation FightAloneViewController
+@implementation PackageEditViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
