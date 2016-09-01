@@ -20,7 +20,7 @@
     [self setTitle:@"申请入驻流程"];
     
     //右侧按钮
-    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"开店手册" style:UIBarButtonItemStyleDone target:self action:@selector(rightBtnClick)];
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"开店手册" style:UIBarButtonItemStyleDone target:self action:@selector(shopmanualBtnClick)];
     [rightBtn setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14],NSFontAttributeName, nil] forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = rightBtn;
 }
@@ -42,6 +42,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+//开店手册
+-(void)shopmanualBtnClick{
+    
+}
 /*
 #pragma mark - Navigation
 

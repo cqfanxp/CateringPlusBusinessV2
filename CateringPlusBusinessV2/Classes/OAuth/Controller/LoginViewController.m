@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "MainViewController.h"
 
 @interface LoginViewController ()
 
@@ -85,6 +86,12 @@
     [UIView animateWithDuration:2 animations:^{
         [self.view layoutIfNeeded];
     }];
+}
+
+//登录
+- (IBAction)loginBtnClick:(id)sender {
+    MainViewController *mainViwe = [[MainViewController alloc] init];
+    [self presentViewController:mainViwe animated:YES completion:nil];
 }
 
 /*

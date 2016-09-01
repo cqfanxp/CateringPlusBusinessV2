@@ -21,7 +21,7 @@
     [self setTitle:@"选择品内"];
     
     //右侧按钮
-    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"开店手册" style:UIBarButtonItemStyleDone target:self action:@selector(rightBtnClick)];
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"开店手册" style:UIBarButtonItemStyleDone target:self action:@selector(shopmanualBtnClick)];
     [rightBtn setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14],NSFontAttributeName, nil] forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = rightBtn;
     
@@ -79,4 +79,8 @@
     }
 }
 
+//开店手册
+-(void)shopmanualBtnClick{
+    
+}
 @end

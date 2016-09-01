@@ -16,7 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    float systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (systemVersion >= 7.0) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    
+    [self setTitle:@"编辑套餐"];
 }
 
 - (void)didReceiveMemoryWarning {

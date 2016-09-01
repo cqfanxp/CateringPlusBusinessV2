@@ -11,4 +11,6 @@
 
 @interface RegisteredViewController : BaseViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberText;
+
 @end

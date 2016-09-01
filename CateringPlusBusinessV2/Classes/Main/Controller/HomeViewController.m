@@ -12,6 +12,7 @@
 #import "AppListCell.h"
 #import "QRCodeController.h"
 #import "StoreManagementViewController.h"
+#import "FeaturesViewController.h"
 
 @interface HomeViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>{
     //应用数据
@@ -179,8 +180,9 @@
     NSDictionary *item  = [_comPetenceData objectAtIndex:indexPath.row];
     
     if (item[@"isStoryboard"]) {
-      UIViewController *viewController = [Public getStoryBoardByController:item[@"storyboard"] storyboardId:item[@"storyboardId"]];
+      FeaturesViewController *viewController = (FeaturesViewController *)[Public getStoryBoardByController:item[@"storyboard"] storyboardId:item[@"storyboardId"]];
       [viewController setTitle:item[@"name"]];
+        viewController.featuresData = item;
       [self.navigationController pushViewController:viewController animated:YES];
     }
 }

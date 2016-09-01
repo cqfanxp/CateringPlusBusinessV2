@@ -9,6 +9,7 @@
 #import "SubmitQualificationViewController.h"
 #import "MHActionSheet.h"
 #import "MSSBrowseDefine.h"
+#import "MainViewController.h"
 
 @interface SubmitQualificationViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
     UIImageView *_businessLicenseImg;//营业执照（添加）
@@ -32,7 +33,7 @@
     [self setTitle:@"提交资质"];
     
     //右侧按钮
-    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"开店手册" style:UIBarButtonItemStyleDone target:self action:@selector(rightBtnClick)];
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"开店手册" style:UIBarButtonItemStyleDone target:self action:@selector(shopmanualBtnClick)];
     [rightBtn setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14],NSFontAttributeName, nil] forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = rightBtn;
     
@@ -205,6 +206,17 @@
 {
     //结束编辑
     [self.view endEditing:YES];
+}
+
+//开店手册
+-(void)shopmanualBtnClick{
+    
+}
+
+//提交审核
+- (IBAction)checkBtnClick:(id)sender {
+    MainViewController *mainViwe = [[MainViewController alloc] init];
+    [self presentViewController:mainViwe animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

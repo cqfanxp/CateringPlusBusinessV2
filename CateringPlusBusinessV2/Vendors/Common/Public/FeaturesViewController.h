@@ -10,4 +10,7 @@
 
 @interface FeaturesViewController : UIViewController
 
+//功能数据
+@property(nonatomic,strong) NSDictionary *featuresData;
+
 @end

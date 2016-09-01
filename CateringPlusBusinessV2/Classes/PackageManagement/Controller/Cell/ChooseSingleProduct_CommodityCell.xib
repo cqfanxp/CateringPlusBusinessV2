@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="69" id="KGk-i7-Jjw" customClass="ChooseSingleProduct_CommodityCell">
+            <rect key="frame" x="0.0" y="0.0" width="570" height="69"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="570" height="68.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bussise_baomihua" translatesAutoresizingMaskIntoConstraints="NO" id="sAM-RH-r1G">
+                        <rect key="frame" x="15" y="12" width="45" height="44.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可口可乐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mry-19-oOY">
+                        <rect key="frame" x="70" y="12" width="60" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="单位：瓶" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOl-WS-vlc">
+                        <rect key="frame" x="70" y="39" width="56" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N22-fu-Pom" userLabel="Button+">
+                        <rect key="frame" x="514" y="13" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="Pg1-k5-N9y"/>
+                            <constraint firstAttribute="width" constant="44" id="jmV-v5-2tA"/>
+                        </constraints>
+                        <state key="normal" image="smll_added"/>
+                        <connections>
+                            <action selector="plusBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="a8x-Ld-sXT"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZX-rR-1c0">
+                        <rect key="frame" x="506" y="25" width="8" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfL-ob-HaQ" userLabel="Button-">
+                        <rect key="frame" x="462" y="12.5" width="44" height="44"/>
+                        <state key="normal" image="smll_reduce"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="lfL-ob-HaQ" firstAttribute="trailing" secondItem="2ZX-rR-1c0" secondAttribute="leading" id="2W1-JW-6Qa"/>
+                    <constraint firstAttribute="bottom" secondItem="sAM-RH-r1G" secondAttribute="bottom" constant="12" id="6gC-oc-zxW"/>
+                    <constraint firstItem="Mry-19-oOY" firstAttribute="top" secondItem="sAM-RH-r1G" secondAttribute="top" id="D0p-BJ-uLP"/>
+                    <constraint firstItem="sAM-RH-r1G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="EkO-Df-YcA"/>
+                    <constraint firstItem="fOl-WS-vlc" firstAttribute="leading" secondItem="Mry-19-oOY" secondAttribute="leading" id="Eu9-TS-tBu"/>
+                    <constraint firstItem="2ZX-rR-1c0" firstAttribute="trailing" secondItem="N22-fu-Pom" secondAttribute="leading" id="KNS-Yr-Yqf"/>
+                    <constraint firstItem="lfL-ob-HaQ" firstAttribute="width" secondItem="N22-fu-Pom" secondAttribute="width" id="Qlz-Cg-uMU"/>
+                    <constraint firstItem="sAM-RH-r1G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Rvh-Ge-prL"/>
+                    <constraint firstItem="fOl-WS-vlc" firstAttribute="bottom" secondItem="sAM-RH-r1G" secondAttribute="bottom" id="boR-sJ-CsB"/>
+                    <constraint firstItem="2ZX-rR-1c0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="h1r-rW-hmA"/>
+                    <constraint firstAttribute="trailing" secondItem="N22-fu-Pom" secondAttribute="trailing" constant="12" id="ovq-u1-0pq"/>
+                    <constraint firstItem="lfL-ob-HaQ" firstAttribute="height" secondItem="N22-fu-Pom" secondAttribute="height" id="ukA-Xk-F7k"/>
+                    <constraint firstItem="Mry-19-oOY" firstAttribute="leading" secondItem="sAM-RH-r1G" secondAttribute="trailing" constant="10" id="v36-sQ-Jbd"/>
+                    <constraint firstItem="N22-fu-Pom" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zGc-NR-YID"/>
+                    <constraint firstItem="lfL-ob-HaQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zjB-de-L5Z"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lessBtn" destination="lfL-ob-HaQ" id="ae9-jL-7Qc"/>
+                <outlet property="number" destination="2ZX-rR-1c0" id="B07-Ea-VIU"/>
+                <outlet property="plusBtn" destination="N22-fu-Pom" id="pha-16-1kW"/>
+            </connections>
+            <point key="canvasLocation" x="365" y="666.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bussise_baomihua" width="45" height="45"/>
+        <image name="smll_added" width="22" height="22"/>
+        <image name="smll_reduce" width="22" height="22"/>
+    </resources>
+</document>

@@ -7,6 +7,7 @@
 //
 
 #import "RegisteredViewController.h"
+#import "NetWorkUtil.h"
 
 
 @interface RegisteredViewController ()
@@ -50,7 +51,18 @@
 #pragma mark 获取验证码
 - (IBAction)verificationCode:(id)sender {
     UIButton *btn = (UIButton *)sender;
-    [Public Countdown:btn];
+    
+    NSMutableDictionary *input = [[NSMutableDictionary alloc] initWithObjectsAndKeys:_phoneNumberText.text,@"PhoneNumber",nil];
+    NSString *result = [Public paramsMd5:input];
+    [input setObject:result forKey:@"sign"];
+    
+    [NetWorkUtil post:@"http://192.168.1.113/api/businesses/business/sendValidateCode" parameters:input success:^(id responseObject) {
+        NSLog(@"----");
+        [Public Countdown:btn];
+    } failure:^(NSError *error) {
+
+    }];
+    
 }
 /*
 #pragma mark - Navigation

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FeaturesViewController.h"
+#import "PrefixHeader.h"
 
 @interface ActivityListViewController : FeaturesViewController
 

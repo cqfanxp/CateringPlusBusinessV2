@@ -8,6 +8,7 @@
 
 #import "ActivityListViewController.h"
 #import "ActivityListCell.h"
+#import "ActivityEditViewController.h"
 
 @interface ActivityListViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -28,6 +29,11 @@
     _TableView.dataSource = self;
     _TableView.delegate = self;
     _TableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    //右侧按钮
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"新增" style:UIBarButtonItemStyleDone target:self action:@selector(addActivity)];
+    [rightBtn setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14],NSFontAttributeName, nil] forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem = rightBtn;
 }
 
 #pragma mark 重写uitableview方法
@@ -53,4 +59,10 @@
     
 }
 
+#pragma mark 添加活动
+-(void)addActivity{
+    ActivityEditViewController *activityEdit = (ActivityEditViewController *)[Public getStoryBoardByController:@"Activity" storyboardId:@"ActivityEditViewController"];
+    activityEdit.plistName =self.featuresData[@"plistName"];
+    [self.navigationController pushViewController:activityEdit animated:YES];
+}
 @end

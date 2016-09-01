@@ -95,11 +95,11 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-//    UIViewController *viewController = [Public getStoryBoardByController:@"Activity" storyboardId:@"ActivityListViewController"];
-    MainViewController *viewController = [[MainViewController alloc] init];
-//    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:viewController];
+    UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"RegisteredViewController"];
+//    MainViewController *viewController = [[MainViewController alloc] init];
+    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:viewController];
     
-    self.window.rootViewController = viewController;
+    self.window.rootViewController = navigation;
     [self.window makeKeyAndVisible];
     
     //设置UINavigationBar样式
