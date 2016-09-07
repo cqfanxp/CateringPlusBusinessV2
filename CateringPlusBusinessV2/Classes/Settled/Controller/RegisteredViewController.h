@@ -11,6 +11,22 @@
 
 @interface RegisteredViewController : BaseViewController
 
+//邀请码
+@property (weak, nonatomic) IBOutlet UITextField *invitationCodeField;
+
+//账号
+@property (weak, nonatomic) IBOutlet UITextField *accountNumberField;
+
+//密码
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+
+//确认密码
+@property (weak, nonatomic) IBOutlet UITextField *confirmPasswordField;
+
+//验证码
+@property (weak, nonatomic) IBOutlet UITextField *codesField;
+
+//手机号
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberText;
 
 @end

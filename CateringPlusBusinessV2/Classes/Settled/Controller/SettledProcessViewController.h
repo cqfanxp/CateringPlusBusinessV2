@@ -11,4 +11,6 @@
 
 @interface SettledProcessViewController : BaseViewController
 
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+
 @end

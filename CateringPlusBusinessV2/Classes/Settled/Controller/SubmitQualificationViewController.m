@@ -19,6 +19,13 @@
     float _imgHeight;//图片高度
     
     int _selectImgTag;//当前选择图片的tag
+    
+    //营业执照服务器图片路径
+    NSString *_businessLicensePath;
+    //身份证正面服务器图片路径
+    NSString *_photoIDCardPositivePath;
+    //身份证背面服务器图片路径
+    NSString *_photoIDCardRearPath;
 }
 
 @end
@@ -57,6 +64,26 @@
     _photoIDCardRearImg = [self getAddImgView:300 num:1];
     [_photoIDCard addSubview:_photoIDCardRearImg];
     
+}
+
+//上传图片
+-(void)uploadImage:(NSData *)imageData type:(NSString *) type{
+    
+    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/uplodStoreImage"] imageData:imageData parameters:[Public getParams:nil] success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+        if ([responseObject[@"success"] boolValue]) {
+            NSString *tempPath = responseObject[@"result"];
+            if ([type isEqualToString:@"businessLincense"]) {
+                _businessLicensePath = tempPath;
+            }else if([type isEqualToString:@"photoIDCardPositive"]){
+                _photoIDCardPositivePath = tempPath;
+            }else{
+                _photoIDCardRearPath = tempPath;
+            }
+        }
+    } failure:^(NSError *error) {
+        NSLog(@"error:%@",error);
+    }];
 }
 
 #pragma mark 获得添加图片按钮
@@ -120,17 +147,22 @@
     [picker dismissViewControllerAnimated:YES completion:^{}];
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
+    NSData *imgData = UIImagePNGRepresentation(image);
+    
     if (_selectImgTag == 100) {
         [_businessLicenseImg removeFromSuperview];
         [_businessLicenseView addSubview:[self generateImg:image num:0]];
+        [self uploadImage:imgData type:@"businessLincense"];
     }
     if (_selectImgTag == 200) {
         [_photoIDCardPositiveImg removeFromSuperview];
         [_photoIDCard addSubview:[self generateImg:image num:0]];
+        [self uploadImage:imgData type:@"photoIDCardPositive"];
     }
     if (_selectImgTag == 300) {
         [_photoIDCardRearImg removeFromSuperview];
         [_photoIDCard addSubview:[self generateImg:image num:1]];
+        [self uploadImage:imgData type:@"photoIDCardRear"];
     }
 }
 
@@ -166,18 +198,24 @@
         _businessLicenseImg = [self getAddImgView:100 num:0];
         [_businessLicenseView addSubview:_businessLicenseImg];
         [btn.superview removeFromSuperview];
+        
+        _businessLicensePath = nil;
     }
     
     if (btn.tag > 200 && btn.tag < 300) {
         _photoIDCardPositiveImg = [self getAddImgView:200 num:0];
         [_photoIDCard addSubview:_photoIDCardPositiveImg];
         [btn.superview removeFromSuperview];
+        
+        _photoIDCardPositivePath = nil;
     }
     
     if (btn.tag > 300) {
         _photoIDCardRearImg = [self getAddImgView:300 num:1];
         [_photoIDCard addSubview:_photoIDCardRearImg];
         [btn.superview removeFromSuperview];
+        
+        _photoIDCardRearPath = nil;
     }
     
 }
@@ -215,8 +253,72 @@
 
 //提交审核
 - (IBAction)checkBtnClick:(id)sender {
-    MainViewController *mainViwe = [[MainViewController alloc] init];
-    [self presentViewController:mainViwe animated:YES completion:nil];
+    if (![self verification]) {
+        return;
+    }
+    //用户信息
+    NSDictionary *userInfo = [Public getUserDefaultKey:USERINFO];
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                   userInfo[@"id"],@"Id",
+                                   _registrationNumberField.text,@"RegistrationNumber",
+                                   _licenseNameField.text,@"LicenseName",
+                                   _nameField.text,@"Name",
+                                   _iDCardField.text,@"IDCard",
+                                   _businessLicensePath,@"BusinessLicensePhoto",
+                                   _photoIDCardPositivePath,@"HandheldID",
+                                   _photoIDCardRearPath,@"HandheldIDC",
+                                   nil];
+    WKProgressHUD *hud = [WKProgressHUD showInView:self.view withText:nil animated:YES];
+    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/updateBusUserByUserId"] parameters:[Public getParams:params] success:^(id responseObject) {
+        [hud dismiss:YES];
+        if ([responseObject[@"success"] boolValue]) {
+            MainViewController *mainViwe = [[MainViewController alloc] init];
+            [self presentViewController:mainViwe animated:YES completion:nil];
+        }else{
+            [Public alertWithType:MozAlertTypeError msg:responseObject[@"message"]];
+        }
+    } failure:^(NSError *error) {
+        [hud dismiss:YES];
+        NSLog(@"error:%@",error);
+    }];
+}
+
+//验证
+-(Boolean)verification{
+    if ([_registrationNumberField.text isEqualToString:@""]) {
+        [Public alertWithType:MozAlertTypeError msg:@"注册号不能为空"];
+        return false;
+    }
+    if ([_licenseNameField.text isEqualToString:@""]) {
+        [Public alertWithType:MozAlertTypeError msg:@"执照名称不能为空"];
+        return false;
+    }
+    if ([_nameField.text isEqualToString:@""]) {
+        [Public alertWithType:MozAlertTypeError msg:@"姓名不能为空"];
+        return false;
+    }
+    if ([_iDCardField.text isEqualToString:@""]) {
+        [Public alertWithType:MozAlertTypeError msg:@"身份证不能为空"];
+        return false;
+    }
+    if (![Verification checkUserIdCard:_iDCardField.text]) {
+        [Public alertWithType:MozAlertTypeError msg:@"身份证号码格式不正确"];
+        return false;
+    }
+    if (_businessLicensePath == nil) {
+        [Public alertWithType:MozAlertTypeError msg:@"请上传营业执照"];
+        return false;
+    }
+    if (_photoIDCardPositivePath == nil) {
+        [Public alertWithType:MozAlertTypeError msg:@"请上传身份证正面图"];
+        return false;
+    }
+    if (_photoIDCardRearPath == nil) {
+        [Public alertWithType:MozAlertTypeError msg:@"请上传身份证背面图"];
+        return false;
+    }
+    return true;
 }
 
 - (void)didReceiveMemoryWarning {

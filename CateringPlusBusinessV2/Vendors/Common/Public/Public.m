@@ -69,7 +69,6 @@
     const char *cStr = [inPutText UTF8String];
     unsigned char result[CC_MD5_DIGEST_LENGTH];
     CC_MD5(cStr, strlen(cStr), result);
-    
     return [[NSString stringWithFormat:@"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
              result[0], result[1], result[2], result[3],
              result[4], result[5], result[6], result[7],
@@ -85,12 +84,37 @@
     }
     NSMutableString *str = [[NSMutableString alloc] init];
     
-    for ( NSString *key in dic) {
+    for ( NSString *key in [[dic allKeys] sortedArrayUsingSelector:@selector(compare:)]) {
         [str appendString:[NSString stringWithFormat:@"&%@=%@",key,dic[key]]];
     }
     [str appendString:KEY];
     return str;
 }
 
++(NSDictionary *)getParams:(NSMutableDictionary *)params{
+    NSMutableDictionary *input = params;
+    if (input == nil) {
+        input = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"CateringPlusBusinessV2",@"key",nil];
 
+    }
+    NSString *result = [Public paramsMd5:input];
+    [input setObject:result forKey:@"sign"];
+    return input;
+}
+//提示信息
++(void)alertWithType:(MozAlertType)type msg:(NSString *)msg{
+    [MozTopAlertView showWithType:type text:msg doText:@"确定" doBlock:^{} parentView:Window];
+}
+
+//获取或设置NSUserDefaults值
++(void)setUserDefaultKey:(NSString *)key value:(nullable id)value{
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    [defaults setObject:value forKey:key];
+    [defaults synchronize];
+}
+
++(id)getUserDefaultKey:(NSString *)key{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [defaults objectForKey:key];
+}
 @end

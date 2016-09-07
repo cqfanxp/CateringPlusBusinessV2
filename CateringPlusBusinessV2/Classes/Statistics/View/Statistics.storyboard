@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--(验证记录)-->
+        <scene sceneID="yPy-M2-OQ1">
+            <objects>
+                <viewController storyboardIdentifier="VerificationRecordsViewController" id="KR9-VH-9ul" userLabel="(验证记录)" customClass="VerificationRecordsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="InT-Ry-Yyb"/>
+                        <viewControllerLayoutGuide type="bottom" id="zt5-Px-idS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1eC-Em-RCc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ThQ-tB-ZBR">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ThQ-tB-ZBR" firstAttribute="top" secondItem="InT-Ry-Yyb" secondAttribute="bottom" id="SO0-K1-rMb"/>
+                            <constraint firstAttribute="trailing" secondItem="ThQ-tB-ZBR" secondAttribute="trailing" id="bBD-XM-Wms"/>
+                            <constraint firstItem="zt5-Px-idS" firstAttribute="top" secondItem="ThQ-tB-ZBR" secondAttribute="bottom" id="hQd-dm-hVo"/>
+                            <constraint firstItem="ThQ-tB-ZBR" firstAttribute="leading" secondItem="1eC-Em-RCc" secondAttribute="leading" id="p8l-Tf-a9M"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="ThQ-tB-ZBR" id="tO8-rh-pEq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sax-aD-Yn0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="366" y="452"/>
+        </scene>
+    </scenes>
+</document>

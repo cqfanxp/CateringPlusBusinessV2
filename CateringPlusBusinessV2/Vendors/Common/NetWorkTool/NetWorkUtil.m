@@ -51,11 +51,11 @@
 //    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 //    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"text/html", @"application/json",@"*/*"]];//设置相应内容类型
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];//设置相应内容类型
     
     [manager POST:url parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
         
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id responseObject) {
         success(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"Error: %@", error);
@@ -86,7 +86,9 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];//设置相应内容类型
     
     [manager POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        [formData appendPartWithFormData:imageData name:@"Filedata"];
+        
+        [formData appendPartWithFileData:imageData name:@"Filedata" fileName:@"image.png" mimeType:@"image/png"];
+//        [formData appendPartWithFormData:imageData name:@"Filedata"];
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

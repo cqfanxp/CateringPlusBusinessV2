@@ -9,8 +9,9 @@
 #import "ImproveStoreInformationViewController.h"
 #import "MHActionSheet.h"
 #import "MSSBrowseDefine.h"
+#import "MapViewController.h"
 
-@interface ImproveStoreInformationViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
+@interface ImproveStoreInformationViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,MapViewDelegate>{
     UIImageView *_storesImg;//门店图（添加）
     UIImageView *_surroundingsImg;//环境图（添加）
     
@@ -18,9 +19,16 @@
     
     int _selectImgTag;//当前选择图片的tag
     
+    NSInteger _tempBtnTag;//btn临时tag
+    
     //图片数据
     NSMutableArray *_storesList;//门店图
     NSMutableArray *_surroundingsList;//环境图
+    
+    NSString *_storesPath;//门店首图服务器地址
+    NSMutableDictionary *_surroundingsPath;//环境图服务器地址
+    
+    MapSelectResult *_mapSelectResult;//地址信息
 }
 
 @end
@@ -40,10 +48,16 @@
     self.navigationItem.rightBarButtonItem = rightBtn;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+}
+
 #pragma mark 初始化布局
 -(void)initLayout{
     
     _imgHeight = _storesScroll.frame.size.height-10;
+    
+    _surroundingsPath = [[NSMutableDictionary alloc] init];
     
     //门店图
     _storesImg = [self getAddImgView:100 num:0];
@@ -57,14 +71,96 @@
     _storesList = [[NSMutableArray alloc] init];
     _surroundingsList = [[NSMutableArray alloc] init];
     
-
+    
+}
+//上传图片
+-(void)uploadImage:(NSData *)imageData type:(NSString *) type tempBtnTag:(NSInteger)tempBtnTag{
+    
+    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/uplodStoreImage"] imageData:imageData parameters:[Public getParams:nil] success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+        if ([responseObject[@"success"] boolValue]) {
+            NSString *tempPath = responseObject[@"result"];
+            if ([type isEqualToString:@"storesImg"]) {
+                _storesPath = tempPath;
+            }else{
+                [_surroundingsPath setObject:tempPath forKey:[NSString stringWithFormat: @"%ld", (long)tempBtnTag]];
+            }
+        }
+    } failure:^(NSError *error) {
+        NSLog(@"error:%@",error);
+    }];
 }
 
 #pragma mark 下一步
 - (IBAction)nextBtn:(id)sender {
-    UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"SubmitQualificationViewController"];
+    if (![self verification]) {
+        return;
+    }
     
-    [self.navigationController pushViewController:viewController animated:YES];
+    //行业信息
+    NSDictionary *categoryInfo = [Public getUserDefaultKey:CATEGORYINFO];
+    //用户信息
+    NSDictionary *userInfo = [Public getUserDefaultKey:USERINFO];
+    
+    //环境图组装
+    NSMutableString *tempEnvironmentMap = [[NSMutableString alloc] init];
+    for (NSString *str in [_surroundingsPath allValues]) {
+        [tempEnvironmentMap appendFormat:@"%@,",str];
+    }
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                   userInfo[@"id"],@"BusUserId",
+                                   categoryInfo[@"id"],@"IndusId",
+                                   _storeNameField.text,@"BusName",
+                                   _phoneStoresField.text,@"MainPhone",
+                                   _storeAddressField.text,@"StoreAddress",
+                                   _storesPath,@"StoreFirstMap",
+                                   tempEnvironmentMap,@"EnvironmentMap",
+                                   [[NSDecimalNumber alloc] initWithFloat:_mapSelectResult.latitude],@"Latitude",
+                                   [[NSDecimalNumber alloc] initWithFloat:_mapSelectResult.longitude],@"Longitude",
+                                   _mapSelectResult.district,@"District",
+                                   @"",@"BusinessArea",
+                                   nil];
+    WKProgressHUD *hud = [WKProgressHUD showInView:self.view withText:nil animated:YES];
+    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/insertStore"] parameters:[Public getParams:params] success:^(id responseObject) {
+        [hud dismiss:YES];
+        if ([responseObject[@"success"] boolValue]) {
+            //跳转到下一步
+            UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"SubmitQualificationViewController"];
+            [self.navigationController pushViewController:viewController animated:YES];
+        }else{
+            [Public alertWithType:MozAlertTypeError msg:responseObject[@"message"]];
+        }
+    } failure:^(NSError *error) {
+        [hud dismiss:YES];
+        NSLog(@"error:%@",error);
+        [Public alertWithType:MozAlertTypeError msg:[NSString stringWithFormat:@"%@",error]];
+    }];
+}
+
+//验证
+-(Boolean)verification{
+    if ([_storeNameField.text isEqualToString:@""]) {
+        [Public alertWithType:MozAlertTypeError msg:@"门店名称不能为空"];
+        return false;
+    }
+    if ([_phoneStoresField.text isEqualToString:@""]) {
+        [Public alertWithType:MozAlertTypeError msg:@"门店电话不能为空"];
+        return false;
+    }
+    if ([_storeAddressField.text isEqualToString:@""]) {
+        [Public alertWithType:MozAlertTypeError msg:@"门店地址不能为空"];
+        return false;
+    }
+    if (_storesPath == nil) {
+        [Public alertWithType:MozAlertTypeError msg:@"请上传门店首图"];
+        return false;
+    }
+    if ([_surroundingsPath count] == 0) {
+        [Public alertWithType:MozAlertTypeError msg:@"请上传环境图"];
+        return false;
+    }
+    return true;
 }
 
 #pragma mark 获得添加图片按钮
@@ -122,10 +218,15 @@
     [picker dismissViewControllerAnimated:YES completion:^{}];
     UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
     
+    NSData *imgData = UIImagePNGRepresentation(image);
+    
     if (_selectImgTag == 100) {
         [_storesImg removeFromSuperview];
         [_storesScroll addSubview:[self generateImg:image num:0]];
         [_storesList addObject:image];
+        
+        //上传图片
+        [self uploadImage:imgData type:@"storesImg" tempBtnTag:_tempBtnTag];
     }else{
         int num = (int)[_surroundingsList count];
         [_surroundingsImg removeFromSuperview];
@@ -138,6 +239,8 @@
             _surroundingsImg = [self getAddImgView:200 num:num];
             [_surroundingsScroll addSubview:_surroundingsImg];
         }
+        //上传图片
+        [self uploadImage:imgData type:@"surroundingsImg" tempBtnTag:_tempBtnTag];
     }
     
 }
@@ -162,6 +265,8 @@
 //    [closeBtn setContentEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
     [view addSubview:closeBtn];
     
+    _tempBtnTag = closeBtn.tag;
+    
     return view;
 }
 #pragma mark 取消图片
@@ -174,6 +279,8 @@
         [_storesScroll addSubview:_storesImg];
         [_storesList removeAllObjects];
         [btn.superview removeFromSuperview];
+        //清空门店首图
+        _storesPath = nil;
     }else{
         //获得view中的所有控件（UIImageView、UIButton）
         NSArray *subViews = btn.superview.subviews;
@@ -201,8 +308,9 @@
             _surroundingsImg = [self getAddImgView:200 num:surroundCount];
             [_surroundingsScroll addSubview:_surroundingsImg];
         }
+        //删除对应的环境图
+        [_surroundingsPath removeObjectForKey:[NSString stringWithFormat: @"%ld", (long)btn.tag]];
     }
-    
 }
 
 #pragma mark 点击图片预览
@@ -240,6 +348,17 @@
 {
     //结束编辑
     [self.view endEditing:YES];
+}
+//选择门店地址
+- (IBAction)selectStoreAddress:(id)sender {
+    MapViewController *mapView = [[MapViewController alloc] init];
+    mapView.delegate = self;
+    [self.navigationController pushViewController:mapView animated:YES];
+}
+
+-(void)selectAddress:(MapSelectResult *)mapSelectResult{
+    _storeAddressField.text = mapSelectResult.address;
+    _mapSelectResult = mapSelectResult;
 }
 
 - (void)didReceiveMemoryWarning {

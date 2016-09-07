@@ -20,7 +20,7 @@
     // Configure the view for the selected state
 }
 
-- (instancetype)cellWithTableView:(UITableView *)tableView text:(NSString *)text{
+- (instancetype)cellWithTableView:(UITableView *)tableView{
     static NSString *ID = @"StoreManagement_Cell";
     StoreManagementCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {

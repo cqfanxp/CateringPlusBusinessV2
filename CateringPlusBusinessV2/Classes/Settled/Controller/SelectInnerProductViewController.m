@@ -8,8 +8,12 @@
 
 #import "SelectInnerProductViewController.h"
 #import "SelectInnerProductCell.h"
+#import "PrefixHeader.h"
 
-@interface SelectInnerProductViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface SelectInnerProductViewController ()<UITableViewDelegate,UITableViewDataSource>{
+    NSArray *_dataResult;//result值
+    NSArray *_dataChildeen;//子行业
+}
 
 @end
 
@@ -34,6 +38,19 @@
     _childTableView.dataSource = self;
     _childTableView.delegate = self;
     _childTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    [self initData];
+}
+
+//加载数据
+-(void)initData{
+    
+    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/getIndustry"] parameters:[Public getParams:nil] success:^(id responseObject) {
+        _dataResult = responseObject[@"result"];
+        [_innerProductTableView reloadData];
+    } failure:^(NSError *error) {
+        NSLog(@"error:%@",error);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +60,11 @@
 #pragma mark 重写uitableview方法
 #pragma mark 返回数据总数
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    if (tableView == _innerProductTableView) {
+        return [_dataResult count];
+    }else{
+        return [_dataChildeen count];
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -51,13 +72,15 @@
     SelectInnerProductCell *cell = nil;
     
     if (tableView == _innerProductTableView) {
-        cell = [[SelectInnerProductCell alloc] cellWithTableView:tableView text:@"美食"];
+        NSDictionary *item = [_dataResult objectAtIndex:indexPath.row];
+        cell = [[SelectInnerProductCell alloc] cellWithTableView:tableView text:item[@"name"]];
         cell.backgroundColor = RGB(240, 240, 240);
         cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
         cell.selectedBackgroundView.backgroundColor = RGB(247, 247, 247);
         
     }else{
-        cell = [[SelectInnerProductCell alloc] cellWithTableView:tableView text:@"火锅"];
+        NSDictionary *item = [_dataChildeen objectAtIndex:indexPath.row];
+        cell = [[SelectInnerProductCell alloc] cellWithTableView:tableView text:item[@"name"]];
         cell.backgroundColor = RGB(247, 247, 247);
         cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
         cell.selectedBackgroundView.backgroundColor = [UIColor whiteColor];
@@ -73,9 +96,16 @@
 #pragma mark 选中行事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == _childTableView) {
-        UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"RegisteredViewController"];
+        //保存选中的行业
+        NSDictionary *selectData = [_dataChildeen objectAtIndex:indexPath.row];
+        [Public setUserDefaultKey:CATEGORYINFO value:selectData];
         
+        UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"RegisteredViewController"];
         [self.navigationController pushViewController:viewController animated:YES];
+    }else{
+        NSDictionary *item = [_dataResult objectAtIndex:indexPath.row];
+        _dataChildeen = item[@"children"];
+        [_childTableView reloadData];
     }
 }
 

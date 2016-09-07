@@ -14,6 +14,12 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - AMap3DMap (4.2.0):
+    - AMapFoundation (~> 1.2)
+  - AMapFoundation (1.2.0)
+  - AMapLocation (1.2.2)
+  - AMapSearch (4.2.0):
+    - AMapFoundation (~> 1.0)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
@@ -25,6 +31,9 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (= 3.1.0)
+  - AMap3DMap (~> 4.0)
+  - AMapLocation (~> 1.0)
+  - AMapSearch (~> 4.0)
   - FMDB (= 2.6.2)
   - IQKeyboardManager (= 3.3.7)
   - MJRefresh (= 3.1.9)
@@ -32,6 +41,10 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AMap3DMap: 35a5e1ce80796ecf996b2c7b847b4ac94e97e448
+  AMapFoundation: 8acc2bf4eed79aab4d21002ddb8b24a6f3f3621c
+  AMapLocation: 5412fbf0385716d4d481e39a95929057cddc093f
+  AMapSearch: 788020fca7ed18819e8bc2bfca716a6775a05ada
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
   MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e

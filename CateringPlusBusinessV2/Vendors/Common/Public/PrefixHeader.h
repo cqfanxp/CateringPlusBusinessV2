@@ -11,7 +11,12 @@
 #import "UINavigationItem+BackButton.h"
 #import "CALayer+XibConfiguration.h"
 #import "BaseViewController.h"
+#import "NetWorkUtil.h"
 #import "Public.h"
+#import "WKProgressHUD.h"
+#import "Verification.h"
+#import "UIImageView+WebCache.h"
+#import "MJRefresh.h"
 
 #ifdef DEBUG //调试模式--模拟器
 
@@ -51,6 +56,9 @@
 #define X(view)    view.frame.origin.x
 #define Y(view)    view.frame.origin.y
 
+//获得window
+#define Window [UIApplication sharedApplication].keyWindow
+
 //5.常用对象
 #define APPDELEGATE ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
@@ -69,4 +77,15 @@
 #define IS_IPHONE_6 (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
 #define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
 
+//数据地址
+#define BASEURL @"http://192.168.1.124"
+
+//NSUserDefaults Key
+#define USERVERIFICATIONINFO @"userVerificationInfo"//用户登录信息
+#define USERINFO @"userInfo" //用户信息
+#define CATEGORYINFO @"categoryInfo" //行业信息
+
+/* 使用高德地图API，请注册Key，注册地址：http://lbs.amap.com/console/key */
+const static NSString *MAPAPIKey = @"ef1484696232a477c63589bde6edc83f";
+const static NSString *MAPTableID = @"";
 #endif

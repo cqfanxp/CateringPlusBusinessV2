@@ -8,8 +8,11 @@
 
 #import "StoreManagementViewController.h"
 #import "StoreManagementCell.h"
+#import "PrefixHeader.h"
 
-@interface StoreManagementViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface StoreManagementViewController ()<UITableViewDataSource,UITableViewDelegate>{
+    NSArray *_dataResult;
+}
 
 @end
 
@@ -17,18 +20,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self.navigationController setNavigationBarHidden:NO animated:NO];
-    
-//    [self setTitle:@"门店管理"];
     
     float systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     if (systemVersion >= 7.0) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
+    //右侧按钮
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"新建" style:UIBarButtonItemStyleDone target:self action:@selector(addClick)];
+    [rightBtn setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14],NSFontAttributeName, nil] forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem = rightBtn;
     
     _TableView.dataSource = self;
     _TableView.delegate = self;
-//    _TableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _TableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+    }];
+    _TableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    [_TableView.mj_header beginRefreshing];
+}
+//初始化数据
+-(void)loadNewData{
+    
+    // 马上进入刷新状态
+//    [_TableView.header beginRefreshing];
+    //用户信息
+    NSDictionary *userInfo = [Public getUserDefaultKey:USERINFO];
+    
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                  userInfo[@"id"],@"BusUserId",nil];
+    
+    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/stores/store/getAllStoreList"] parameters:[Public getParams:param] success:^(id responseObject) {
+        _dataResult = responseObject[@"result"];
+        [_TableView reloadData];
+        [_TableView.mj_header endRefreshing];
+    } failure:^(NSError *error) {
+        NSLog(@"error:%@",error);
+        [_TableView.mj_header endRefreshing];
+    }];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -38,7 +66,7 @@
 #pragma mark 重写uitableview方法
 #pragma mark 返回数据总数
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return [_dataResult count];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -47,8 +75,13 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    StoreManagementCell *cell = [[StoreManagementCell alloc] cellWithTableView:tableView text:@"美食"];;
+    NSDictionary *item = [_dataResult objectAtIndex:indexPath.row];
     
+    StoreManagementCell *cell = [[StoreManagementCell alloc] cellWithTableView:tableView];
+    cell.titleLabel.text = item[@"busName"];
+    cell.addressLabel.text = item[@"storeAddress"];
+    
+    [cell.iconImgView sd_setImageWithURL:[NSURL URLWithString:[BASEURL stringByAppendingString:item[@"picture"]]] placeholderImage:[UIImage imageNamed:@"img_false"]];
     return cell;
 }
 
@@ -70,5 +103,9 @@
     
 }
 
+//添加
+-(void)addClick{
+    
+}
 
 @end

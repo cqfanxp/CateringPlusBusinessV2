@@ -1,0 +1,201 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend{margin:0;padding:0;border:0;outline:0;font-size:100%;background:transparent}
+table,caption,tbody,tfoot,thead,tr,th{margin:0;padding:0;border:0;outline:0;font-size:100%;}
+body{line-height:1.425;-webkit-user-select: none;-webkit-text-size-adjust: none;-webkit-overflow-scrolling:touch;}
+ol,ul,li{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0}
+ins{text-decoration:none}
+del{text-decoration:line-through}
+table{border-collapse:collapse;border-spacing:0;}
+a{cursor:pointer;}
+a{-webkit-tap-highlight-color:rgba(205,205,205,.4);-webkit-touch-callout:none;-webkit-user-select:none;}
+
+textarea{resize:none;} 
+input,textarea{font-size:1em;-webkit-appearance: none;color:#2c2c2c;}
+img,a{-webkit-touch-callout:none;}
+input{-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-touch-callout:none;outline:none;blr:expression(this.onFocus=this.blur());border:0;background:none;}
+textarea{border:none;}
+img{display:block;width:100%;}
+/* 单独的清除元素*/
+.clear {clear: both;display: block;overflow: hidden;visibility: hidden;width: 0;height: 0;}
+
+/* 当一个外部元素内部有浮动元素时，外部元素如需清除浮动，用如下的清除样式 */
+.clearfix:after {clear: both; content: ' ';display: block;visibility: hidden;height: 0;}
+* html .clearfix {height: 1%;}
+*+html .clearfix{min-height:1%;}
+
+*{box-sizing: border-box;}
+
+html{font-size:62.5%;}
+body{font-size:1.2em;color:#333;font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif;min-width:320px;background-color: #fff;}
+a{color:#333;text-decoration:none;}
+a.textline{text-decoration:underline;}
+a.textline:hover{text-decoration:none;}
+.fl{float:left;}
+.fr{float:right;}
+
+.tr{text-align:right;}
+.tl{text-align:left;}
+.tc{text-align:center;}
+
+.c-gray{color:#999 !important;}
+.c-lgray{color:#666 !important;}
+
+.fz-14{font-size:.95em;}
+.fz-16{font-size:1em;}
+.fz-18{font-size:1.05em;}
+.fz-20{font-size:1.1em;}
+.fz-22{font-size:1.15em;}
+.fz-24{font-size:1.2em;}
+.fz-25{font-size:1.225em;}
+.fz-26{font-size:1.25em;}
+.fz-28{font-size:1.3em;}
+.fz-30{font-size:1.35em;}
+.fz-32{font-size:1.4em;}
+.fz-34{font-size:1.45em;}
+.fz-36{font-size:1.5em;}
+.fz-48{font-size:2.5em;}
+.fz-60{font-size:3em;}
+
+.pt{padding-top:15px;}
+.pl{padding-left:15px;}
+.pr{padding-right:15px;}
+.pl10{padding-left:10px;}
+.pall{padding:15px;}
+.pall05{padding:.5em .8em;}
+
+.pt01{padding-top:.1em;}
+.pb01{padding-bottom:.1em;}
+.pt02{padding-top:.2em;}
+.pb02{padding-bottom:.2em;}
+.pt03{padding-top:.3em;}
+.pb03{padding-bottom:.3em;}
+.pt04{padding-top:.4em;}
+.pb04{padding-bottom:.4em;}
+.pt05{padding-top:.5em;}
+.pb05{padding-bottom:.5em;}
+.pt08{padding-top:.8em;}
+.pb08{padding-bottom:.8em;}
+.pt1{padding-top:1em;}
+.pb1{padding-bottom:1em;}
+.pb15{padding-bottom:1.5em;}
+.pb2{padding-bottom:2em;}
+.pl3{padding-left:3em;}
+.pr05{padding-right:.5em;}
+
+.mb05{margin-bottom:.5em;}
+.mb08{margin-bottom:.8em;}
+.mb1{margin-bottom:1em;}
+.mt12{margin-top:1.2em;}
+.mt14{margin-top:1.4em;}
+.mt15{margin-top:1.5em;}
+.mt18{margin-top:1.8em;}
+.mb15{margin-bottom:1.5em;}
+.mb2{margin-bottom:2em;}
+.mb3{margin-bottom:3em;}
+.mb5{margin-bottom:5em;}
+.mt2{margin-top:2em;}
+.mt3{margin-top:3em;}
+.mt5{margin-top:5em;}
+
+.mr05{margin-right:.5em;}
+.mr08{margin-right:.8em;}
+.ml05{margin-left:.5em;}
+.mr1{margin-right:1em;}
+.ml1{margin-left:1em;}
+.mr2{margin-right:2em;}
+.mr15{margin-right:15px;}
+.ml2{margin-left:2em;}
+
+.mt05{margin-top:.5em;}
+.mt08{margin-top:.8em;}
+.mt1{margin-top:1em;}
+
+.ml-2{margin-left:-.2em;}
+
+.lh-1{line-height:1.2;}
+.lh-2{line-height:2;}
+.lh-4{line-height:4;}
+.lh-6{line-height:6;}
+.lh-14{line-height:1.4;}
+.lh-16{line-height:1.6;}
+.lh-18{line-height:1.8;}
+.lh-30{line-height:30px;}
+.lh-44{line-height:44px;}
+
+.tin4{padding-left:4em;text-indent:-4em;}
+.tin5{padding-left:5em;text-indent:-5em;}
+.textindent2{text-indent:2em;}
+.textindent-1{text-indent:-1em;}
+.textindent05{text-indent:-.5em;}
+.textindent0{text-indent:0 !important;}
+.linethrough{text-decoration:line-through;}
+
+.line-1{width:100%;height:1px;background:#f0f0f0;overflow:hidden;}
+.line-d1{width:100%;height:1px;background:#a6a6a6;overflow:hidden;}
+.line-black1{width:100%;height:1px;background:#333;overflow:hidden;}
+.line-44{width:100%;height:44px;background:#f0f0f0;overflow:hidden;}
+
+.group-line{width:100%;height:8px;background:#f3f3f3;overflow:hidden;}
+.group-line5{width:100%;height:5px;background:#f3f3f3;overflow:hidden;}
+
+.bg-white{background-color:#fff;}
+.bg-gray{background-color:#f0f0f0;}
+.bg-grayewm{background-color:#f2f2ef;}
+.bg-orange{background-color:#f49c1a;}
+.bg-lorange{background-color:#fef6df;}
+.bg-darkgray{background-color:#1e1a19;}
+
+.nowrap{white-space:nowrap;text-overflow: ellipsis;overflow:hidden;}
+.nowrap-over{white-space:nowrap;}
+.tindent2{text-indent:2em;}
+.block{display:block;}
+.hide{display:none;}
+.visible{visibility:visible;}
+.hidden{visibility:hidden;}
+
+.w-2 li{float:left;width:50%;}
+.w-3 li{float:left;width:33.333%;}
+.w-4 li{float:left;width:25%;}
+
+.opacity-black3{background:rgba(0,0,0,.3);}
+.opacity-black5{background:rgba(0,0,0,.5);}
+.opacity-black7{background:rgba(0,0,0,.7);}
+
+.fw{font-weight:bold;}
+
+.overhidden{overflow:hidden;}
+.absolute{position:absolute;}
+.relative{position:relative;}
+.r1{right:1em;}
+.t1{top:1em;}
+
+.overlay-bg{position:fixed;top:0;left:0;right:0;bottom:0;z-index:1000;}
+
+.radius0{border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;}
+.radius2{border-radius:2px;-webkit-border-radius:2px;-moz-border-radius:2px;}
+.radius4{border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;}
+.radius6{border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;}
+.radius10{border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;}
+.radius20{border-radius:20px;-webkit-border-radius:20px;-moz-border-radius:20px;}
+.radius50{border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;}
+
+input{border:0;background:none;}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder{color:#969696;}
+input:-moz-placeholder,
+textarea:-moz-placeholder{color:#969696;}
+input::-moz-placeholder,
+textarea::-moz-placeholder{color:#969696;}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder{color:#969696;}
+
+/*移除HTML5 input在type="number"时的上下小箭头 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0; 
+}
+@media screen and (max-width:430px){
+    body{font-size:1em;}
+}

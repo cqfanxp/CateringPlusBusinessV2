@@ -7,8 +7,9 @@
 //
 
 #import "SettledProcessViewController.h"
+#import <JavaScriptCore/JavaScriptCore.h>
 
-@interface SettledProcessViewController ()
+@interface SettledProcessViewController ()<UIWebViewDelegate>
 
 @end
 
@@ -19,10 +20,49 @@
     
     [self setTitle:@"申请入驻流程"];
     
+    float systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (systemVersion >= 7.0) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    
     //右侧按钮
     UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"开店手册" style:UIBarButtonItemStyleDone target:self action:@selector(shopmanualBtnClick)];
     [rightBtn setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14],NSFontAttributeName, nil] forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = rightBtn;
+    
+    _webView.delegate = self;
+    
+    [self initHtml];
+    
+    
+}
+
+//加载Html
+-(void)initHtml{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        NSString *path = [[NSBundle mainBundle] bundlePath];
+        NSURL *baseURL = [NSURL fileURLWithPath:path];
+        
+        NSString * htmlPath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+        NSString * htmlCont = [NSString stringWithContentsOfFile:htmlPath
+                                                        encoding:NSUTF8StringEncoding
+                                                           error:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_webView loadHTMLString:htmlCont baseURL:baseURL];
+        });
+    });
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
+    JSContext *context = [self.webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+    
+    context[@"nowSettled"] = ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"SelectInnerProductViewController"];
+            [self.navigationController pushViewController:viewController animated:YES];
+        });
+    };
 }
 
 -(void)viewWillAppear:(BOOL)animated{

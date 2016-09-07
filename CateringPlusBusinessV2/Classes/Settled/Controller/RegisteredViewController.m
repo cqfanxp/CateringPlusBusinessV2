@@ -7,10 +7,10 @@
 //
 
 #import "RegisteredViewController.h"
-#import "NetWorkUtil.h"
 
-
-@interface RegisteredViewController ()
+@interface RegisteredViewController (){
+    NSString *_phoneNumber;//手机号码
+}
 
 @end
 
@@ -41,26 +41,99 @@
 
 #pragma mark 立即注册
 - (IBAction)submitRegistration:(id)sender {
-    UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"ImproveStoreInformationViewController"];
     
-    [self.navigationController pushViewController:viewController animated:YES];
+    if (![self verification]) {
+        return;
+    }
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                            _accountNumberField.text,@"Account",
+                            _passwordField.text,@"Password",
+                            _confirmPasswordField.text,@"ConfirmPassword",
+                            _phoneNumber,@"PhoneNumber",
+                            _codesField.text,@"UserCode",
+                            nil];
+    WKProgressHUD *hud = [WKProgressHUD showInView:self.view withText:nil animated:YES];
+    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/register"] parameters:[Public getParams:params] success:^(id responseObject) {
+        [hud dismiss:YES];
+        if ([responseObject[@"success"] boolValue]) {
+            NSDictionary *result = responseObject[@"result"];
+            //存储用户信息
+            [Public setUserDefaultKey:USERINFO value:[[NSDictionary alloc] initWithObjectsAndKeys:result[@"account"],@"account",
+                                                      result[@"id"],@"id",
+                                                      result[@"phone"],@"phone",nil]];
+            //存储用户验证信息
+            [Public setUserDefaultKey:USERVERIFICATIONINFO value:[[NSDictionary alloc] initWithObjectsAndKeys:params[@"Account"],@"account",
+                                                                  params[@"Password"],@"password", nil]];
+            //跳转到下一步
+            UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"ImproveStoreInformationViewController"];
+            [self.navigationController pushViewController:viewController animated:YES];
+        }else{
+            [Public alertWithType:MozAlertTypeError msg:responseObject[@"message"]];
+        }
+    } failure:^(NSError *error) {
+        [hud dismiss:YES];
+        NSLog(@"error:%@",error);
+    }];
+
 }
 
-
-
+//验证
+-(Boolean)verification{
+//    if ([_invitationCodeField.text isEqualToString:@""]) {
+//        [Public alertWithType:MozAlertTypeError msg:@"邀请码不能为空"];
+//        return false;
+//    }
+    if ([_accountNumberField.text isEqualToString:@""]) {
+        [Public alertWithType:MozAlertTypeError msg:@"账号不能为空"];
+        return false;
+    }
+    if ([_passwordField.text isEqualToString:@""]) {
+        [Public alertWithType:MozAlertTypeError msg:@"密码不能为空"];
+        return false;
+    }
+//    if (![Verification checkPassword:_passwordField.text]) {
+//        [Public alertWithType:MozAlertTypeError msg:@"密码必须是6-18位数字和字母"];
+//        return false;
+//    }
+    if ([_confirmPasswordField.text isEqualToString:@""]) {
+        [Public alertWithType:MozAlertTypeError msg:@"请再次输入密码"];
+        return false;
+    }
+    if (![_confirmPasswordField.text isEqualToString:_passwordField.text]) {
+        [Public alertWithType:MozAlertTypeError msg:@"两次输入的密码不一致"];
+        return false;
+    }
+    if ([_codesField.text isEqualToString:@""]) {
+        [Public alertWithType:MozAlertTypeError msg:@"验证码不能空"];
+        return false;
+    }
+    if(_phoneNumber == nil){
+        [Public alertWithType:MozAlertTypeError msg:@"请先获取手机验证码"];
+        return false;
+    }
+    return true;
+}
 #pragma mark 获取验证码
 - (IBAction)verificationCode:(id)sender {
     UIButton *btn = (UIButton *)sender;
     
+    if ([_phoneNumberText.text isEqualToString:@""]) {
+        [Public alertWithType:MozAlertTypeError msg:@"手机号码不能为空"];
+        return;
+    }
+    if (![Verification checkTelNumber:_phoneNumberText.text]) {
+        [Public alertWithType:MozAlertTypeError msg:@"手机号码格式不正确"];
+        return;
+    }
+    
     NSMutableDictionary *input = [[NSMutableDictionary alloc] initWithObjectsAndKeys:_phoneNumberText.text,@"PhoneNumber",nil];
     NSString *result = [Public paramsMd5:input];
     [input setObject:result forKey:@"sign"];
-    
-    [NetWorkUtil post:@"http://192.168.1.113/api/businesses/business/sendValidateCode" parameters:input success:^(id responseObject) {
-        NSLog(@"----");
+    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/sendValidateCode"] parameters:input success:^(id responseObject) {
+        _phoneNumber = _phoneNumberText.text;
         [Public Countdown:btn];
     } failure:^(NSError *error) {
-
+        NSLog(@"error:%@",error);
     }];
     
 }

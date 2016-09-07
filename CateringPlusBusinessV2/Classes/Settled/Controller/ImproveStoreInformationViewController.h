@@ -16,4 +16,12 @@
 
 #pragma mark 环境图
 @property (weak, nonatomic) IBOutlet UIScrollView *surroundingsScroll;
+
+//门店名称
+@property (weak, nonatomic) IBOutlet UITextField *storeNameField;
+//门店电话
+@property (weak, nonatomic) IBOutlet UITextField *phoneStoresField;
+//门店地址
+@property (weak, nonatomic) IBOutlet UITextField *storeAddressField;
+
 @end
