@@ -29,7 +29,7 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
+    //初始化字段数据
     [self initData];
 }
 
@@ -41,6 +41,7 @@
         _activityData = [[NSArray alloc] initWithContentsOfFile:path];
         dispatch_async(dispatch_get_main_queue(), ^{
             [_tableView reloadData];
+            self.selectStoresView.hidden = NO;
         });
     });
 }
@@ -185,6 +186,17 @@
         NSLog(@"error:%@",error);
         [hud dismiss:YES];
     }];
+}
+
+#pragma mark 选择框
+-(SelectStores *)selectStoresView{
+    if (!_selectStoresView) {
+        _selectStoresView = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([SelectStores class]) owner:self options:nil].lastObject;
+        _selectStoresView.frame = CGRectMake(0, 0, screen_width, screen_height);
+        _selectStoresView.hidden = YES;
+        [self.view addSubview:_selectStoresView];
+    }
+    return _selectStoresView;
 }
 
 - (void)didReceiveMemoryWarning {

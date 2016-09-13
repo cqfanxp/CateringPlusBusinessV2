@@ -7,15 +7,40 @@
 //
 
 #import "SelectStores.h"
+#import "SelectStoresCell.h"
 
 @implementation SelectStores
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+-(void)awakeFromNib{
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
 }
-*/
 
+#pragma mark 重写uitableview方法
+#pragma mark 返回数据总数
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 2;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    SelectStoresCell *cell = [[SelectStoresCell alloc] cellWithTableView:tableView];;
+    return cell;
+}
+
+#pragma mark 设置每行的高度
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 70;
+}
+
+#pragma mark 选中行事件
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 0.00001;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.00001;
+}
 @end

@@ -14,6 +14,7 @@
 #import "Activity_TextCell.h"
 #import "TableGroupAttributes.h"
 #import "Activity_ButtonCell.h"
+#import "SelectStores.h"
 
 @interface ActivityEditViewController : UIViewController
 
@@ -21,4 +22,7 @@
 
 //plist文件名称
 @property(nonatomic,strong) NSString *plistName;
+
+//选择门店弹框
+@property(nonatomic,strong) SelectStores *selectStoresView;
 @end

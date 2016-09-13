@@ -12,6 +12,8 @@
 		571968BB1D86D5630005E073 /* Package.m in Sources */ = {isa = PBXBuildFile; fileRef = 571968BA1D86D5630005E073 /* Package.m */; };
 		571968BF1D87E6290005E073 /* SelectStores.m in Sources */ = {isa = PBXBuildFile; fileRef = 571968BE1D87E6290005E073 /* SelectStores.m */; };
 		571968C11D87E63F0005E073 /* SelectStores.xib in Resources */ = {isa = PBXBuildFile; fileRef = 571968C01D87E63F0005E073 /* SelectStores.xib */; };
+		571968C51D87F7380005E073 /* SelectStoresCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 571968C31D87F7380005E073 /* SelectStoresCell.m */; };
+		571968C61D87F7380005E073 /* SelectStoresCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 571968C41D87F7380005E073 /* SelectStoresCell.xib */; };
 		571A18461D7FFA1A00E9BAAC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 571A18451D7FFA1A00E9BAAC /* SystemConfiguration.framework */; };
 		571A18491D800D1800E9BAAC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 571A18481D800D1800E9BAAC /* Reachability.m */; };
 		572ACA081D61609F00FDD68B /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572ACA071D61609F00FDD68B /* ForgotPasswordViewController.m */; };
@@ -182,6 +184,9 @@
 		571968BD1D87E6290005E073 /* SelectStores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectStores.h; sourceTree = "<group>"; };
 		571968BE1D87E6290005E073 /* SelectStores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectStores.m; sourceTree = "<group>"; };
 		571968C01D87E63F0005E073 /* SelectStores.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectStores.xib; sourceTree = "<group>"; };
+		571968C21D87F7380005E073 /* SelectStoresCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectStoresCell.h; sourceTree = "<group>"; };
+		571968C31D87F7380005E073 /* SelectStoresCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectStoresCell.m; sourceTree = "<group>"; };
+		571968C41D87F7380005E073 /* SelectStoresCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectStoresCell.xib; sourceTree = "<group>"; };
 		571A18451D7FFA1A00E9BAAC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		571A18471D800D1800E9BAAC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		571A18481D800D1800E9BAAC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -461,6 +466,9 @@
 				571968BD1D87E6290005E073 /* SelectStores.h */,
 				571968BE1D87E6290005E073 /* SelectStores.m */,
 				571968C01D87E63F0005E073 /* SelectStores.xib */,
+				571968C21D87F7380005E073 /* SelectStoresCell.h */,
+				571968C31D87F7380005E073 /* SelectStoresCell.m */,
+				571968C41D87F7380005E073 /* SelectStoresCell.xib */,
 			);
 			path = Select;
 			sourceTree = "<group>";
@@ -1418,6 +1426,7 @@
 				572ACA161D61A86800FDD68B /* SelectInnerProductCell.xib in Resources */,
 				57E213C01D6A90AA0003BB07 /* PackageManagement.storyboard in Resources */,
 				57FB280B1D718C7B00E7FDB8 /* Activity_TextCell.xib in Resources */,
+				571968C61D87F7380005E073 /* SelectStoresCell.xib in Resources */,
 				574A73001D7589E30014CC8C /* ChooseSingleProduct_CommodityCell.xib in Resources */,
 				57A7B7BA1D5DAC8200BF2928 /* MHSheetHead.xib in Resources */,
 				574A733D1D782E3D0014CC8C /* index.html in Resources */,
@@ -1564,6 +1573,7 @@
 				57FC38EF1D65867C009A6C9C /* MainViewController.m in Sources */,
 				57E213DA1D6ACC780003BB07 /* CALayer+XibConfiguration.m in Sources */,
 				57A7B7DC1D5EB70400BF2928 /* MSSBrowseActionSheetCell.m in Sources */,
+				571968C51D87F7380005E073 /* SelectStoresCell.m in Sources */,
 				57FC390B1D66ACEE009A6C9C /* BusinessSchoolCell.m in Sources */,
 				57FC39161D66D93A009A6C9C /* StoreManagementViewController.m in Sources */,
 				57E213CB1D6A93750003BB07 /* PackageListCell.m in Sources */,

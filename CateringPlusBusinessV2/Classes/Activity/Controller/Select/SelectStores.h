@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SelectStores : UIView
+@interface SelectStores : UIView<UITableViewDelegate,UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
