@@ -33,7 +33,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    UIViewController *viewController = [Public getStoryBoardByController:@"Stores" storyboardId:@"StoreManagementViewController"];
+    UIViewController *viewController = [Public getStoryBoardByController:@"Activity" storyboardId:@"ActivityEditViewController"];
 //    MainViewController *viewController = [[MainViewController alloc] init];
 //    MapViewController *viewController = [[MapViewController alloc] init];
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:viewController];

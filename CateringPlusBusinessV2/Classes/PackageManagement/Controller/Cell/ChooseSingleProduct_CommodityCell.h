@@ -20,8 +20,20 @@
 //数量
 @property (weak, nonatomic) IBOutlet UILabel *number;
 
+//图片
+@property (weak, nonatomic) IBOutlet UIImageView *singMapImgView;
+//名称
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+//单位
+@property (weak, nonatomic) IBOutlet UILabel *unitLabel;
+
+
 - (instancetype)cellWithTableView:(UITableView *)tableView;
 
-
+//添加
 @property(nonatomic,strong) void(^shopCartBlock)(UIButton *plusBtn);
+//减少
+@property(nonatomic,strong) void(^shopCancelBlock)(UIButton *plusBtn);
+
+
 @end

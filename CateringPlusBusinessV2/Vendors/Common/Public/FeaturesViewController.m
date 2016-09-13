@@ -26,4 +26,18 @@
     return self;
 }
 
+-(UIView *)imgInfoView{
+    if (!_imgInfoView) {
+        _imgInfoView = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ImgInfoView class]) owner:self options:nil].lastObject;
+        _imgInfoView.frame = CGRectMake(0, 0, screen_width, screen_height);
+        _imgInfoView.hidden = YES;
+        [_imgInfoView.reloadBtn addTarget:self action:@selector(reloadClick) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_imgInfoView];
+    }
+    return _imgInfoView;
+}
+//重新加载
+-(void)reloadClick{
+    
+}
 @end

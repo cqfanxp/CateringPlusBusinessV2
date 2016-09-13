@@ -11,6 +11,7 @@
 #import "CommonCrypto/CommonDigest.h"
 #import "MozTopAlertView.h"
 #import "PrefixHeader.h"
+#import "Reachability.h"
 
 @interface Public : NSObject
 
@@ -32,4 +33,8 @@
 //获取或设置NSUserDefaults值
 +(void)setUserDefaultKey:(NSString *)key value:(nullable id)value;
 +(id)getUserDefaultKey:(NSString *)key;
+
+#pragma mark 网络状态
+//是否有网络
++(Boolean)isNetWork;
 @end

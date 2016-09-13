@@ -88,7 +88,7 @@
         [str appendString:[NSString stringWithFormat:@"&%@=%@",key,dic[key]]];
     }
     [str appendString:KEY];
-    return str;
+    return [str lowercaseString];
 }
 
 +(NSDictionary *)getParams:(NSMutableDictionary *)params{
@@ -117,4 +117,28 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     return [defaults objectForKey:key];
 }
+
+#pragma mark 网络检查
++(Boolean)isNetWork{
+    //检测手机是否能上网络
+    Reachability *conn = [Reachability reachabilityForInternetConnection];
+    
+    return [conn currentReachabilityStatus] != NotReachable;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end

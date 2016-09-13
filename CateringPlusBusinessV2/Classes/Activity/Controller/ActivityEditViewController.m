@@ -8,7 +8,7 @@
 
 #import "ActivityEditViewController.h"
 
-@interface ActivityEditViewController ()<UITableViewDelegate,UITableViewDataSource>{
+@interface ActivityEditViewController ()<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
     NSArray *_activityData;
 }
 
@@ -36,7 +36,8 @@
 //初始化数据
 -(void)initData{
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSString *path = [[NSBundle mainBundle] pathForResource:_plistName ofType:@"plist"];
+//        NSString *path = [[NSBundle mainBundle] pathForResource:_plistName ofType:@"plist"];
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"helpCut" ofType:@"plist"];
         _activityData = [[NSArray alloc] initWithContentsOfFile:path];
         dispatch_async(dispatch_get_main_queue(), ^{
             [_tableView reloadData];
@@ -60,7 +61,11 @@
     TableGroupAttributes *attributes = [TableGroupAttributes initWithCounts:[[_activityData objectAtIndex:indexPath.section] count] row:indexPath.row];
     
     if ([itemData[@"type"] isEqualToString:@"img"]) {//图片ecc
-        Activity_ImgCell *cell = [[Activity_ImgCell alloc] cellWithTableView:tableView text:@"美食"];
+        Activity_ImgCell *cell = [[Activity_ImgCell alloc] cellWithTableView:tableView];
+        cell.activityImgView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapAddImgGesturRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(selectImgWay:)];
+        [cell.activityImgView addGestureRecognizer:tapAddImgGesturRecognizer];
+        
         return cell;
     }else if([itemData[@"type"] isEqualToString:@"select"]){//选择
         Activity_SelectCell *cell = [[Activity_SelectCell alloc] cellWithTableView:tableView tableGroupAttributes:attributes];
@@ -84,7 +89,6 @@
     }
     return nil;
 }
-
 #pragma mark 设置每行的高度
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *itemData = [[_activityData objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
@@ -117,9 +121,70 @@
     return headView;
 }
 
+
 #pragma mark 选中行事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+}
+
+#pragma mark 图片
+//选择图片
+-(void)selectImgWay:(UITapGestureRecognizer *)recognizer{
+    [self.view endEditing:YES];
+    MHActionSheet *actionSheet = nil;
+    // 判断是否支持相机
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        actionSheet = [[MHActionSheet alloc] initSheetWithTitle:nil style:MHSheetStyleDefault itemTitles:@[@"拍照",@"从相册选择"]];
+    }
+    else {
+        actionSheet = [[MHActionSheet alloc] initSheetWithTitle:nil style:MHSheetStyleDefault itemTitles:@[@"从相册选择"]];
+    }
+    
+    [actionSheet didFinishSelectIndex:^(NSInteger index, NSString *title) {
+        NSUInteger sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        
+        if ([title isEqualToString:@"拍照"]) {
+            sourceType = UIImagePickerControllerSourceTypeCamera;
+        }
+        if ([title isEqualToString:@"从相册选择"]) {
+            sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        }
+        
+        // 跳转到相机或相册页面
+        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+        imagePickerController.delegate = self;
+        imagePickerController.allowsEditing = YES;
+        imagePickerController.sourceType = sourceType;
+        [self presentViewController:imagePickerController animated:YES completion:^{}];
+    }];
+}
+
+//处理后的图片
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    
+    [picker dismissViewControllerAnimated:YES completion:^{}];
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    NSData *imgData = UIImagePNGRepresentation(image);
+    
+    //上传图片
+    [self uploadImage:imgData];
+    
+}
+
+//上传图片
+-(void)uploadImage:(NSData *)imageData{
+    WKProgressHUD *hud = [WKProgressHUD showInView:self.view withText:nil animated:YES];
+    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/uplodStoreImage"] imageData:imageData parameters:[Public getParams:nil] success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+        [hud dismiss:YES];
+        if ([responseObject[@"success"] boolValue]) {
+            NSString *tempPath = responseObject[@"result"];
+        }
+    } failure:^(NSError *error) {
+        NSLog(@"error:%@",error);
+        [hud dismiss:YES];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

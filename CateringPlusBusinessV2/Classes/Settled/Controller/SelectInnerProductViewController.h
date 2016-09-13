@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "PrefixHeader.h"
 
+typedef void(^innerProductResult)(NSDictionary *dic);
+
 @interface SelectInnerProductViewController : BaseViewController
 
 #pragma mark 品内
@@ -16,5 +18,8 @@
 
 #pragma mark 子级
 @property (weak, nonatomic) IBOutlet UITableView *childTableView;
-
+//是否有返回值
+@property(nonatomic,assign) Boolean isResult;
+//返回值
+@property(nonatomic,strong) innerProductResult result;
 @end

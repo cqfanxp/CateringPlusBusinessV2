@@ -27,6 +27,9 @@
                             <constraint firstAttribute="width" constant="44" id="p9Y-ad-aYx"/>
                         </constraints>
                         <state key="normal" image="smll_added"/>
+                        <connections>
+                            <action selector="plusBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="7MF-eU-XAE"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63n-5K-TKB">
                         <rect key="frame" x="422" y="19" width="8" height="21"/>
@@ -37,6 +40,9 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rr-go-ee9" userLabel="Button-">
                         <rect key="frame" x="378" y="8" width="44" height="44"/>
                         <state key="normal" image="smll_reduce"/>
+                        <connections>
+                            <action selector="cancelSelection:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1ri-z9-7C2"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -52,6 +58,12 @@
                     <constraint firstItem="63n-5K-TKB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yfo-Qj-a9M"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="lessBtn" destination="8Rr-go-ee9" id="Vg4-Pf-l4y"/>
+                <outlet property="nameLabel" destination="GtS-AC-gy8" id="Vr8-xu-4ZJ"/>
+                <outlet property="numberLabel" destination="63n-5K-TKB" id="eYg-Qp-8Ea"/>
+                <outlet property="plusBtn" destination="ogc-Pr-tuS" id="DPA-Nf-E5m"/>
+            </connections>
             <point key="canvasLocation" x="371" y="535"/>
         </tableViewCell>
     </objects>

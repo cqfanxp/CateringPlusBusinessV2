@@ -10,6 +10,17 @@
 
 @interface PackageListCell : UITableViewCell
 
-- (instancetype)cellWithTableView:(UITableView *)tableView text:(NSString *)text;
+- (instancetype)cellWithTableView:(UITableView *)tableView;
 
+//套餐首图
+@property (weak, nonatomic) IBOutlet UIImageView *packageImgView;
+
+//套餐名称
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+//删除按钮
+@property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
+
+//修改按钮
+@property (weak, nonatomic) IBOutlet UIButton *updateBtn;
 @end

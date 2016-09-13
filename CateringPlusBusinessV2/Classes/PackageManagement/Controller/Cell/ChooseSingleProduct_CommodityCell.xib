@@ -16,6 +16,9 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bussise_baomihua" translatesAutoresizingMaskIntoConstraints="NO" id="sAM-RH-r1G">
                         <rect key="frame" x="15" y="12" width="45" height="44.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="45" id="nIl-Ew-CK7"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可口可乐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mry-19-oOY">
                         <rect key="frame" x="70" y="12" width="60" height="18"/>
@@ -49,6 +52,9 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfL-ob-HaQ" userLabel="Button-">
                         <rect key="frame" x="462" y="12.5" width="44" height="44"/>
                         <state key="normal" image="smll_reduce"/>
+                        <connections>
+                            <action selector="cancelSelection:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Tlq-vM-TAI"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -71,8 +77,11 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="lessBtn" destination="lfL-ob-HaQ" id="ae9-jL-7Qc"/>
+                <outlet property="nameLabel" destination="Mry-19-oOY" id="KxX-CT-nwi"/>
                 <outlet property="number" destination="2ZX-rR-1c0" id="B07-Ea-VIU"/>
                 <outlet property="plusBtn" destination="N22-fu-Pom" id="pha-16-1kW"/>
+                <outlet property="singMapImgView" destination="sAM-RH-r1G" id="9Lg-WK-ve6"/>
+                <outlet property="unitLabel" destination="fOl-WS-vlc" id="AoR-0Q-03N"/>
             </connections>
             <point key="canvasLocation" x="365" y="666.5"/>
         </tableViewCell>

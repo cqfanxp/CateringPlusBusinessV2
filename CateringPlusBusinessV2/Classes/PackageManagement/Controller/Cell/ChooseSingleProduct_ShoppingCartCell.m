@@ -28,6 +28,15 @@
     return cell;
 }
 
+//增加
+- (IBAction)plusBtnClick:(UIButton *)sender {
+    self.shopCartBlock(sender);
+}
+//减少
+- (IBAction)cancelSelection:(UIButton *)sender {
+    self.shopCancelBlock(sender);
+}
+
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();

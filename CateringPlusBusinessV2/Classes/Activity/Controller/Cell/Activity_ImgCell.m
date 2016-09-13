@@ -11,7 +11,7 @@
 @implementation Activity_ImgCell
 
 - (void)awakeFromNib {
-    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -20,7 +20,7 @@
     // Configure the view for the selected state
 }
 
-- (instancetype)cellWithTableView:(UITableView *)tableView text:(NSString *)text{
+- (instancetype)cellWithTableView:(UITableView *)tableView{
     static NSString *ID = @"Activity_Img_Cell";
     Activity_ImgCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {

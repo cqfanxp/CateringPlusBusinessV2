@@ -98,10 +98,15 @@
     if (tableView == _childTableView) {
         //保存选中的行业
         NSDictionary *selectData = [_dataChildeen objectAtIndex:indexPath.row];
-        [Public setUserDefaultKey:CATEGORYINFO value:selectData];
         
-        UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"RegisteredViewController"];
-        [self.navigationController pushViewController:viewController animated:YES];
+        if (_isResult) {
+            _result(selectData);
+            [self.navigationController popViewControllerAnimated:YES];
+        }else{
+            [Public setUserDefaultKey:CATEGORYINFO value:selectData];
+            UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"RegisteredViewController"];
+            [self.navigationController pushViewController:viewController animated:YES];
+        }
     }else{
         NSDictionary *item = [_dataResult objectAtIndex:indexPath.row];
         _dataChildeen = item[@"children"];

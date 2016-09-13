@@ -11,6 +11,21 @@
 
 @interface ChooseSingleProduct_ShoppingCartCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+//加
+@property (weak, nonatomic) IBOutlet UIButton *plusBtn;
+
+//减
+@property (weak, nonatomic) IBOutlet UIButton *lessBtn;
+
+//数量
+@property (weak, nonatomic) IBOutlet UILabel *numberLabel;
+
 - (instancetype)cellWithTableView:(UITableView *)tableView;
 
+//添加
+@property(nonatomic,strong) void(^shopCartBlock)(UIButton *plusBtn);
+//减少
+@property(nonatomic,strong) void(^shopCancelBlock)(UIButton *plusBtn);
 @end

@@ -10,6 +10,9 @@
 
 @interface Activity_ImgCell : UITableViewCell
 
-- (instancetype)cellWithTableView:(UITableView *)tableView text:(NSString *)text;
+- (instancetype)cellWithTableView:(UITableView *)tableView;
+
+//活动图片
+@property (weak, nonatomic) IBOutlet UIImageView *activityImgView;
 
 @end

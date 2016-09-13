@@ -127,9 +127,8 @@
     }
     
     NSMutableDictionary *input = [[NSMutableDictionary alloc] initWithObjectsAndKeys:_phoneNumberText.text,@"PhoneNumber",nil];
-    NSString *result = [Public paramsMd5:input];
-    [input setObject:result forKey:@"sign"];
-    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/sendValidateCode"] parameters:input success:^(id responseObject) {
+
+    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/sendValidateCode"] parameters:[Public getParams:input] success:^(id responseObject) {
         _phoneNumber = _phoneNumberText.text;
         [Public Countdown:btn];
     } failure:^(NSError *error) {

@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^addStoerSuccess)(Boolean success);
+
 @interface EditSingleProductViewController : UIViewController
 
+//图片
+@property (weak, nonatomic) IBOutlet UIImageView *singleFirstMapImgView;
+//单位
+@property (weak, nonatomic) IBOutlet UITextField *unitField;
+//名称
+@property (weak, nonatomic) IBOutlet UITextField *singleNameField;
+
+@property(nonatomic,strong) addStoerSuccess addSuccess;
 @end

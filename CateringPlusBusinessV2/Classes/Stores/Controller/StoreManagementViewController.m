@@ -8,10 +8,13 @@
 
 #import "StoreManagementViewController.h"
 #import "StoreManagementCell.h"
-#import "PrefixHeader.h"
+#import "EditStoreViewController.h"
+#import "Stoer.h"
+#import "EntityHelper.h"
 
 @interface StoreManagementViewController ()<UITableViewDataSource,UITableViewDelegate>{
-    NSArray *_dataResult;
+    NSMutableArray *_dataResult;
+    WKProgressHUD *_hud;
 }
 
 @end
@@ -30,33 +33,72 @@
     [rightBtn setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14],NSFontAttributeName, nil] forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = rightBtn;
     
+    _dataResult = [[NSMutableArray alloc] init];
+    
     _TableView.dataSource = self;
     _TableView.delegate = self;
+    _TableView.hidden = YES;
     _TableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         
     }];
-    _TableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-    [_TableView.mj_header beginRefreshing];
+    _TableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData:)];
+    
+    [self loadNewData:nil];
 }
 //初始化数据
--(void)loadNewData{
-    
-    // 马上进入刷新状态
-//    [_TableView.header beginRefreshing];
+-(void)loadNewData:(MJRefreshNormalHeader *)header{
+    if ([Public isNetWork]) {
+        _TableView.hidden = NO;
+    }else{
+        self.imgInfoView.hidden = NO;
+    }
+    [_dataResult removeAllObjects];
     //用户信息
     NSDictionary *userInfo = [Public getUserDefaultKey:USERINFO];
-    
     NSMutableDictionary *param = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
                                   userInfo[@"id"],@"BusUserId",nil];
-    
+    if (header == nil) {
+        _hud = [WKProgressHUD showInView:self.view withText:nil animated:YES];
+    }
     [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/stores/store/getAllStoreList"] parameters:[Public getParams:param] success:^(id responseObject) {
-        _dataResult = responseObject[@"result"];
-        [_TableView reloadData];
+        
         [_TableView.mj_header endRefreshing];
+        if (_hud) {
+            [_hud dismiss:YES];
+        }
+        NSArray *tempArr = responseObject[@"result"];
+        if ([tempArr count] == 0) {
+            self.imgInfoView.hidden = NO;
+            _TableView.hidden = YES;
+            [self.imgInfoView SetStatus:NoData];
+        }else{
+            for (NSDictionary *dic in tempArr) {
+                Stoer *tempStoer = [[Stoer alloc] initWithDic:dic];
+                tempStoer.latitude = [dic[@"latitude"] floatValue];
+                tempStoer.longitude = [dic[@"longitude"] floatValue];
+                
+                [_dataResult addObject:tempStoer];
+            }
+            [_TableView reloadData];
+        }
     } failure:^(NSError *error) {
         NSLog(@"error:%@",error);
+        
+        self.imgInfoView.hidden = NO;
+        _TableView.hidden = YES;
+        [self.imgInfoView SetStatus:ServesError];
+        
+        if (_hud) {
+            [_hud dismiss:YES];
+        }
         [_TableView.mj_header endRefreshing];
     }];
+}
+//重新加载
+-(void)reloadClick{
+    self.imgInfoView.hidden = YES;
+    _TableView.hidden = NO;
+    [self loadNewData:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -74,14 +116,15 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    NSDictionary *item = [_dataResult objectAtIndex:indexPath.row];
+    Stoer *item = [_dataResult objectAtIndex:indexPath.row];
     
     StoreManagementCell *cell = [[StoreManagementCell alloc] cellWithTableView:tableView];
-    cell.titleLabel.text = item[@"busName"];
-    cell.addressLabel.text = item[@"storeAddress"];
     
-    [cell.iconImgView sd_setImageWithURL:[NSURL URLWithString:[BASEURL stringByAppendingString:item[@"picture"]]] placeholderImage:[UIImage imageNamed:@"img_false"]];
+    cell.titleLabel.text = item.busName;
+    cell.addressLabel.text = item.storeAddress;
+    [cell.statusBtn setTitle:item.busStateValue forState:UIControlStateNormal];
+    
+    [cell.iconImgView sd_setImageWithURL:[NSURL URLWithString:[BASEURL stringByAppendingString:item.picture]] placeholderImage:[UIImage imageNamed:@"img_false"]];
     return cell;
 }
 
@@ -100,12 +143,26 @@
 
 #pragma mark 选中行事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    Stoer *item = [_dataResult objectAtIndex:indexPath.row];
+    EditStoreViewController *viewController = (EditStoreViewController *)[Public getStoryBoardByController:@"Stores" storyboardId:@"EditStoreViewController"];
+    viewController.store = item;
+    viewController.addSuccess = ^(Boolean success){
+        self.imgInfoView.hidden = YES;
+        _TableView.hidden = NO;
+        [self loadNewData:nil];
+    };
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 //添加
 -(void)addClick{
-    
+    EditStoreViewController *viewController = (EditStoreViewController *)[Public getStoryBoardByController:@"Stores" storyboardId:@"EditStoreViewController"];
+    viewController.addSuccess = ^(Boolean success){
+        self.imgInfoView.hidden = YES;
+        _TableView.hidden = NO;
+        [self loadNewData:nil];
+    };
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 @end

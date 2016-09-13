@@ -17,6 +17,8 @@
 #import "Verification.h"
 #import "UIImageView+WebCache.h"
 #import "MJRefresh.h"
+#import "MHActionSheet.h"
+#import "ImgInfoView.h"
 
 #ifdef DEBUG //调试模式--模拟器
 

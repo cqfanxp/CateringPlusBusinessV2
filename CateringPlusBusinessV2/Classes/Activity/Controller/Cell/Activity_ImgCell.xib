@@ -46,6 +46,9 @@
                     <constraint firstAttribute="bottom" secondItem="jAc-AB-Ild" secondAttribute="bottom" constant="15" id="uwG-iL-7jm"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="activityImgView" destination="jAc-AB-Ild" id="UNk-xx-ljh"/>
+            </connections>
             <point key="canvasLocation" x="599" y="558"/>
         </tableViewCell>
     </objects>

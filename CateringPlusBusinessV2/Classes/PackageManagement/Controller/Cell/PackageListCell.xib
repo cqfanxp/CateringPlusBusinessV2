@@ -27,7 +27,7 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="草稿" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kH7-rX-c83">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kH7-rX-c83">
                         <rect key="frame" x="491" y="12" width="30" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -65,8 +65,8 @@
                             <constraint firstAttribute="height" constant="5" id="iGY-zO-iTP"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3NO-YY-B2u">
-                        <rect key="frame" x="411" y="42" width="50" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3NO-YY-B2u">
+                        <rect key="frame" x="413" y="42" width="50" height="30"/>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.84313725490196079" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" title="修改">
                             <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -101,6 +101,12 @@
                     <constraint firstAttribute="trailing" secondItem="4TS-5i-yaP" secondAttribute="trailing" id="yKv-Th-uDC"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="deleteBtn" destination="dC4-I3-R99" id="kp1-Mw-70H"/>
+                <outlet property="nameLabel" destination="5M9-ER-g60" id="VxG-MN-Eaw"/>
+                <outlet property="packageImgView" destination="jdW-h8-PEU" id="F01-kK-CtE"/>
+                <outlet property="updateBtn" destination="3NO-YY-B2u" id="1Bf-Mj-xfC"/>
+            </connections>
             <point key="canvasLocation" x="512" y="632"/>
         </tableViewCell>
     </objects>
