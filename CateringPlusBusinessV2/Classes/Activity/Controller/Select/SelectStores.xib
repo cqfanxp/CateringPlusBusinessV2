@@ -27,6 +27,9 @@
                                             <state key="normal" title="取消">
                                                 <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="cencelClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="qS7-X2-SP1"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yM-IK-CaN">
                                             <rect key="frame" x="285" y="0.0" width="285" height="50"/>
@@ -34,6 +37,9 @@
                                             <state key="normal" title="确定">
                                                 <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="determineClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="z8n-p9-jc6"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

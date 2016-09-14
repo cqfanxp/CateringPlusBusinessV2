@@ -48,4 +48,6 @@
 //门店首图
 @property(nonatomic,strong) NSString *picture;
 
+//是否被选中
+@property(nonatomic,assign) Boolean isSelect;
 @end

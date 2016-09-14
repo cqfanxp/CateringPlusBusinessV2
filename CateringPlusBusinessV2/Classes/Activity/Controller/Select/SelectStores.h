@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PrefixHeader.h"
 
 @interface SelectStores : UIView<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property(nonatomic,strong) void(^resultData)(NSArray *data);
 @end

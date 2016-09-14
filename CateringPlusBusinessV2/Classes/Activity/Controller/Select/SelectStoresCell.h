@@ -10,6 +10,18 @@
 
 @interface SelectStoresCell : UITableViewCell
 
+//门店首图
+@property (weak, nonatomic) IBOutlet UIImageView *storeFirstMapImgView;
+
+//门店名称
+@property (weak, nonatomic) IBOutlet UILabel *busNameLabel;
+
+//门店地址
+@property (weak, nonatomic) IBOutlet UILabel *storeAddressLabel;
+
+//状态
+@property (weak, nonatomic) IBOutlet UIImageView *statusImgView;
+
 - (instancetype)cellWithTableView:(UITableView *)tableView;
 
 @end

@@ -56,7 +56,8 @@
     //用户信息
     NSDictionary *userInfo = [Public getUserDefaultKey:USERINFO];
     NSMutableDictionary *param = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                                  userInfo[@"id"],@"BusUserId",nil];
+                                  userInfo[@"id"],@"BusUserId",
+                                  @"",@"busState",nil];
     if (header == nil) {
         _hud = [WKProgressHUD showInView:self.view withText:nil animated:YES];
     }

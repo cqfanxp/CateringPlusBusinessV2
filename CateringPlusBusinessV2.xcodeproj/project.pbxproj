@@ -14,6 +14,16 @@
 		571968C11D87E63F0005E073 /* SelectStores.xib in Resources */ = {isa = PBXBuildFile; fileRef = 571968C01D87E63F0005E073 /* SelectStores.xib */; };
 		571968C51D87F7380005E073 /* SelectStoresCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 571968C31D87F7380005E073 /* SelectStoresCell.m */; };
 		571968C61D87F7380005E073 /* SelectStoresCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 571968C41D87F7380005E073 /* SelectStoresCell.xib */; };
+		571968C91D88055B0005E073 /* SelectPackageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 571968C81D88055B0005E073 /* SelectPackageViewController.m */; };
+		571968CD1D8807840005E073 /* SelectPackageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 571968CB1D8807840005E073 /* SelectPackageCell.m */; };
+		571968CE1D8807840005E073 /* SelectPackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 571968CC1D8807840005E073 /* SelectPackageCell.xib */; };
+		571968D21D88FB1F0005E073 /* SelectStartAndEndTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 571968D01D88FB1F0005E073 /* SelectStartAndEndTimeViewController.m */; };
+		571968D31D88FB1F0005E073 /* SelectStartAndEndTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 571968D11D88FB1F0005E073 /* SelectStartAndEndTimeViewController.xib */; };
+		571968DB1D8924E10005E073 /* HcdDateTimePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 571968D61D8924E10005E073 /* HcdDateTimePickerView.m */; };
+		571968DC1D8924E10005E073 /* MXSCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 571968D81D8924E10005E073 /* MXSCycleScrollView.m */; };
+		571968DD1D8924E10005E073 /* UIColor+HcdCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 571968DA1D8924E10005E073 /* UIColor+HcdCustom.m */; };
+		571968E01D8933BF0005E073 /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 571968DF1D8933BF0005E073 /* ActivityModel.m */; };
+		571968E31D893A350005E073 /* ActivityDisplayField.m in Sources */ = {isa = PBXBuildFile; fileRef = 571968E21D893A350005E073 /* ActivityDisplayField.m */; };
 		571A18461D7FFA1A00E9BAAC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 571A18451D7FFA1A00E9BAAC /* SystemConfiguration.framework */; };
 		571A18491D800D1800E9BAAC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 571A18481D800D1800E9BAAC /* Reachability.m */; };
 		572ACA081D61609F00FDD68B /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572ACA071D61609F00FDD68B /* ForgotPasswordViewController.m */; };
@@ -187,6 +197,24 @@
 		571968C21D87F7380005E073 /* SelectStoresCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectStoresCell.h; sourceTree = "<group>"; };
 		571968C31D87F7380005E073 /* SelectStoresCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectStoresCell.m; sourceTree = "<group>"; };
 		571968C41D87F7380005E073 /* SelectStoresCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectStoresCell.xib; sourceTree = "<group>"; };
+		571968C71D88055B0005E073 /* SelectPackageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPackageViewController.h; sourceTree = "<group>"; };
+		571968C81D88055B0005E073 /* SelectPackageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPackageViewController.m; sourceTree = "<group>"; };
+		571968CA1D8807840005E073 /* SelectPackageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPackageCell.h; sourceTree = "<group>"; };
+		571968CB1D8807840005E073 /* SelectPackageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPackageCell.m; sourceTree = "<group>"; };
+		571968CC1D8807840005E073 /* SelectPackageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectPackageCell.xib; sourceTree = "<group>"; };
+		571968CF1D88FB1F0005E073 /* SelectStartAndEndTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectStartAndEndTimeViewController.h; sourceTree = "<group>"; };
+		571968D01D88FB1F0005E073 /* SelectStartAndEndTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectStartAndEndTimeViewController.m; sourceTree = "<group>"; };
+		571968D11D88FB1F0005E073 /* SelectStartAndEndTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectStartAndEndTimeViewController.xib; sourceTree = "<group>"; };
+		571968D51D8924E10005E073 /* HcdDateTimePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HcdDateTimePickerView.h; sourceTree = "<group>"; };
+		571968D61D8924E10005E073 /* HcdDateTimePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HcdDateTimePickerView.m; sourceTree = "<group>"; };
+		571968D71D8924E10005E073 /* MXSCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXSCycleScrollView.h; sourceTree = "<group>"; };
+		571968D81D8924E10005E073 /* MXSCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXSCycleScrollView.m; sourceTree = "<group>"; };
+		571968D91D8924E10005E073 /* UIColor+HcdCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HcdCustom.h"; sourceTree = "<group>"; };
+		571968DA1D8924E10005E073 /* UIColor+HcdCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HcdCustom.m"; sourceTree = "<group>"; };
+		571968DE1D8933BF0005E073 /* ActivityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityModel.h; sourceTree = "<group>"; };
+		571968DF1D8933BF0005E073 /* ActivityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityModel.m; sourceTree = "<group>"; };
+		571968E11D893A350005E073 /* ActivityDisplayField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDisplayField.h; sourceTree = "<group>"; };
+		571968E21D893A350005E073 /* ActivityDisplayField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDisplayField.m; sourceTree = "<group>"; };
 		571A18451D7FFA1A00E9BAAC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		571A18471D800D1800E9BAAC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		571A18481D800D1800E9BAAC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -469,8 +497,29 @@
 				571968C21D87F7380005E073 /* SelectStoresCell.h */,
 				571968C31D87F7380005E073 /* SelectStoresCell.m */,
 				571968C41D87F7380005E073 /* SelectStoresCell.xib */,
+				571968C71D88055B0005E073 /* SelectPackageViewController.h */,
+				571968C81D88055B0005E073 /* SelectPackageViewController.m */,
+				571968CA1D8807840005E073 /* SelectPackageCell.h */,
+				571968CB1D8807840005E073 /* SelectPackageCell.m */,
+				571968CC1D8807840005E073 /* SelectPackageCell.xib */,
+				571968CF1D88FB1F0005E073 /* SelectStartAndEndTimeViewController.h */,
+				571968D01D88FB1F0005E073 /* SelectStartAndEndTimeViewController.m */,
+				571968D11D88FB1F0005E073 /* SelectStartAndEndTimeViewController.xib */,
 			);
 			path = Select;
+			sourceTree = "<group>";
+		};
+		571968D41D8924E10005E073 /* HcdDateTimePicker */ = {
+			isa = PBXGroup;
+			children = (
+				571968D51D8924E10005E073 /* HcdDateTimePickerView.h */,
+				571968D61D8924E10005E073 /* HcdDateTimePickerView.m */,
+				571968D71D8924E10005E073 /* MXSCycleScrollView.h */,
+				571968D81D8924E10005E073 /* MXSCycleScrollView.m */,
+				571968D91D8924E10005E073 /* UIColor+HcdCustom.h */,
+				571968DA1D8924E10005E073 /* UIColor+HcdCustom.m */,
+			);
+			path = HcdDateTimePicker;
 			sourceTree = "<group>";
 		};
 		572ACA091D6171ED00FDD68B /* Common */ = {
@@ -906,6 +955,7 @@
 		57A7B7A41D5DAC0000BF2928 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				571968D41D8924E10005E073 /* HcdDateTimePicker */,
 				57EB49161D791F58009B39C8 /* TopAlertView */,
 				57EB49211D791F58009B39C8 /* WKProgressHUD */,
 				57FC39021D65B634009A6C9C /* QRcode */,
@@ -1050,6 +1100,10 @@
 			children = (
 				574A72E51D73D21C0014CC8C /* TableGroupAttributes.h */,
 				574A72E61D73D21C0014CC8C /* TableGroupAttributes.m */,
+				571968DE1D8933BF0005E073 /* ActivityModel.h */,
+				571968DF1D8933BF0005E073 /* ActivityModel.m */,
+				571968E11D893A350005E073 /* ActivityDisplayField.h */,
+				571968E21D893A350005E073 /* ActivityDisplayField.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1407,6 +1461,7 @@
 				574A72F31D741F1D0014CC8C /* customEvents.plist in Resources */,
 				57A7B7D91D5EB70400BF2928 /* mss_browseLoading@2x.png in Resources */,
 				574A73381D782E3D0014CC8C /* module.css in Resources */,
+				571968CE1D8807840005E073 /* SelectPackageCell.xib in Resources */,
 				57FC39011D65A22D009A6C9C /* menu_app.plist in Resources */,
 				57FC38EC1D6585A8009A6C9C /* Main.storyboard in Resources */,
 				57E213D71D6AA3B00003BB07 /* ActivityListCell.xib in Resources */,
@@ -1414,6 +1469,7 @@
 				57DCEF281D6C423400CEFCF9 /* Activity_ImgCell.xib in Resources */,
 				574A72F51D741F1D0014CC8C /* lessSpending.plist in Resources */,
 				574A733A1D782E3D0014CC8C /* ban.png in Resources */,
+				571968D31D88FB1F0005E073 /* SelectStartAndEndTimeViewController.xib in Resources */,
 				57DCEF321D6C4E3400CEFCF9 /* Activity_NumberCell.xib in Resources */,
 				577AC5641D5C0D2C00390F62 /* LaunchScreen.storyboard in Resources */,
 				574A73231D7821AF0014CC8C /* Statistics.storyboard in Resources */,
@@ -1522,11 +1578,14 @@
 			files = (
 				571968B81D868F480005E073 /* BaseObject.m in Sources */,
 				57A7B7E61D5EB70400BF2928 /* UIView+MSSLayout.m in Sources */,
+				571968DD1D8924E10005E073 /* UIColor+HcdCustom.m in Sources */,
 				57FC38FD1D659BF9009A6C9C /* AppListCell.m in Sources */,
+				571968E31D893A350005E073 /* ActivityDisplayField.m in Sources */,
 				57A9A0091D7D6760007E4AC1 /* MapPOIAddressCell.m in Sources */,
 				574A73271D7822360014CC8C /* VerificationRecordsViewController.m in Sources */,
 				572ACA251D62E8AA00FDD68B /* UINavigationItem+BackButton.m in Sources */,
 				577AC5591D5C0D2C00390F62 /* AppDelegate.m in Sources */,
+				571968DB1D8924E10005E073 /* HcdDateTimePickerView.m in Sources */,
 				57A7B7DB1D5EB70400BF2928 /* MSSBrowseActionSheet.m in Sources */,
 				57EB492D1D791F58009B39C8 /* WKMessageProgressHUD.m in Sources */,
 				57A7B7B51D5DAC8200BF2928 /* MHSheetCell.m in Sources */,
@@ -1545,8 +1604,10 @@
 				57A9A0191D7E99CB007E4AC1 /* VerifyBankCardViewController.m in Sources */,
 				574A72FF1D7589E30014CC8C /* ChooseSingleProduct_CommodityCell.m in Sources */,
 				57E213C31D6A911C0003BB07 /* PackageListViewController.m in Sources */,
+				571968DC1D8924E10005E073 /* MXSCycleScrollView.m in Sources */,
 				574A73081D76F2AA0014CC8C /* EditSingleProductViewController.m in Sources */,
 				57EB492F1D791F58009B39C8 /* WKWaitingProgressHUD.m in Sources */,
+				571968C91D88055B0005E073 /* SelectPackageViewController.m in Sources */,
 				574A730B1D77D6EF0014CC8C /* EditStoreViewController.m in Sources */,
 				57A7B7A31D5C9B8100BF2928 /* ImproveStoreInformationViewController.m in Sources */,
 				57A9A01C1D7EA881007E4AC1 /* SelectBankViewController.m in Sources */,
@@ -1568,6 +1629,7 @@
 				573155DE1D62FC660091A337 /* BaseViewController.m in Sources */,
 				573E6D451D810F06007E2236 /* XMRTimePiker.m in Sources */,
 				57EB492C1D791F58009B39C8 /* MozTopAlertView.m in Sources */,
+				571968D21D88FB1F0005E073 /* SelectStartAndEndTimeViewController.m in Sources */,
 				57A7B7DE1D5EB70400BF2928 /* MSSBrowseCollectionViewCell.m in Sources */,
 				57A99FFC1D7D4B8E007E4AC1 /* MapViewController.m in Sources */,
 				57FC38EF1D65867C009A6C9C /* MainViewController.m in Sources */,
@@ -1589,6 +1651,7 @@
 				577AC5561D5C0D2C00390F62 /* main.m in Sources */,
 				57E213CF1D6AA0A80003BB07 /* ActivityListViewController.m in Sources */,
 				57A7B79E1D5C7D6B00BF2928 /* RegisteredViewController.m in Sources */,
+				571968CD1D8807840005E073 /* SelectPackageCell.m in Sources */,
 				57EB492B1D791F58009B39C8 /* UIFont+FontAwesome.m in Sources */,
 				578E93391D8167F7001A0A70 /* Stoer.m in Sources */,
 				578E933D1D8259EA001A0A70 /* ImgInfoView.m in Sources */,
@@ -1597,6 +1660,7 @@
 				57A7B7E91D5EC8C800BF2928 /* SubmitQualificationViewController.m in Sources */,
 				57A7B7DF1D5EB70400BF2928 /* MSSBrowseLoadingImageView.m in Sources */,
 				57FC39051D65B634009A6C9C /* QRCodeController.m in Sources */,
+				571968E01D8933BF0005E073 /* ActivityModel.m in Sources */,
 				57A7B7B41D5DAC8200BF2928 /* MHActionSheet.m in Sources */,
 				57FC38F51D6586B1009A6C9C /* MineViewController.m in Sources */,
 				57A7B7B71D5DAC8200BF2928 /* MHSheetFoot.m in Sources */,

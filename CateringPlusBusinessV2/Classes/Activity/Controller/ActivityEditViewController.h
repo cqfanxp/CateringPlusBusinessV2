@@ -15,6 +15,8 @@
 #import "TableGroupAttributes.h"
 #import "Activity_ButtonCell.h"
 #import "SelectStores.h"
+#import "ActivityModel.h"
+#import "Package.h"
 
 @interface ActivityEditViewController : UIViewController
 
@@ -25,4 +27,7 @@
 
 //选择门店弹框
 @property(nonatomic,strong) SelectStores *selectStoresView;
+
+//活动对象
+@property(nonatomic,strong) ActivityModel *activityModel;
 @end

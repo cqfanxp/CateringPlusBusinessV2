@@ -39,8 +39,8 @@
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yes_bule" translatesAutoresizingMaskIntoConstraints="NO" id="hBb-wi-scd">
-                        <rect key="frame" x="429" y="39.5" width="25" height="25"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yes_gray" translatesAutoresizingMaskIntoConstraints="NO" id="hBb-wi-scd">
+                        <rect key="frame" x="429" y="39" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="biF-8U-N0E"/>
                             <constraint firstAttribute="width" constant="25" id="yTW-kv-Hui"/>
@@ -58,11 +58,17 @@
                     <constraint firstItem="nDd-sE-FaZ" firstAttribute="top" secondItem="mG8-gj-uEa" secondAttribute="top" constant="5" id="tXW-LA-GQ5"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="busNameLabel" destination="nDd-sE-FaZ" id="C09-hJ-CuF"/>
+                <outlet property="statusImgView" destination="hBb-wi-scd" id="cEL-ea-83d"/>
+                <outlet property="storeAddressLabel" destination="599-50-Tn9" id="pEK-H2-3W9"/>
+                <outlet property="storeFirstMapImgView" destination="mG8-gj-uEa" id="V0d-JQ-d4S"/>
+            </connections>
             <point key="canvasLocation" x="579" y="537.5"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="yes_bule" width="29" height="29"/>
+        <image name="yes_gray" width="29" height="29"/>
         <image name="组 3" width="68" height="58"/>
     </resources>
 </document>

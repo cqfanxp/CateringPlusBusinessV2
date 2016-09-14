@@ -26,6 +26,8 @@
 			<string>storeIds</string>
 			<key>placeholder</key>
 			<string>请选择此活动门店</string>
+			<key>selectType</key>
+			<string>selectStores</string>
 		</dict>
 		<dict>
 			<key>labelText</key>
@@ -38,6 +40,8 @@
 			<string>packageId</string>
 			<key>placeholder</key>
 			<string>请选择参与活动的套餐</string>
+			<key>selectType</key>
+			<string>selectPackage</string>
 		</dict>
 	</array>
 	<array>
@@ -88,6 +92,8 @@
 			<string></string>
 			<key>placeholder</key>
 			<string>请填写活动时间</string>
+			<key>selectType</key>
+			<string>selectStartAndEndTime</string>
 		</dict>
 	</array>
 	<array>
@@ -102,6 +108,8 @@
 			<string></string>
 			<key>placeholder</key>
 			<string>请选择</string>
+			<key>New item</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>labelText</key>
