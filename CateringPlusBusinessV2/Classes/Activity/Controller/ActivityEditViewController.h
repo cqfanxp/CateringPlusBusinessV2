@@ -17,6 +17,7 @@
 #import "SelectStores.h"
 #import "ActivityModel.h"
 #import "Package.h"
+#import "ActivityPrice.h"
 
 @interface ActivityEditViewController : UIViewController
 
@@ -30,4 +31,6 @@
 
 //活动对象
 @property(nonatomic,strong) ActivityModel *activityModel;
+
+@property(nonatomic,strong) void(^saveSuccess)(Boolean success);
 @end

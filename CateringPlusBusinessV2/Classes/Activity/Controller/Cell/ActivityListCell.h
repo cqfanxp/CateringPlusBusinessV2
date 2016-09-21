@@ -11,6 +11,23 @@
 
 @interface ActivityListCell : UITableViewCell
 
-- (instancetype)cellWithTableView:(UITableView *)tableView text:(NSString *)text;
+- (instancetype)cellWithTableView:(UITableView *)tableView;
+
+//活动首图
+@property (weak, nonatomic) IBOutlet UIImageView *firstMapImgView;
+
+//标题
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+//已领次数
+@property (weak, nonatomic) IBOutlet UILabel *useNumberLabel;
+
+//状态
+@property (weak, nonatomic) IBOutlet UILabel *stateLabel;
+
+//修改按钮
+@property (weak, nonatomic) IBOutlet UIButton *modifyBtn;
+//删除按钮
+@property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
 
 @end

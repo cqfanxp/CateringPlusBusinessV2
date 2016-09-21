@@ -43,7 +43,9 @@
 @property(nonatomic,strong) NSString *district;
 //附件
 @property(nonatomic,strong) NSArray *accessory;
-//状态
+//状态（dic）
+@property(nonatomic,strong) NSString *busStateDic;
+//状态（str）
 @property(nonatomic,strong) NSString *busStateValue;
 //门店首图
 @property(nonatomic,strong) NSString *picture;

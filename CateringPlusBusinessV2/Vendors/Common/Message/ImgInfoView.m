@@ -35,16 +35,19 @@
             self.titleLabel.text = @"网络请求失败";
             self.contentLabel.text = @"请检查你的网络";
             self.iconImgView.image = [UIImage imageNamed:@"internet"];
+            self.reloadBtn.hidden = NO;
             break;
         case NoData://无数据
             self.titleLabel.text = @"木有数据";
             self.contentLabel.text = @"还木有数据";
             self.iconImgView.image = [UIImage imageNamed:@"data"];
+            self.reloadBtn.hidden = YES;
             break;
         default://服务器错误
             self.titleLabel.text = @"服务器错误";
             self.contentLabel.text = @"请稍后再试";
             self.iconImgView.image = [UIImage imageNamed:@"load_fail"];
+            self.reloadBtn.hidden = NO;
             break;
     }
 }

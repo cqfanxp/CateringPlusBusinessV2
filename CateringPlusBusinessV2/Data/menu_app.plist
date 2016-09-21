@@ -20,7 +20,7 @@
 		<key>sequence</key>
 		<string>2</string>
 		<key>name</key>
-		<string>商品管理</string>
+		<string>套餐管理</string>
 		<key>icon</key>
 		<string>commodity</string>
 		<key>isStoryboard</key>
@@ -34,7 +34,7 @@
 		<key>sequence</key>
 		<string>3</string>
 		<key>name</key>
-		<string>拼单</string>
+		<string>拼团</string>
 		<key>icon</key>
 		<string>Fight-alone</string>
 		<key>isStoryboard</key>
@@ -50,7 +50,7 @@
 		<key>sequence</key>
 		<string>4</string>
 		<key>name</key>
-		<string>好有帮帮砍</string>
+		<string>好友帮帮砍</string>
 		<key>icon</key>
 		<string>friend-0</string>
 		<key>isStoryboard</key>
@@ -66,7 +66,7 @@
 		<key>sequence</key>
 		<string>5</string>
 		<key>name</key>
-		<string>折扣卷</string>
+		<string>折扣劵</string>
 		<key>icon</key>
 		<string>discount</string>
 		<key>isStoryboard</key>
@@ -80,7 +80,7 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>抵扣卷</string>
+		<string>抵扣劵</string>
 		<key>icon</key>
 		<string>Deductible</string>
 		<key>sequence</key>

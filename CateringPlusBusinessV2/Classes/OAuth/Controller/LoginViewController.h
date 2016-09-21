@@ -14,5 +14,10 @@
 #pragma mark logo顶部约束
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerViewConstraintTop;
 
+//账户
+@property (weak, nonatomic) IBOutlet UITextField *accountField;
+
+//密码
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
 @end

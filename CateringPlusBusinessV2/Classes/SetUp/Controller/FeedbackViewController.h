@@ -1,6 +1,6 @@
 //
 //  FeedbackViewController.h
-//  CateringPlusBusinessV2  已经反馈
+//  CateringPlusBusinessV2  意见反馈
 //
 //  Created by 火爆私厨 on 16/9/1.
 //  Copyright © 2016年 餐+. All rights reserved.

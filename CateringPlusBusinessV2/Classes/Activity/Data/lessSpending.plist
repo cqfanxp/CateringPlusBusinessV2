@@ -11,7 +11,7 @@
 			<key>value</key>
 			<string></string>
 			<key>key</key>
-			<string></string>
+			<string>image</string>
 		</dict>
 	</array>
 	<array>
@@ -23,9 +23,11 @@
 			<key>value</key>
 			<string></string>
 			<key>key</key>
-			<string></string>
+			<string>storeIds</string>
 			<key>placeholder</key>
 			<string>请选择此活动门店</string>
+			<key>selectType</key>
+			<string>selectStores</string>
 		</dict>
 	</array>
 	<array>
@@ -37,7 +39,7 @@
 			<key>value</key>
 			<string></string>
 			<key>key</key>
-			<string></string>
+			<string>title</string>
 			<key>placeholder</key>
 			<string>请填写活动主题名称(20字以内)</string>
 		</dict>
@@ -49,9 +51,11 @@
 			<key>value</key>
 			<string></string>
 			<key>key</key>
-			<string></string>
+			<string>content</string>
 			<key>placeholder</key>
 			<string>请填写活动内容</string>
+			<key>selectType</key>
+			<string>selectHtmlContent</string>
 		</dict>
 		<dict>
 			<key>labelText</key>
@@ -64,6 +68,8 @@
 			<string></string>
 			<key>placeholder</key>
 			<string>请填活动价格</string>
+			<key>selectType</key>
+			<string>selectActivityPrice</string>
 		</dict>
 		<dict>
 			<key>labelText</key>
@@ -73,9 +79,11 @@
 			<key>value</key>
 			<string></string>
 			<key>key</key>
-			<string></string>
+			<string>limitTime</string>
 			<key>placeholder</key>
 			<string>请填写有效期</string>
+			<key>selectType</key>
+			<string>selectDate</string>
 		</dict>
 	</array>
 	<array>
@@ -87,9 +95,11 @@
 			<key>value</key>
 			<string></string>
 			<key>key</key>
-			<string></string>
+			<string>limitations</string>
 			<key>placeholder</key>
 			<string>请填写使用限制</string>
+			<key>selectType</key>
+			<string>selectHtmlContent</string>
 		</dict>
 	</array>
 	<array>

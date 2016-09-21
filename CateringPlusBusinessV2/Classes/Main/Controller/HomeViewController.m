@@ -134,9 +134,10 @@
 
 #pragma mark 验证记录
 - (IBAction)verificationRecordsClick:(id)sender {
-    
-}
+    UIViewController *viewController = [Public getStoryBoardByController:@"Statistics" storyboardId:@"VerificationRecordsViewController"];
 
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 
 
 #pragma mark 重写UICollectionView 方法

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FeaturesViewController.h"
 
-@interface VerificationRecordsViewController : UIViewController
+@interface VerificationRecordsViewController : FeaturesViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

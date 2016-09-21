@@ -34,6 +34,8 @@
     
     [self setTitle:@"选择套餐"];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     //初始化
     _limit = 10;
     _start = 0;

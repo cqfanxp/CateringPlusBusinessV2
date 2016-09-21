@@ -380,6 +380,7 @@
 -(void)addClick{
     EditSingleProductViewController *viewController = (EditSingleProductViewController *)[Public getStoryBoardByController:@"PackageManagement" storyboardId:@"EditSingleProductViewController"];
     viewController.addSuccess = ^(Boolean success){
+        _start = 0;
         self.imgInfoView.hidden = YES;
         _commodityTableView.hidden = NO;
         [self loadNewData:nil];

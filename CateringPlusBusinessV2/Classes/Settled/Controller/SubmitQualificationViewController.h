@@ -29,4 +29,7 @@
 //身份证
 @property (weak, nonatomic) IBOutlet UITextField *iDCardField;
 
+//门店编号
+@property(nonatomic,strong) NSString *storeId;
+
 @end

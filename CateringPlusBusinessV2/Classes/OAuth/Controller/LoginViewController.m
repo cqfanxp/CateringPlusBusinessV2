@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "MainViewController.h"
+#import "PrefixHeader.h"
 
 @interface LoginViewController ()
 
@@ -74,9 +75,17 @@
 }
 #pragma mark 申请入驻
 - (IBAction)applicationSettled:(id)sender {
-    UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"SettledProcessViewController"];
+    //用户信息
+    NSDictionary *userInfo = [Public getUserDefaultKey:USERINFO];
     
-    [self.navigationController pushViewController:viewController animated:YES];
+    //用户没注册前 按顺序  用户注册后跳到添加门店
+    if (!userInfo) {
+        UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"SettledProcessViewController"];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }else{
+        UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"ImproveStoreInformationViewController"];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
 }
 
 //修改头部logo约束
@@ -90,8 +99,60 @@
 
 //登录
 - (IBAction)loginBtnClick:(id)sender {
-    MainViewController *mainViwe = [[MainViewController alloc] init];
-    [self presentViewController:mainViwe animated:YES completion:nil];
+    [self.view endEditing:YES];
+    if (![self verification]) {
+        return;
+    }
+    //当前时间戳
+    NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
+    NSTimeInterval a=[dat timeIntervalSince1970]*1000;
+    NSString *timeString = [NSString stringWithFormat:@"%f", a];
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                   _accountField.text,@"account",
+                                   _passwordField.text,@"password",
+                                   [[UIDevice currentDevice].identifierForVendor UUIDString],@"uniqueIdentifier",
+                                   [[UIDevice currentDevice] systemName],@"systemName",
+                                   [[UIDevice currentDevice] systemVersion],@"systemVersion",
+                                   timeString,@"timestamp",
+                                   nil];
+    
+    WKProgressHUD *hud = [WKProgressHUD showInView:self.view withText:nil animated:YES];
+    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/userLogin"] parameters:[Public getParams:params] success:^(id responseObject) {
+        [hud dismiss:YES];
+        if ([responseObject[@"success"] boolValue]) {
+            NSDictionary *result = responseObject[@"result"];
+            //存储用户信息
+            [Public setUserDefaultKey:USERINFO value:[[NSDictionary alloc] initWithObjectsAndKeys:
+                                                      result[@"account"],@"account",
+                                                      _passwordField.text,@"password",
+                                                      result[@"id"],@"id",
+                                                      result[@"phone"],@"phone",nil]];
+            
+            MainViewController *mainViwe = [[MainViewController alloc] init];
+            [self presentViewController:mainViwe animated:YES completion:nil];
+        }else{
+            [Public alertWithType:MozAlertTypeError msg:responseObject[@"message"]];
+        }
+    } failure:^(NSError *error) {
+        [hud dismiss:YES];
+        [Public alertWithType:MozAlertTypeError msg:@"登录错误，请稍后再试"];
+        NSLog(@"error:%@",[error.userInfo objectForKey:@"NSLocalizedDescription"]);
+    }];
+
+}
+
+//验证
+-(Boolean)verification{
+    if ([_accountField.text isEqualToString:@""]) {
+        [Public alertWithType:MozAlertTypeError msg:@"请输入账号"];
+        return false;
+    }
+    if ([_passwordField.text isEqualToString:@""]) {
+        [Public alertWithType:MozAlertTypeError msg:@"请输入密码"];
+        return false;
+    }
+    return true;
 }
 
 /*

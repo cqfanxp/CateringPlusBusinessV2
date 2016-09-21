@@ -2,4 +2,54 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CateringPlusBusinessV2/Classes/Settled/Controller/SubmitQualificationViewController.m"
+            timestampString = "496034609.1853"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
+            landmarkName = "-checkBtnClick:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SubmitQualificationViewController checkBtnClick:]"
+                  moduleName = "CateringPlusBusinessV2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/huobaosichu/Documents/code/CateringPlusBusinessV2/CateringPlusBusinessV2/Classes/Settled/Controller/SubmitQualificationViewController.m"
+                  timestampString = "496143180.018238"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "274"
+                  endingLineNumber = "274"
+                  offsetFromSymbolStart = "1044">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__51-[SubmitQualificationViewController checkBtnClick:]_block_invoke"
+                  moduleName = "CateringPlusBusinessV2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/huobaosichu/Documents/code/CateringPlusBusinessV2/CateringPlusBusinessV2/Classes/Settled/Controller/SubmitQualificationViewController.m"
+                  timestampString = "496143180.019452"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "274"
+                  endingLineNumber = "274"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -68,6 +68,8 @@
 			<string>content</string>
 			<key>placeholder</key>
 			<string>请填写活动内容</string>
+			<key>selectType</key>
+			<string>selectHtmlContent</string>
 		</dict>
 		<dict>
 			<key>labelText</key>
@@ -80,6 +82,8 @@
 			<string></string>
 			<key>placeholder</key>
 			<string>请填写人数和价格</string>
+			<key>selectType</key>
+			<string>selectMissionFight</string>
 		</dict>
 		<dict>
 			<key>labelText</key>
@@ -99,17 +103,17 @@
 	<array>
 		<dict>
 			<key>labelText</key>
-			<string>使用时间</string>
+			<string>有效期</string>
 			<key>type</key>
 			<string>select</string>
 			<key>value</key>
 			<string></string>
 			<key>key</key>
-			<string></string>
+			<string>limitTime</string>
 			<key>placeholder</key>
 			<string>请选择</string>
-			<key>New item</key>
-			<string></string>
+			<key>selectType</key>
+			<string>selectDate</string>
 		</dict>
 		<dict>
 			<key>labelText</key>
@@ -122,6 +126,8 @@
 			<string>limitations</string>
 			<key>placeholder</key>
 			<string>请选择</string>
+			<key>selectType</key>
+			<string>selectHtmlContent</string>
 		</dict>
 	</array>
 	<array>

@@ -8,6 +8,7 @@
 
 #import "MineViewController.h"
 #import "PrefixHeader.h"
+#import "NJKWebViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>{
     NSMutableArray *_appData;
@@ -29,6 +30,10 @@
     _toolTableView.dataSource = self;
     
     [self initData];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 #pragma mark 初始化数据
@@ -66,7 +71,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    cell.textLabel.text = item[@"name"];
+    if ([item.allKeys containsObject:@"key"]) {
+        //用户信息
+        NSDictionary *userInfo = [Public getUserDefaultKey:USERINFO];
+        cell.textLabel.text = userInfo[@"account"];
+    }else{
+        cell.textLabel.text = item[@"name"];
+    }
     if (indexPath.section == 0 && indexPath.row == 0) {
         cell.textLabel.font = [UIFont systemFontOfSize:20];
     }else{
@@ -97,7 +108,33 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *item = [[_appData objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     
+    NSString *title = item[@"name"];
     
+    if ([item.allKeys containsObject:@"controller"] && ![item[@"controller"] isEqualToString:@""]) {
+        UIViewController *viewController = [Public getStoryBoardByController:@"SetUp" storyboardId:item[@"controller"]];
+        
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+    
+    if ([title isEqualToString:@"客服热线"]) {
+        NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"400-0236903"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    }
+    
+    if ([title isEqualToString:@"推荐给朋友"]) {
+        [Public share];
+    }
+    
+    if ([title isEqualToString:@"活动规则介绍"]) {
+       NJKWebViewController *njkWeb = [[NJKWebViewController alloc] init];
+        njkWeb.webTitle = @"活动规则介绍";
+        njkWeb.url = @"http://www.baidu.com";
+        [self.navigationController pushViewController:njkWeb animated:YES];
+    }
+    
+    if ([title isEqualToString:@"关于我们"]) {
+        
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

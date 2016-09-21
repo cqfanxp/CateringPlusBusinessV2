@@ -211,7 +211,13 @@
         imagePickerController.delegate = self;
         imagePickerController.allowsEditing = YES;
         imagePickerController.sourceType = sourceType;
-        [self presentViewController:imagePickerController animated:YES completion:^{}];
+        imagePickerController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+        
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self presentViewController:imagePickerController animated:YES completion:^{}];
+        });
+//        [self presentViewController:imagePickerController animated:YES completion:^{}];
     }];
 }
 

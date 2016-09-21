@@ -11,6 +11,7 @@
 @implementation ActivityListCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
@@ -20,7 +21,7 @@
     // Configure the view for the selected state
 }
 
-- (instancetype)cellWithTableView:(UITableView *)tableView text:(NSString *)text{
+- (instancetype)cellWithTableView:(UITableView *)tableView{
     static NSString *ID = @"ActivityList_Cell";
     ActivityListCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {

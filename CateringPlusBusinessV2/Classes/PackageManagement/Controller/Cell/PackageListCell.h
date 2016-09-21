@@ -23,4 +23,8 @@
 
 //修改按钮
 @property (weak, nonatomic) IBOutlet UIButton *updateBtn;
+
+//内容
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+
 @end

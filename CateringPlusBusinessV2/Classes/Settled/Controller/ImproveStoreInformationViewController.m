@@ -7,6 +7,7 @@
 //
 
 #import "ImproveStoreInformationViewController.h"
+#import "SubmitQualificationViewController.h"
 #import "MHActionSheet.h"
 #import "MSSBrowseDefine.h"
 #import "MapViewController.h"
@@ -55,7 +56,7 @@
 #pragma mark 初始化布局
 -(void)initLayout{
     
-    _imgHeight = _storesScroll.frame.size.height-10;
+    _imgHeight = 77-10;
     
     _surroundingsPath = [[NSMutableDictionary alloc] init];
     
@@ -126,7 +127,9 @@
         [hud dismiss:YES];
         if ([responseObject[@"success"] boolValue]) {
             //跳转到下一步
-            UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"SubmitQualificationViewController"];
+            SubmitQualificationViewController *viewController = (SubmitQualificationViewController *)[Public getStoryBoardByController:@"Settled" storyboardId:@"SubmitQualificationViewController"];
+            viewController.storeId = responseObject[@"result"];
+            
             [self.navigationController pushViewController:viewController animated:YES];
         }else{
             [Public alertWithType:MozAlertTypeError msg:responseObject[@"message"]];

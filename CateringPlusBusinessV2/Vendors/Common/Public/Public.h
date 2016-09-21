@@ -13,6 +13,9 @@
 #import "PrefixHeader.h"
 #import "Reachability.h"
 
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKUI/ShareSDK+SSUI.h>
+
 @interface Public : NSObject
 
 #pragma mark 倒计时
@@ -37,4 +40,7 @@
 #pragma mark 网络状态
 //是否有网络
 +(Boolean)isNetWork;
+
+//分享
++(void)share;
 @end

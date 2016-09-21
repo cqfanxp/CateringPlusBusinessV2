@@ -11,7 +11,7 @@
 			<key>value</key>
 			<string></string>
 			<key>key</key>
-			<string></string>
+			<string>image</string>
 		</dict>
 	</array>
 	<array>
@@ -23,9 +23,11 @@
 			<key>value</key>
 			<string></string>
 			<key>key</key>
-			<string></string>
+			<string>storeIds</string>
 			<key>placeholder</key>
 			<string>请选择此活动门店</string>
+			<key>selectType</key>
+			<string>selectStores</string>
 		</dict>
 		<dict>
 			<key>labelText</key>
@@ -35,9 +37,11 @@
 			<key>value</key>
 			<string></string>
 			<key>key</key>
-			<string></string>
+			<string>packageId</string>
 			<key>placeholder</key>
 			<string>请选择参与活动的套餐</string>
+			<key>selectType</key>
+			<string>selectPackage</string>
 		</dict>
 	</array>
 	<array>
@@ -49,7 +53,7 @@
 			<key>value</key>
 			<string></string>
 			<key>key</key>
-			<string></string>
+			<string>title</string>
 			<key>placeholder</key>
 			<string>请填写活动主题名称(20字以内)</string>
 		</dict>
@@ -61,9 +65,11 @@
 			<key>value</key>
 			<string></string>
 			<key>key</key>
-			<string></string>
+			<string>content</string>
 			<key>placeholder</key>
 			<string>请填写活动内容</string>
+			<key>selectType</key>
+			<string>selectHtmlContent</string>
 		</dict>
 		<dict>
 			<key>labelText</key>
@@ -73,7 +79,7 @@
 			<key>value</key>
 			<string></string>
 			<key>key</key>
-			<string></string>
+			<string>price</string>
 			<key>placeholder</key>
 			<string>请填写优惠价格</string>
 		</dict>
@@ -88,21 +94,11 @@
 			<string></string>
 			<key>placeholder</key>
 			<string>请填写活动时间</string>
+			<key>selectType</key>
+			<string>selectStartAndEndTime</string>
 		</dict>
 	</array>
 	<array>
-		<dict>
-			<key>labelText</key>
-			<string>使用时间</string>
-			<key>type</key>
-			<string>select</string>
-			<key>value</key>
-			<string></string>
-			<key>key</key>
-			<string></string>
-			<key>placeholder</key>
-			<string>请选择</string>
-		</dict>
 		<dict>
 			<key>labelText</key>
 			<string>使用限制</string>
@@ -111,9 +107,11 @@
 			<key>value</key>
 			<string></string>
 			<key>key</key>
-			<string></string>
+			<string>limitations</string>
 			<key>placeholder</key>
 			<string>请选择</string>
+			<key>selectType</key>
+			<string>selectHtmlContent</string>
 		</dict>
 	</array>
 	<array>

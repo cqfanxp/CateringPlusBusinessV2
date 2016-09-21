@@ -30,9 +30,10 @@
 //selectStores = 选择门店
 //selectPackage = 选择套餐
 //selectHtmlContent = html文本框
-//selectMissionFight = 拼团
+//selectMissionFight = 拼团选择人数价格
 //selectStartAndEndTime = 选择开始时间和结束时间
 //selectDate = 选择时间
+//selectActivityPrice = 选择活动价格
 @property(nonatomic,strong) NSString *selectType;
 
 @end

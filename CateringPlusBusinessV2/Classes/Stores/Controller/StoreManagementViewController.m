@@ -123,8 +123,13 @@
     
     cell.titleLabel.text = item.busName;
     cell.addressLabel.text = item.storeAddress;
-    [cell.statusBtn setTitle:item.busStateValue forState:UIControlStateNormal];
     
+    if ([item.busStateDic isEqualToString:@"10071004"]) {
+        cell.statusBtn.hidden = YES;
+    }else{
+        cell.statusBtn.hidden = NO;
+    }
+    [cell.statusBtn setTitle:item.busStateValue forState:UIControlStateNormal];
     [cell.iconImgView sd_setImageWithURL:[NSURL URLWithString:[BASEURL stringByAppendingString:item.picture]] placeholderImage:[UIImage imageNamed:@"img_false"]];
     return cell;
 }

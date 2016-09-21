@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setTitle:@"选择品内"];
+    [self setTitle:@"选择品类"];
     
     //右侧按钮
     UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"开店手册" style:UIBarButtonItemStyleDone target:self action:@selector(shopmanualBtnClick)];
@@ -103,7 +103,10 @@
             _result(selectData);
             [self.navigationController popViewControllerAnimated:YES];
         }else{
-            [Public setUserDefaultKey:CATEGORYINFO value:selectData];
+            [Public setUserDefaultKey:CATEGORYINFO value:[[NSDictionary alloc] initWithObjectsAndKeys:
+                                                          selectData[@"id"],@"id",
+                                                          selectData[@"codeNumber"],@"codeNumber",
+                                                          selectData[@"name"],@"name",nil]];
             UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"RegisteredViewController"];
             [self.navigationController pushViewController:viewController animated:YES];
         }

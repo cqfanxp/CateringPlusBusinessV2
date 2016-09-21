@@ -6,20 +6,20 @@
 		<dict>
 			<key>name</key>
 			<string>周星驰</string>
-			<key>controller</key>
-			<string></string>
+			<key>key</key>
+			<string>username</string>
 		</dict>
 		<dict>
 			<key>name</key>
 			<string>修改密码</string>
 			<key>controller</key>
-			<string></string>
+			<string>ChangePasswordViewController</string>
 		</dict>
 		<dict>
 			<key>name</key>
 			<string>修改电话</string>
 			<key>controller</key>
-			<string></string>
+			<string>ModifyOldPhoneNumberViewController</string>
 		</dict>
 	</array>
 	<array>
@@ -30,16 +30,12 @@
 			<string>service</string>
 			<key>name</key>
 			<string>客服热线</string>
-			<key>controller</key>
-			<string>FeedbackViewController</string>
 		</dict>
 		<dict>
 			<key>icon</key>
 			<string>share-0</string>
 			<key>name</key>
 			<string>推荐给朋友</string>
-			<key>controller</key>
-			<string>FeedbackViewController</string>
 		</dict>
 		<dict>
 			<key>icon</key>
@@ -55,7 +51,7 @@
 			<key>name</key>
 			<string>活动规则介绍</string>
 			<key>controller</key>
-			<string>HelpViewController</string>
+			<string></string>
 		</dict>
 		<dict>
 			<key>icon</key>
@@ -63,7 +59,7 @@
 			<key>name</key>
 			<string>关于我们</string>
 			<key>controller</key>
-			<string>AboutViewController</string>
+			<string></string>
 		</dict>
 	</array>
 </array>

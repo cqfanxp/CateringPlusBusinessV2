@@ -39,7 +39,6 @@
     _limit = 10;
     _start = 0;
     _dataResult = [[NSMutableArray alloc] init];
-    _dataResult = [[NSMutableArray alloc] init];
     
     _TableView.dataSource = self;
     _TableView.delegate = self;
@@ -148,6 +147,7 @@
     PackageListCell *cell = [[PackageListCell alloc] cellWithTableView:tableView];
     cell.nameLabel.text = item.packageName;
     [cell.packageImgView sd_setImageWithURL:[NSURL URLWithString:[BASEURL stringByAppendingString:item.packageFirstMap]] placeholderImage:[UIImage imageNamed:@"img_false"]];
+    cell.contentLabel.text = [self assemblingContent:item.packageToSingleProducts];
     
     cell.updateBtn.tag = indexPath.row;
     cell.deleteBtn.tag = indexPath.row;
@@ -168,13 +168,23 @@
     
 }
 
+//组装内容
+-(NSString *)assemblingContent:(NSArray *)data{
+    if ([data count] == 0) {
+        return @"";
+    }
+    NSMutableString *tempStr = [[NSMutableString alloc] init];
+    for (NSDictionary *dic in data) {
+        [tempStr appendFormat:@"%@(%@) ",dic[@"singleName"],dic[@"singleNumber"]];
+    }
+    return tempStr;
+}
+
 //添加套餐管理
 -(void)addClick{
     PackageEditViewController *viewController = (PackageEditViewController *)[Public getStoryBoardByController:@"PackageManagement" storyboardId:@"PackageEditViewController"];
     viewController.saveSuccess = ^(Boolean success){
-        self.imgInfoView.hidden = YES;
-        _TableView.hidden = NO;
-        [self loadNewData:nil];
+        [self reloadClick];
     };
     [self.navigationController pushViewController:viewController animated:YES];
 }
@@ -184,9 +194,7 @@
     PackageEditViewController *viewController = (PackageEditViewController *)[Public getStoryBoardByController:@"PackageManagement" storyboardId:@"PackageEditViewController"];
     viewController.package = item;
     viewController.saveSuccess = ^(Boolean success){
-        self.imgInfoView.hidden = YES;
-        _TableView.hidden = NO;
-        [self loadNewData:nil];
+        [self reloadClick];
     };
     [self.navigationController pushViewController:viewController animated:YES];
 }
@@ -217,6 +225,7 @@
 
 //重新加载
 -(void)reloadClick{
+    _start = 0;
     self.imgInfoView.hidden = YES;
     _TableView.hidden = NO;
     [self loadNewData:nil];

@@ -10,4 +10,8 @@
 
 @interface NewPhoneNumberViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *phoneNuberField;
+
+@property (weak, nonatomic) IBOutlet UITextField *smsCodeField;
+
 @end

@@ -44,7 +44,7 @@
 
 #pragma mark 初始化布局
 -(void)initLayout{
-    _imgHeight = _fIGDetailsScroll.frame.size.height-10;
+    _imgHeight = 60;
     
     //商品首图
     UITapGestureRecognizer *tapAddImgGesturRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(selectImgWay:)];

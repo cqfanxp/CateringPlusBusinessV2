@@ -12,4 +12,7 @@
 
 - (instancetype)cellWithTableView:(UITableView *)tableView;
 
+//提交
+@property (weak, nonatomic) IBOutlet UIButton *submitBtn;
+
 @end

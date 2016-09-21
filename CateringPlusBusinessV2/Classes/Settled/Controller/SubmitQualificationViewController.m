@@ -50,7 +50,7 @@
 #pragma mark 初始化布局
 -(void)initLayout{
     
-    _imgHeight = _businessLicenseView.frame.size.height-10;
+    _imgHeight = 68-10;
     
     //营业执照图
     _businessLicenseImg = [self getAddImgView:100 num:0];
@@ -260,7 +260,7 @@
     NSDictionary *userInfo = [Public getUserDefaultKey:USERINFO];
     
     NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                                   userInfo[@"id"],@"Id",
+                                   userInfo[@"id"],@"busUserId",
                                    _registrationNumberField.text,@"RegistrationNumber",
                                    _licenseNameField.text,@"LicenseName",
                                    _nameField.text,@"Name",
@@ -268,6 +268,7 @@
                                    _businessLicensePath,@"BusinessLicensePhoto",
                                    _photoIDCardPositivePath,@"HandheldID",
                                    _photoIDCardRearPath,@"HandheldIDC",
+                                   _storeId,@"longStoreId",
                                    nil];
     WKProgressHUD *hud = [WKProgressHUD showInView:self.view withText:nil animated:YES];
     [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/updateBusUserByUserId"] parameters:[Public getParams:params] success:^(id responseObject) {

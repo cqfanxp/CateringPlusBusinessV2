@@ -19,6 +19,8 @@
 @implementation SelectStores
 
 -(void)awakeFromNib{
+    [super awakeFromNib];
+    
     _tableView.delegate = self;
     _tableView.dataSource = self;
     

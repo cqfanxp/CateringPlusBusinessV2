@@ -10,4 +10,9 @@
 
 @interface ModifyOldPhoneNumberViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+
+
+@property (weak, nonatomic) IBOutlet UITextField *SMSVerificationCode;
+
 @end

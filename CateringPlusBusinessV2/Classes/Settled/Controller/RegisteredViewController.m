@@ -58,7 +58,9 @@
         if ([responseObject[@"success"] boolValue]) {
             NSDictionary *result = responseObject[@"result"];
             //存储用户信息
-            [Public setUserDefaultKey:USERINFO value:[[NSDictionary alloc] initWithObjectsAndKeys:result[@"account"],@"account",
+            [Public setUserDefaultKey:USERINFO value:[[NSDictionary alloc] initWithObjectsAndKeys:
+                                                      result[@"account"],@"account",
+                                                      _passwordField.text,@"password",
                                                       result[@"id"],@"id",
                                                       result[@"phone"],@"phone",nil]];
             //存储用户验证信息
@@ -91,10 +93,10 @@
         [Public alertWithType:MozAlertTypeError msg:@"密码不能为空"];
         return false;
     }
-//    if (![Verification checkPassword:_passwordField.text]) {
-//        [Public alertWithType:MozAlertTypeError msg:@"密码必须是6-18位数字和字母"];
-//        return false;
-//    }
+    if (![Verification checkPassword:_passwordField.text]) {
+        [Public alertWithType:MozAlertTypeError msg:@"密码必须是6-18位数字和字母"];
+        return false;
+    }
     if ([_confirmPasswordField.text isEqualToString:@""]) {
         [Public alertWithType:MozAlertTypeError msg:@"请再次输入密码"];
         return false;
@@ -117,6 +119,8 @@
 - (IBAction)verificationCode:(id)sender {
     UIButton *btn = (UIButton *)sender;
     
+    [self.view endEditing:YES];
+    
     if ([_phoneNumberText.text isEqualToString:@""]) {
         [Public alertWithType:MozAlertTypeError msg:@"手机号码不能为空"];
         return;
@@ -126,7 +130,9 @@
         return;
     }
     
-    NSMutableDictionary *input = [[NSMutableDictionary alloc] initWithObjectsAndKeys:_phoneNumberText.text,@"PhoneNumber",nil];
+    NSMutableDictionary *input = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                  _phoneNumberText.text,@"PhoneNumber",
+                                  @"SMS_10245454",@"smsTemlateId",nil];
 
     [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/sendValidateCode"] parameters:[Public getParams:input] success:^(id responseObject) {
         _phoneNumber = _phoneNumberText.text;
