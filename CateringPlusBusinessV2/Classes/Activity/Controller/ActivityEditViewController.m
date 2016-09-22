@@ -68,7 +68,6 @@
 -(void)initData{
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSString *path = [[NSBundle mainBundle] pathForResource:_plistName ofType:@"plist"];
-//        NSString *path = [[NSBundle mainBundle] pathForResource:@"customEvents" ofType:@"plist"];
         NSArray *tempArr = [[NSArray alloc] initWithContentsOfFile:path];
         
         for (NSArray *array in tempArr) {
@@ -260,6 +259,7 @@
         //选择套餐
         if ([itemData.selectType isEqualToString:@"selectPackage"]) {
             SelectPackageViewController *viewController = [[SelectPackageViewController alloc] init];
+            viewController.selectData = self.activityModel.packageId;
             viewController.resultData = ^(Package *item){
                 itemData.value = item.packageName;
                 [self.activityModel setValue:item.identifies forKey:itemData.key];
@@ -271,6 +271,9 @@
         //选择开始时间和结束时间
         if ([itemData.selectType isEqualToString:@"selectStartAndEndTime"]) {
             SelectStartAndEndTimeViewController *viewController = [[SelectStartAndEndTimeViewController alloc] init];
+            viewController.startTime = self.activityModel.starTime;
+            viewController.endTime = self.activityModel.overTime;
+            
             viewController.resultData = ^(NSString *startTime,NSString *endTime){
                 self.activityModel.starTime = startTime;
                 self.activityModel.overTime = endTime;
@@ -434,6 +437,8 @@
         _selectStoresView = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([SelectStores class]) owner:self options:nil].lastObject;
         _selectStoresView.frame = CGRectMake(0, 0, screen_width, screen_height);
         _selectStoresView.hidden = YES;
+        _selectStoresView.selectData = self.activityModel.storeList;
+        
         _selectStoresView.resultData = ^(NSArray *data){
             NSMutableString *tempStr = [[NSMutableString alloc] init];
             NSMutableString *tempids = [[NSMutableString alloc] init];
@@ -464,6 +469,10 @@
 
 //提交数据
 -(void)submitClick{
+    
+    if (![self verification:_plistName]) {
+        return;
+    }
     
     NSMutableDictionary *params = [self getParams:_plistName];
     
@@ -565,6 +574,130 @@
         params[@"fiendsHelpSpreads"] = tempHelpCutArr;
     }
     return params;
+}
+
+//验证
+-(Boolean)verification:(NSString *)type{
+    
+    if ([self isNull:self.activityModel.image]) {
+        [Public alertWithType:MozAlertTypeError msg:@"首图不能为空"];
+        return false;
+    }
+    if ([self isNull:self.activityModel.storeIds]) {
+        [Public alertWithType:MozAlertTypeError msg:@"请选择参与活动的门店"];
+        return false;
+    }
+    if ([self isNull:self.activityModel.title]) {
+        [Public alertWithType:MozAlertTypeError msg:@"活动主题不能为空"];
+        return false;
+    }
+    if ([self isNull:self.activityModel.content]) {
+        [Public alertWithType:MozAlertTypeError msg:@"活动内容不能为空"];
+        return false;
+    }
+    if ([self isNull:self.activityModel.limitations]) {
+        [Public alertWithType:MozAlertTypeError msg:@"使用限制不能为空"];
+        return false;
+    }
+    //定义活动
+    if ([type isEqualToString:@"customEvents"]) {
+        if ([self isNull:self.activityModel.limitTime]) {
+            [Public alertWithType:MozAlertTypeError msg:@"请选择有效期"];
+            return false;
+        }
+    }
+    //消费满减
+    if ([type isEqualToString:@"lessSpending"]) {
+        if ([self isNull:self.activityModel.limitTime]) {
+            [Public alertWithType:MozAlertTypeError msg:@"请选择有效期"];
+            return false;
+        }
+        if ([self isNull:self.activityModel.howLess]) {
+            [Public alertWithType:MozAlertTypeError msg:@"请设置活动价格"];
+            return false;
+        }
+    }
+    //限时优惠
+    if ([type isEqualToString:@"limitedTimeOffer"]) {
+        if ([self isNull:self.activityModel.packageId]) {
+            [Public alertWithType:MozAlertTypeError msg:@"请选择套餐"];
+            return false;
+        }
+        if ([self isNull:self.activityModel.price]) {
+            [Public alertWithType:MozAlertTypeError msg:@"请输入优惠价格"];
+            return false;
+        }
+        if ([self isNull:self.activityModel.starTime]) {
+            [Public alertWithType:MozAlertTypeError msg:@"请设置活动时间"];
+            return false;
+        }
+    }
+    //抵扣券
+    if ([type isEqualToString:@"volumeDeductible"]) {
+        if ([self isNull:self.activityModel.price]) {
+            [Public alertWithType:MozAlertTypeError msg:@"请输入抵扣面值"];
+            return false;
+        }
+        if ([self isNull:self.activityModel.limitTime]) {
+            [Public alertWithType:MozAlertTypeError msg:@"请选择有效期"];
+            return false;
+        }
+    }
+    //折扣劵
+    if ([type isEqualToString:@"volumeDiscounts"]) {
+        if ([self isNull:self.activityModel.discount]) {
+            [Public alertWithType:MozAlertTypeError msg:@"请输入折扣比例"];
+            return false;
+        }
+        if ([self isNull:self.activityModel.limitTime]) {
+            [Public alertWithType:MozAlertTypeError msg:@"请选择有效期"];
+            return false;
+        }
+    }
+    //拼团
+    if ([type isEqualToString:@"fightAlone"]) {
+        if ([self isNull:self.activityModel.packageId]) {
+            [Public alertWithType:MozAlertTypeError msg:@"请选择套餐"];
+            return false;
+        }
+        if ([self isNull:self.activityModel.price]) {
+            [Public alertWithType:MozAlertTypeError msg:@"请输入拼团价格"];
+            return false;
+        }
+        if ([self isNull:self.activityModel.peoNumber]) {
+            [Public alertWithType:MozAlertTypeError msg:@"请输入拼团人数"];
+            return false;
+        }
+        if ([self isNull:self.activityModel.starTime]) {
+            [Public alertWithType:MozAlertTypeError msg:@"请设置活动时间"];
+            return false;
+        }
+        if ([self isNull:self.activityModel.limitTime]) {
+            [Public alertWithType:MozAlertTypeError msg:@"请选择有效期"];
+            return false;
+        }
+    }
+    //帮帮砍
+    if ([type isEqualToString:@"helpCut"]) {
+        if ([self isNull:self.activityModel.packageId]) {
+            [Public alertWithType:MozAlertTypeError msg:@"请选择套餐"];
+            return false;
+        }
+        if (!self.activityModel.settingNumberActivities || [self.activityModel.settingNumberActivities count] == 0) {
+            [Public alertWithType:MozAlertTypeError msg:@"请设置帮帮砍规则"];
+            return false;
+        }
+        if ([self isNull:self.activityModel.starTime]) {
+            [Public alertWithType:MozAlertTypeError msg:@"请设置活动时间"];
+            return false;
+        }
+        if ([self isNull:self.activityModel.limitTime]) {
+            [Public alertWithType:MozAlertTypeError msg:@"请选择有效期"];
+            return false;
+        }
+        
+    }
+    return true;
 }
 
 

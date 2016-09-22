@@ -47,11 +47,23 @@
 }
 //初始化数据
 -(void)loadNewData:(MJRefreshNormalHeader *)header{
-    if ([Public isNetWork]) {
-        _TableView.hidden = NO;
-    }else{
+    //判断网络
+    if (![Public isNetWork]) {
+        _TableView.hidden = YES;
         self.imgInfoView.hidden = NO;
+        [self.imgInfoView SetStatus:NoNetwork];
+        return;
     }
+    
+    //判断是下拉刷新 还是第一次刷新
+    if (header == nil) {
+        _TableView.hidden = YES;
+        self.imgInfoView.hidden = YES;
+    }else{
+        _TableView.hidden = NO;
+        self.imgInfoView.hidden = YES;
+    }
+
     [_dataResult removeAllObjects];
     //用户信息
     NSDictionary *userInfo = [Public getUserDefaultKey:USERINFO];
@@ -77,9 +89,9 @@
                 Stoer *tempStoer = [[Stoer alloc] initWithDic:dic];
                 tempStoer.latitude = [dic[@"latitude"] floatValue];
                 tempStoer.longitude = [dic[@"longitude"] floatValue];
-                
                 [_dataResult addObject:tempStoer];
             }
+            _TableView.hidden = NO;
             [_TableView reloadData];
         }
     } failure:^(NSError *error) {
@@ -97,8 +109,6 @@
 }
 //重新加载
 -(void)reloadClick{
-    self.imgInfoView.hidden = YES;
-    _TableView.hidden = NO;
     [self loadNewData:nil];
 }
 
@@ -153,8 +163,6 @@
     EditStoreViewController *viewController = (EditStoreViewController *)[Public getStoryBoardByController:@"Stores" storyboardId:@"EditStoreViewController"];
     viewController.store = item;
     viewController.addSuccess = ^(Boolean success){
-        self.imgInfoView.hidden = YES;
-        _TableView.hidden = NO;
         [self loadNewData:nil];
     };
     [self.navigationController pushViewController:viewController animated:YES];
@@ -164,8 +172,6 @@
 -(void)addClick{
     EditStoreViewController *viewController = (EditStoreViewController *)[Public getStoryBoardByController:@"Stores" storyboardId:@"EditStoreViewController"];
     viewController.addSuccess = ^(Boolean success){
-        self.imgInfoView.hidden = YES;
-        _TableView.hidden = NO;
         [self loadNewData:nil];
     };
     [self.navigationController pushViewController:viewController animated:YES];

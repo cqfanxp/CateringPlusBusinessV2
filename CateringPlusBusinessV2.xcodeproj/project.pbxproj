@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57020B771D9407DB00B13FE8 /* BusinessSchool.m in Sources */ = {isa = PBXBuildFile; fileRef = 57020B761D9407DB00B13FE8 /* BusinessSchool.m */; };
 		570DF80F1D8CF14600010A98 /* editor.html in Resources */ = {isa = PBXBuildFile; fileRef = 570DF7A01D8CF14600010A98 /* editor.html */; };
 		570DF8101D8CF14600010A98 /* ZSSbgcolor.png in Resources */ = {isa = PBXBuildFile; fileRef = 570DF7A21D8CF14600010A98 /* ZSSbgcolor.png */; };
 		570DF8111D8CF14600010A98 /* ZSSbgcolor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 570DF7A31D8CF14600010A98 /* ZSSbgcolor@2x.png */; };
@@ -313,6 +314,8 @@
 
 /* Begin PBXFileReference section */
 		09919C46605366D59CD5B5E8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		57020B751D9407DB00B13FE8 /* BusinessSchool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessSchool.h; sourceTree = "<group>"; };
+		57020B761D9407DB00B13FE8 /* BusinessSchool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessSchool.m; sourceTree = "<group>"; };
 		570DF7A01D8CF14600010A98 /* editor.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = editor.html; sourceTree = "<group>"; };
 		570DF7A21D8CF14600010A98 /* ZSSbgcolor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZSSbgcolor.png; sourceTree = "<group>"; };
 		570DF7A31D8CF14600010A98 /* ZSSbgcolor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZSSbgcolor@2x.png"; sourceTree = "<group>"; };
@@ -1423,6 +1426,8 @@
 		57A7B7911D5C1EDC00BF2928 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				57020B751D9407DB00B13FE8 /* BusinessSchool.h */,
+				57020B761D9407DB00B13FE8 /* BusinessSchool.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2236,6 +2241,7 @@
 				571968E31D893A350005E073 /* ActivityDisplayField.m in Sources */,
 				57A9A0091D7D6760007E4AC1 /* MapPOIAddressCell.m in Sources */,
 				574A73271D7822360014CC8C /* VerificationRecordsViewController.m in Sources */,
+				57020B771D9407DB00B13FE8 /* BusinessSchool.m in Sources */,
 				572ACA251D62E8AA00FDD68B /* UINavigationItem+BackButton.m in Sources */,
 				577AC5591D5C0D2C00390F62 /* AppDelegate.m in Sources */,
 				571968DB1D8924E10005E073 /* HcdDateTimePickerView.m in Sources */,

@@ -87,11 +87,22 @@
 }
 //初始化数据
 -(void)loadNewData:(id)header{
-    if ([Public isNetWork]) {
-        _TableView.hidden = NO;
-    }else{
+    //判断网络
+    if (![Public isNetWork]) {
+        _TableView.hidden = YES;
         self.imgInfoView.hidden = NO;
+        [self.imgInfoView SetStatus:NoNetwork];
+        return;
     }
+    //判断是下拉刷新 还是第一次刷新
+    if (header == nil) {
+        _TableView.hidden = YES;
+        self.imgInfoView.hidden = YES;
+    }else{
+        _TableView.hidden = NO;
+        self.imgInfoView.hidden = YES;
+    }
+    
     if (_start == 0) {
         [_dataResult removeAllObjects];
     }
@@ -126,6 +137,7 @@
                     [_dataResult addObject:temp];
                 }
                 _start += [tempArr count];
+                _TableView.hidden = NO;
                 [_TableView reloadData];
             }
         }else{
@@ -165,6 +177,7 @@
     ActivityListCell *cell = [[ActivityListCell alloc] cellWithTableView:tableView];;
     cell.titleLabel.text = item.title;
     cell.stateLabel.text = item.stateValue;
+    
     cell.useNumberLabel.text = [NSString stringWithFormat:@"已领：%ld次",item.useNumber];
     [cell.firstMapImgView sd_setImageWithURL:[NSURL URLWithString:[BASEURL stringByAppendingString:item.image]] placeholderImage:[UIImage imageNamed:@"img_false"]];
     
@@ -194,8 +207,7 @@
     activityEdit.plistName =self.featuresData[@"plistName"];
     activityEdit.saveSuccess = ^(Boolean success){
         dispatch_async(dispatch_get_main_queue(), ^{
-            _start = 0;
-            [self loadNewData:nil];
+            [self reloadClick];
         });
     };
     [self.navigationController pushViewController:activityEdit animated:YES];
@@ -208,8 +220,7 @@
     activityEdit.activityModel = item;
     activityEdit.saveSuccess = ^(Boolean success){
         dispatch_async(dispatch_get_main_queue(), ^{
-            _start = 0;
-            [self loadNewData:nil];
+            [self reloadClick];
         });
     };
     [self.navigationController pushViewController:activityEdit animated:YES];
@@ -260,7 +271,8 @@
         [hud dismiss:YES];
         if ([responseObject[@"success"] boolValue]) {
             [Public alertWithType:MozAlertTypeSuccess msg:responseObject[@"message"]];
-            [self reloadClick];
+            [_dataResult removeObject:item];
+            [_TableView reloadData];
         }else{
             NSLog(@"message:%@",responseObject[@"message"]);
             [Public alertWithType:MozAlertTypeError msg:responseObject[@"message"]];

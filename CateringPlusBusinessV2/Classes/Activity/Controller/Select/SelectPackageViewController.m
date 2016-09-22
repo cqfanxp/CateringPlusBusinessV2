@@ -58,8 +58,27 @@
     SelectPackageCell *cell = [[SelectPackageCell alloc] cellWithTableView:tableView];
     cell.packageNameLabel.text = item.packageName;
     [cell.packageFirstMapImgView sd_setImageWithURL:[NSURL URLWithString:[BASEURL stringByAppendingString:item.packageFirstMap]] placeholderImage:[UIImage imageNamed:@"img_false"]];
-
+    cell.contentLabel.text = [self assemblingContent:item.packageToSingleProducts];
+    
+    if (item.isSelect) {
+        [cell.statusImgView setImage:[UIImage imageNamed:@"yes_bule"]];
+    }else{
+        [cell.statusImgView setImage:[UIImage imageNamed:@"yes_gray"]];
+    }
+    
     return cell;
+}
+
+//组装内容
+-(NSString *)assemblingContent:(NSArray *)data{
+    if ([data count] == 0) {
+        return @"";
+    }
+    NSMutableString *tempStr = [[NSMutableString alloc] init];
+    for (NSDictionary *dic in data) {
+        [tempStr appendFormat:@"%@(%@) ",dic[@"singleName"],dic[@"singleNumber"]];
+    }
+    return tempStr;
 }
 
 #pragma mark 设置每行的高度
@@ -159,6 +178,11 @@
                 for (NSDictionary *dic in tempArr) {
                     Package *temp = [[Package alloc] initWithDic:dic];
                     temp.identifies = dic[@"packageId"];
+                    
+                    if (_selectData && [_selectData isEqualToString:temp.identifies]) {
+                        temp.isSelect = YES;
+                    }
+                    
                     [_dataResult addObject:temp];
                 }
                 _start += [tempArr count];

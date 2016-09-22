@@ -22,4 +22,6 @@
 //套餐内容
 @property(nonatomic,strong) NSArray *packageToSingleProducts;
 
+//是否被选中
+@property(nonatomic,assign) Boolean isSelect;
 @end

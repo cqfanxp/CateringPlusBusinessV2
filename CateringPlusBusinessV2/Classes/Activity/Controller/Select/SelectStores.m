@@ -44,10 +44,20 @@
         [hud dismiss:YES];
         
         if ([responseObject[@"success"] boolValue]) {
+            
             for (NSDictionary *dic in responseObject[@"result"]) {
                 Stoer *tempStoer = [[Stoer alloc] initWithDic:dic];
                 tempStoer.latitude = [dic[@"latitude"] floatValue];
                 tempStoer.longitude = [dic[@"longitude"] floatValue];
+                
+                if (_selectData) {
+                    for (NSDictionary *tempDic in _selectData) {
+                        if ([tempDic[@"id"] isEqualToString:tempStoer.storeId]) {
+                            tempStoer.isSelect = YES;
+                            continue;
+                        }
+                    }
+                }
                 
                 [_dataResult addObject:tempStoer];
             }
@@ -71,6 +81,8 @@
     SelectStoresCell *cell = [[SelectStoresCell alloc] cellWithTableView:tableView];
     cell.busNameLabel.text = item.busName;
     cell.storeAddressLabel.text = item.storeAddress;
+    
+    
     
     if (item.isSelect) {
         [cell.statusImgView setImage:[UIImage imageNamed:@"yes_bule"]];

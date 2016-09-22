@@ -26,6 +26,13 @@
     UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStyleDone target:self action:@selector(determineClick)];
     [rightBtn setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14],NSFontAttributeName, nil] forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = rightBtn;
+    
+    if (_startTime) {
+        _startField.text = _startTime;
+    }
+    if (_endTime) {
+        _endField.text = _endTime;
+    }
 }
 
 //确定

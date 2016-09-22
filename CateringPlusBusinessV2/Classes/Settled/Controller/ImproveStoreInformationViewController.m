@@ -210,6 +210,10 @@
         imagePickerController.allowsEditing = YES;
         imagePickerController.sourceType = sourceType;
         
+        if([[[UIDevice currentDevice] systemVersion] floatValue]>=8.0) {
+            imagePickerController.modalPresentationStyle=UIModalPresentationCurrentContext;
+        }
+        
         [self presentViewController:imagePickerController animated:YES completion:^{}];
     }];
 }

@@ -281,9 +281,9 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="35n-pC-6fM">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码由6-20位英文字母、数字符号组成" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="35n-pC-6fM">
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -337,6 +337,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="submitClick:" destination="xzf-xF-uEn" eventType="touchUpInside" id="veR-SM-NbK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -349,10 +352,15 @@
                             <constraint firstItem="bJt-M8-Qgf" firstAttribute="leading" secondItem="6Vp-n6-Uqg" secondAttribute="leading" id="yJW-bt-DrR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="codesField" destination="I4s-Ms-OfS" id="Ckh-uL-epi"/>
+                        <outlet property="passwordField" destination="35n-pC-6fM" id="NtA-l6-YVt"/>
+                        <outlet property="phoneNumberField" destination="jK3-6m-nh1" id="Ftt-8O-wnJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HGU-bG-9J2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1305" y="575"/>
+            <point key="canvasLocation" x="1302" y="575"/>
         </scene>
     </scenes>
     <resources>

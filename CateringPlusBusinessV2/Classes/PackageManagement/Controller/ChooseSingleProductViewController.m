@@ -103,11 +103,22 @@
 
 //初始化数据
 -(void)loadNewData:(id)header{
-    if ([Public isNetWork]) {
-        _commodityTableView.hidden = NO;
-    }else{
+    //判断网络
+    if (![Public isNetWork]) {
+        _commodityTableView.hidden = YES;
         self.imgInfoView.hidden = NO;
+        [self.imgInfoView SetStatus:NoNetwork];
+        return;
     }
+    //判断是下拉刷新 还是第一次刷新
+    if (header == nil) {
+        _commodityTableView.hidden = YES;
+        self.imgInfoView.hidden = YES;
+    }else{
+        _commodityTableView.hidden = NO;
+        self.imgInfoView.hidden = YES;
+    }
+    
     if (_start == 0) {
         [_dataResult removeAllObjects];
     }
@@ -140,6 +151,7 @@
                 [_dataResult addObject:tempModel];
             }
             _start += [tempArr count];
+            _commodityTableView.hidden = NO;
             [_commodityTableView reloadData];
         }
     } failure:^(NSError *error) {
@@ -154,6 +166,12 @@
         }
         [self endRefresh];
     }];
+}
+
+//刷新
+-(void)reloadClick{
+    _start = 0;
+    [self loadNewData:nil];
 }
 
 #pragma mark 重写uitableview方法
@@ -380,10 +398,7 @@
 -(void)addClick{
     EditSingleProductViewController *viewController = (EditSingleProductViewController *)[Public getStoryBoardByController:@"PackageManagement" storyboardId:@"EditSingleProductViewController"];
     viewController.addSuccess = ^(Boolean success){
-        _start = 0;
-        self.imgInfoView.hidden = YES;
-        _commodityTableView.hidden = NO;
-        [self loadNewData:nil];
+        [self reloadClick];
     };
     [self.navigationController pushViewController:viewController animated:YES];
 }

@@ -11,6 +11,10 @@
 
 @interface SelectStartAndEndTimeViewController : UIViewController
 
+@property(nonatomic,strong) NSString *startTime;
+
+@property(nonatomic,strong) NSString *endTime;
+
 @property (weak, nonatomic) IBOutlet UITextField *startField;
 
 @property (weak, nonatomic) IBOutlet UITextField *endField;

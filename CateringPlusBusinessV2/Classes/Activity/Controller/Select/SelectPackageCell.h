@@ -15,7 +15,11 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *packageNameLabel;
 
+//状态
+@property (weak, nonatomic) IBOutlet UIImageView *statusImgView;
 
+//内容
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
 - (instancetype)cellWithTableView:(UITableView *)tableView;
 

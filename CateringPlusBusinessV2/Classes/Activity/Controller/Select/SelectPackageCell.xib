@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -12,42 +13,49 @@
             <rect key="frame" x="0.0" y="0.0" width="472" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="472" height="99.5"/>
+                <frame key="frameInset" width="472" height="99"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eJt-Ol-vrB">
-                        <rect key="frame" x="13" y="20" width="60" height="60"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="msl-cO-iwD"/>
                             <constraint firstAttribute="height" constant="60" id="zIi-3F-U07"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="胜多负少" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDb-M2-u62">
-                        <rect key="frame" x="83" y="20" width="60" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yes_gray" translatesAutoresizingMaskIntoConstraints="NO" id="lZn-1H-o9q">
-                        <rect key="frame" x="427" y="37.5" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="eCx-So-HCU"/>
                             <constraint firstAttribute="height" constant="25" id="j3c-QJ-4My"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oS9-y5-tFw">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="dDb-M2-u62" firstAttribute="top" secondItem="eJt-Ol-vrB" secondAttribute="top" id="9ym-FZ-w4V"/>
+                    <constraint firstItem="oS9-y5-tFw" firstAttribute="leading" secondItem="dDb-M2-u62" secondAttribute="leading" id="A79-4O-LpR"/>
                     <constraint firstItem="lZn-1H-o9q" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UaA-RX-lww"/>
                     <constraint firstItem="eJt-Ol-vrB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cf3-3N-GS9"/>
+                    <constraint firstItem="oS9-y5-tFw" firstAttribute="trailing" secondItem="lZn-1H-o9q" secondAttribute="leading" id="ffP-Nb-q4X"/>
+                    <constraint firstItem="oS9-y5-tFw" firstAttribute="top" secondItem="dDb-M2-u62" secondAttribute="bottom" constant="25" id="luf-mP-B6h"/>
                     <constraint firstAttribute="trailingMargin" secondItem="lZn-1H-o9q" secondAttribute="trailing" constant="12" id="nsf-PW-0sm"/>
                     <constraint firstItem="eJt-Ol-vrB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="qBu-IL-3qd"/>
                     <constraint firstItem="dDb-M2-u62" firstAttribute="leading" secondItem="eJt-Ol-vrB" secondAttribute="trailing" constant="10" id="x6x-oy-sbi"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="contentLabel" destination="oS9-y5-tFw" id="6aW-ck-GI5"/>
                 <outlet property="packageFirstMapImgView" destination="eJt-Ol-vrB" id="ibI-jY-U3R"/>
                 <outlet property="packageNameLabel" destination="dDb-M2-u62" id="7io-lj-Mqf"/>
+                <outlet property="statusImgView" destination="lZn-1H-o9q" id="jDL-dJ-0TQ"/>
             </connections>
             <point key="canvasLocation" x="503" y="543"/>
         </tableViewCell>

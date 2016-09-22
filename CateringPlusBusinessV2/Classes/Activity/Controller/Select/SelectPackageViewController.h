@@ -15,5 +15,7 @@
 
 @property(nonatomic,strong) UITableView *tableView;
 
+@property(nonatomic,strong) NSString *selectData;
+
 @property(nonatomic,strong) void(^resultData)(Package *package);
 @end

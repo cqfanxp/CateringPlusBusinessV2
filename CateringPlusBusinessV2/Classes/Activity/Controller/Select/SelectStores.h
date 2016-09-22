@@ -13,5 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property(nonatomic,strong) NSArray *selectData;
+
 @property(nonatomic,strong) void(^resultData)(NSArray *data);
 @end

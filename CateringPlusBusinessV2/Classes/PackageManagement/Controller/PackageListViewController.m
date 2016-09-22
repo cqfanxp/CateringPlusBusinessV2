@@ -78,11 +78,22 @@
 }
 //初始化数据
 -(void)loadNewData:(id)header{
-    if ([Public isNetWork]) {
-        _TableView.hidden = NO;
-    }else{
+    //判断网络
+    if (![Public isNetWork]) {
+        _TableView.hidden = YES;
         self.imgInfoView.hidden = NO;
+        [self.imgInfoView SetStatus:NoNetwork];
+        return;
     }
+    //判断是下拉刷新 还是第一次刷新
+    if (header == nil) {
+        _TableView.hidden = YES;
+        self.imgInfoView.hidden = YES;
+    }else{
+        _TableView.hidden = NO;
+        self.imgInfoView.hidden = YES;
+    }
+    
     if (_start == 0) {
         [_dataResult removeAllObjects];
     }
@@ -114,6 +125,7 @@
                     [_dataResult addObject:temp];
                 }
                 _start += [tempArr count];
+                _TableView.hidden = NO;
                 [_TableView reloadData];
             }
         }else{
@@ -226,8 +238,6 @@
 //重新加载
 -(void)reloadClick{
     _start = 0;
-    self.imgInfoView.hidden = YES;
-    _TableView.hidden = NO;
     [self loadNewData:nil];
 }
 @end
