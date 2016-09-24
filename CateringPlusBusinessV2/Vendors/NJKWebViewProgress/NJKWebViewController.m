@@ -36,6 +36,14 @@
     [self initLayout];
 }
 
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.hidesBottomBarWhenPushed = YES;
+    }
+    return self;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -44,6 +52,8 @@
 -(void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self.view addSubview:_progressView];
+    
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -54,7 +64,6 @@
     // because UINavigationBar is shared with other ViewControllers
     [_progressView removeFromSuperview];
 }
-
 #pragma mark 初始化布局
 -(void)initLayout{
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 64, screen_width, screen_height-64)];

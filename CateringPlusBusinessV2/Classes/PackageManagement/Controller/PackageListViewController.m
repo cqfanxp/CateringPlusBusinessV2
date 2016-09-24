@@ -212,26 +212,37 @@
 }
 //删除数据
 -(void)deleteData:(UIButton *)btn{
+    
     Package *item = [_dataResult objectAtIndex:btn.tag];
     
-    NSMutableDictionary *param = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                                  item.identifies,@"packageId",nil];
-    WKProgressHUD *hud = [WKProgressHUD showInView:self.view withText:nil animated:YES];
+    CKAlertViewController *alertVC = [CKAlertViewController alertControllerWithTitle:@"提示" message:@"是否确定删除？" ];
     
-    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/packages/package/deletePackage"] parameters:[Public getParams:param] success:^(id responseObject) {
-        [hud dismiss:YES];
-        if ([responseObject[@"success"] boolValue]) {
-            [Public alertWithType:MozAlertTypeSuccess msg:responseObject[@"message"]];
-            [_dataResult removeObject:item];
-            [_TableView reloadData];
-        }else{
-            NSLog(@"message:%@",responseObject[@"message"]);
-            [Public alertWithType:MozAlertTypeError msg:responseObject[@"message"]];
-        }
-    } failure:^(NSError *error) {
-       [Public alertWithType:MozAlertTypeError msg:[NSString stringWithFormat:@"%@",error]];
+    CKAlertAction *cancel = [CKAlertAction actionWithTitle:@"取消" handler:^(CKAlertAction *action) {
+        NSLog(@"点击了 %@ 按钮",action.title);
     }];
+    CKAlertAction *sure = [CKAlertAction actionWithTitle:@"确定" handler:^(CKAlertAction *action) {
+        NSMutableDictionary *param = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                      item.identifies,@"packageId",nil];
+        WKProgressHUD *hud = [WKProgressHUD showInView:self.view withText:nil animated:YES];
+        
+        [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/packages/package/deletePackage"] parameters:[Public getParams:param] success:^(id responseObject) {
+            [hud dismiss:YES];
+            if ([responseObject[@"success"] boolValue]) {
+                [Public alertWithType:MozAlertTypeSuccess msg:responseObject[@"message"]];
+                [_dataResult removeObject:item];
+                [_TableView reloadData];
+            }else{
+                NSLog(@"message:%@",responseObject[@"message"]);
+                [Public alertWithType:MozAlertTypeError msg:responseObject[@"message"]];
+            }
+        } failure:^(NSError *error) {
+            [Public alertWithType:MozAlertTypeError msg:[NSString stringWithFormat:@"%@",error]];
+        }];
 
+    }];
+    [alertVC addAction:cancel];
+    [alertVC addAction:sure];
+    [self presentViewController:alertVC animated:NO completion:nil];
     
 }
 

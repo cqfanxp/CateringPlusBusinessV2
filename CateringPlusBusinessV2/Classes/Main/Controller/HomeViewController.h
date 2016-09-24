@@ -12,4 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *appCollectionView;
 
+@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
+
+@property (weak, nonatomic) IBOutlet UITextField *codeField;
+
 @end

@@ -11,6 +11,7 @@
 #import "MHActionSheet.h"
 #import "MSSBrowseDefine.h"
 #import "MapViewController.h"
+#import "NJKWebViewController.h"
 
 @interface ImproveStoreInformationViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,MapViewDelegate>{
     UIImageView *_storesImg;//门店图（添加）
@@ -375,7 +376,10 @@
 
 //开店手册
 -(void)shopmanualBtnClick{
-    
+    NJKWebViewController *njkWeb = [[NJKWebViewController alloc] init];
+    njkWeb.webTitle = @"开店手册";
+    njkWeb.url = [BASEURL stringByAppendingString:@"/App/AppAction/OpenStore"];
+    [self.navigationController pushViewController:njkWeb animated:YES];
 }
 
 /*

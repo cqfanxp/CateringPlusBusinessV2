@@ -9,6 +9,7 @@
 #import "SelectInnerProductViewController.h"
 #import "SelectInnerProductCell.h"
 #import "PrefixHeader.h"
+#import "NJKWebViewController.h"
 
 @interface SelectInnerProductViewController ()<UITableViewDelegate,UITableViewDataSource>{
     NSArray *_dataResult;//result值
@@ -51,6 +52,10 @@
     } failure:^(NSError *error) {
         NSLog(@"error:%@",error);
     }];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -119,6 +124,9 @@
 
 //开店手册
 -(void)shopmanualBtnClick{
-    
+    NJKWebViewController *njkWeb = [[NJKWebViewController alloc] init];
+    njkWeb.webTitle = @"开店手册";
+    njkWeb.url = [BASEURL stringByAppendingString:@"/App/AppAction/OpenStore"];
+    [self.navigationController pushViewController:njkWeb animated:YES];
 }
 @end

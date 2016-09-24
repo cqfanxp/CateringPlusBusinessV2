@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--(门店管理)-->
@@ -14,15 +15,14 @@
                         <viewControllerLayoutGuide type="bottom" id="AKt-ge-DQ9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tMz-W2-8vm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="d4w-b8-c2x">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="d4w-b8-c2x" firstAttribute="leading" secondItem="tMz-W2-8vm" secondAttribute="leading" id="cFd-WL-gka"/>
                             <constraint firstItem="AKt-ge-DQ9" firstAttribute="top" secondItem="d4w-b8-c2x" secondAttribute="bottom" id="krc-wf-J95"/>
@@ -36,7 +36,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4rB-Hy-6G7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="355" y="548"/>
+            <point key="canvasLocation" x="783" y="532"/>
         </scene>
         <!--Edit Store View Controller(编辑门店信息)-->
         <scene sceneID="Tpj-ft-HnH">
@@ -51,30 +51,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3sf-Lu-Cgu">
-                                <rect key="frame" x="0.0" y="20" width="600" height="680"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PxE-s0-IJT">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="700"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Mu-JI-rzp" userLabel="View1">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="No8-lb-kLx" userLabel="View1_1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="门店名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxn-ue-OCi">
-                                                                <rect key="frame" x="12" y="15" width="64" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入商家名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2RE-gZ-CXP">
-                                                                <rect key="frame" x="96" y="0.0" width="504" height="50"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="2RE-gZ-CXP" secondAttribute="bottom" id="4fJ-0e-1WW"/>
                                                             <constraint firstItem="2RE-gZ-CXP" firstAttribute="leading" secondItem="hxn-ue-OCi" secondAttribute="trailing" constant="20" id="5Yg-eD-nVW"/>
@@ -86,37 +80,30 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9NC-oI-WvU" userLabel="View1_1_line">
-                                                        <rect key="frame" x="12" y="50" width="588" height="1"/>
-                                                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="oX5-0p-qaH"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fs0-Za-61W" userLabel="View1_2">
-                                                        <rect key="frame" x="0.0" y="51" width="600" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="经营品类" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chC-EY-zKD">
-                                                                <rect key="frame" x="12" y="14" width="68" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请选择品类" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Gu-ys-69a">
-                                                                <rect key="frame" x="96" y="16" width="74" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="return" translatesAutoresizingMaskIntoConstraints="NO" id="XXt-lU-YjP">
-                                                                <rect key="frame" x="578" y="15" width="10" height="20"/>
-                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="return" translatesAutoresizingMaskIntoConstraints="NO" id="XXt-lU-YjP"/>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hbt-Dj-7RT">
-                                                                <rect key="frame" x="80" y="12" width="520" height="30"/>
                                                                 <connections>
                                                                     <action selector="selectProductClick:" destination="3Dd-Ak-cuc" eventType="touchUpInside" id="aVQ-LD-0HN"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="XXt-lU-YjP" firstAttribute="centerY" secondItem="Fs0-Za-61W" secondAttribute="centerY" id="4CA-GN-rTQ"/>
                                                             <constraint firstAttribute="bottom" secondItem="Hbt-Dj-7RT" secondAttribute="bottom" constant="8" id="4Kw-bl-482"/>
@@ -129,41 +116,35 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9nh-5w-zqB" userLabel="View1_2_line">
-                                                        <rect key="frame" x="12" y="101" width="588" height="1"/>
-                                                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="40h-tg-aH1"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gei-2e-pyc" userLabel="View1_3">
-                                                        <rect key="frame" x="0.0" y="102" width="600" height="48"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="经营时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bd-WX-UxY">
-                                                                <rect key="frame" x="12" y="14" width="64" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请选择营业时间" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QPW-nQ-Rie">
-                                                                <rect key="frame" x="96" y="15" width="102" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="return" translatesAutoresizingMaskIntoConstraints="NO" id="8t7-MQ-edW">
-                                                                <rect key="frame" x="578" y="14" width="10" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="10" id="kEn-UN-3qA"/>
                                                                     <constraint firstAttribute="height" constant="20" id="n1n-gm-wz0"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7od-EB-ppl">
-                                                                <rect key="frame" x="80" y="8" width="520" height="30"/>
                                                                 <connections>
                                                                     <action selector="businessHoursClick:" destination="3Dd-Ak-cuc" eventType="touchUpInside" id="h3C-59-2Z7"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="8t7-MQ-edW" firstAttribute="centerY" secondItem="Gei-2e-pyc" secondAttribute="centerY" id="2Iv-oH-Quc"/>
                                                             <constraint firstAttribute="bottom" secondItem="7od-EB-ppl" secondAttribute="bottom" constant="10" id="55G-6p-IH9"/>
@@ -174,7 +155,7 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="9NC-oI-WvU" firstAttribute="top" secondItem="No8-lb-kLx" secondAttribute="bottom" id="3dq-hh-PgZ"/>
                                                     <constraint firstAttribute="trailing" secondItem="Gei-2e-pyc" secondAttribute="trailing" id="3ld-g0-9fh"/>
@@ -205,23 +186,19 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAM-Gm-kFg" userLabel="View3">
-                                                <rect key="frame" x="0.0" y="310" width="600" height="235"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2iX-lj-eBu" userLabel="View3_1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="113"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="门店首图" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yow-z2-WN1">
-                                                                <rect key="frame" x="12" y="12" width="64" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aw7-sn-NZ5">
-                                                                <rect key="frame" x="0.0" y="43" width="600" height="57.5"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </scrollView>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="Yow-z2-WN1" firstAttribute="top" secondItem="2iX-lj-eBu" secondAttribute="top" constant="12" id="0CU-51-iNS"/>
                                                             <constraint firstItem="Aw7-sn-NZ5" firstAttribute="top" secondItem="Yow-z2-WN1" secondAttribute="bottom" constant="12" id="5um-If-dGR"/>
@@ -233,26 +210,21 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9U0-kJ-Vhk" userLabel="View3_1_lin">
-                                                        <rect key="frame" x="12" y="113" width="588" height="1"/>
-                                                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="CI7-an-9hL"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="keb-os-TDZ" userLabel="View3_2">
-                                                        <rect key="frame" x="0.0" y="114" width="600" height="121"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="环境图" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJ0-dq-5YE">
-                                                                <rect key="frame" x="12" y="12" width="48" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8DT-yf-QDw">
-                                                                <rect key="frame" x="0.0" y="43" width="600" height="65.5"/>
-                                                            </scrollView>
+                                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8DT-yf-QDw"/>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="UJ0-dq-5YE" firstAttribute="leading" secondItem="keb-os-TDZ" secondAttribute="leading" constant="12" id="3yH-G3-4xe"/>
                                                             <constraint firstItem="8DT-yf-QDw" firstAttribute="leading" secondItem="keb-os-TDZ" secondAttribute="leading" id="4VE-Nw-BGh"/>
@@ -263,7 +235,7 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="235" id="CDb-zc-6mh"/>
                                                     <constraint firstItem="2iX-lj-eBu" firstAttribute="top" secondItem="YAM-Gm-kFg" secondAttribute="top" id="CaQ-0j-KxB"/>
@@ -279,14 +251,13 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRW-yC-t9D">
-                                                <rect key="frame" x="15" y="595" width="570" height="50"/>
-                                                <color key="backgroundColor" red="0.97647058823529409" green="0.84313725490196079" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.97647058823529409" green="0.84313725490196079" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="aYM-DW-D2m"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="提交审核">
-                                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -298,24 +269,20 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00N-7H-PYW" userLabel="View2">
-                                                <rect key="frame" x="0.0" y="155" width="600" height="150"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLF-G2-u7G" userLabel="View2_1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="主要电话" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFs-Zk-M74">
-                                                                <rect key="frame" x="12" y="15" width="64" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机或固话,固话必须填写区号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VZa-Lg-cPa">
-                                                                <rect key="frame" x="96" y="0.0" width="504" height="50"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="VZa-Lg-cPa" secondAttribute="bottom" id="7yD-TW-mEJ"/>
                                                             <constraint firstAttribute="trailing" secondItem="VZa-Lg-cPa" secondAttribute="trailing" id="HhM-YO-jcF"/>
@@ -325,28 +292,24 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJg-GF-Lck" userLabel="View2_1_line">
-                                                        <rect key="frame" x="12" y="50" width="588" height="1"/>
-                                                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="Mp2-u7-zzv"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zGq-Hh-9os" userLabel="View2_2">
-                                                        <rect key="frame" x="0.0" y="51" width="600" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其它电话" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEQ-W6-mjw">
-                                                                <rect key="frame" x="12" y="15" width="64" height="19.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="非必填" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYa-EP-R9D">
-                                                                <rect key="frame" x="96" y="0.0" width="504" height="50"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="eYa-EP-R9D" secondAttribute="trailing" id="KIm-Mw-Civ"/>
                                                             <constraint firstItem="XEQ-W6-mjw" firstAttribute="centerY" secondItem="zGq-Hh-9os" secondAttribute="centerY" id="Tdy-qd-Yue"/>
@@ -356,41 +319,35 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LxG-AD-L8N" userLabel="View2_2_line">
-                                                        <rect key="frame" x="12" y="101" width="588" height="1"/>
-                                                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="TIW-6T-aO6"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5uF-45-DGN" userLabel="View2_3">
-                                                        <rect key="frame" x="0.0" y="102" width="600" height="48"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="门店地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMq-tN-3Uq">
-                                                                <rect key="frame" x="12" y="13" width="68" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输选择门店地址" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ttv-CN-mUP">
-                                                                <rect key="frame" x="96" y="0.0" width="504" height="48"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="return" translatesAutoresizingMaskIntoConstraints="NO" id="OS1-u4-GnQ">
-                                                                <rect key="frame" x="578" y="14" width="10" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="3ZX-VM-pcx"/>
                                                                     <constraint firstAttribute="width" constant="10" id="L5S-gq-6bi"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35r-tj-mQw">
-                                                                <rect key="frame" x="96" y="0.0" width="504" height="48"/>
                                                                 <connections>
                                                                     <action selector="selectMapAddressClick:" destination="3Dd-Ak-cuc" eventType="touchUpInside" id="MZj-xf-9Up"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="35r-tj-mQw" firstAttribute="leading" secondItem="Ttv-CN-mUP" secondAttribute="leading" id="0Bh-du-jUc"/>
                                                             <constraint firstItem="35r-tj-mQw" firstAttribute="trailing" secondItem="Ttv-CN-mUP" secondAttribute="trailing" id="2Qd-ZM-hG8"/>
@@ -405,7 +362,7 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="XEQ-W6-mjw" firstAttribute="leading" secondItem="yFs-Zk-M74" secondAttribute="leading" id="6o8-pu-pGh"/>
                                                     <constraint firstItem="HLF-G2-u7G" firstAttribute="top" secondItem="00N-7H-PYW" secondAttribute="top" id="6rW-Sz-hL8"/>
@@ -431,7 +388,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="sRW-yC-t9D" firstAttribute="leading" secondItem="PxE-s0-IJT" secondAttribute="leading" constant="15" id="2ET-fU-dIc"/>
                                             <constraint firstItem="9Mu-JI-rzp" firstAttribute="top" secondItem="PxE-s0-IJT" secondAttribute="top" id="6bb-fH-nvV"/>
@@ -460,7 +417,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3sf-Lu-Cgu" firstAttribute="leading" secondItem="1RS-HY-ctK" secondAttribute="leading" id="8mr-eD-bbR"/>
                             <constraint firstAttribute="trailing" secondItem="3sf-Lu-Cgu" secondAttribute="trailing" id="ILP-yT-xcs"/>
@@ -483,7 +440,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKF-nh-fB2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1053" y="548"/>
+            <point key="canvasLocation" x="1755" y="547"/>
         </scene>
     </scenes>
     <resources>

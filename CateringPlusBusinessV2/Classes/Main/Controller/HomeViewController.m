@@ -35,6 +35,13 @@
     [_appCollectionView registerNib:[UINib nibWithNibName:@"AppListCell" bundle:nil] forCellWithReuseIdentifier:@"AppListCell"];
     
     [self initData];
+    
+    //获取当天验证总数
+    [self getOrderByValidateSuccess];
+    
+    //注册键盘消失的通知
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -97,6 +104,7 @@
     qrcodeVC.view.alpha = 1;
     [qrcodeVC setDidReceiveBlock:^(NSString *result) {
 //        [self submitVerification:result];
+        [self VerificationCode:result];
     }];
     [self.navigationController pushViewController:qrcodeVC animated:YES];
 
@@ -188,5 +196,62 @@
     }
 }
 
+//查询用户当天验证订单的条数
+-(void)getOrderByValidateSuccess{
+    //用户信息
+    NSDictionary *userInfo = [Public getUserDefaultKey:USERINFO];
+    NSMutableDictionary *param = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                  userInfo[@"id"],@"BusUserId",nil];
+    
+    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/orders/order/getOrderByValidateSuccess"] parameters:[Public getParams:param] success:^(id responseObject) {
+        
+        if ([responseObject[@"success"] boolValue]) {
+            _tipLabel.text = [NSString stringWithFormat:@"提醒：今日已完成%@个订单验证",responseObject[@"result"]];
+        }else{
+            NSLog(@"message:%@",responseObject[@"message"]);
+        }
+    } failure:^(NSError *error) {
+        NSLog(@"error:%@",error);
+    }];
+}
+
+//键盘隐藏时
+-(void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    NSString *code = _codeField.text;
+    if (![code isEqualToString:@""]) {
+        [self VerificationCode:code];
+    }
+}
+
+//验证用户订单
+-(void)VerificationCode:(NSString *)code{
+    //用户信息
+    NSDictionary *userInfo = [Public getUserDefaultKey:USERINFO];
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                   code,@"code",
+                                   userInfo[@"id"],@"busUserId",
+                                   nil];
+    
+    WKProgressHUD *hud = [WKProgressHUD showInView:self.view withText:nil animated:YES];
+    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/orders/order/validateOrder"] parameters:[Public getParams:params] success:^(id responseObject) {
+        [hud dismiss:YES];
+        if ([responseObject[@"success"] boolValue]) {
+            [Public alertWithType:MozAlertTypeSuccess msg:responseObject[@"message"]];
+            if (![_codeField.text isEqualToString:@""]) {
+                _codeField.text = @"";
+            }
+        }else{
+            NSLog(@"message:%@",responseObject[@"message"]);
+            [Public alertWithType:MozAlertTypeError msg:responseObject[@"message"]];
+        }
+    } failure:^(NSError *error) {
+        [hud dismiss:YES];
+        NSLog(@"error:%@",error);
+        [Public alertWithType:MozAlertTypeError msg:[NSString stringWithFormat:@"%@",error]];
+    }];
+
+}
 
 @end

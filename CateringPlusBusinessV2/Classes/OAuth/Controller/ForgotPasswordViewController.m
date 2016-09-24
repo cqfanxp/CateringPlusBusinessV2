@@ -63,51 +63,38 @@
 
 //提交
 - (IBAction)submitClick:(id)sender {
+    [self.view endEditing:YES];
     if (![self verification]) {
         return;
     }
-//    NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-//                                   _accountNumberField.text,@"Account",
-//                                   _passwordField.text,@"Password",
-//                                   _confirmPasswordField.text,@"ConfirmPassword",
-//                                   _phoneNumber,@"PhoneNumber",
-//                                   _codesField.text,@"UserCode",
-//                                   nil];
-//    WKProgressHUD *hud = [WKProgressHUD showInView:self.view withText:nil animated:YES];
-//    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/register"] parameters:[Public getParams:params] success:^(id responseObject) {
-//        [hud dismiss:YES];
-//        if ([responseObject[@"success"] boolValue]) {
-//            NSDictionary *result = responseObject[@"result"];
-//            //存储用户信息
-//            [Public setUserDefaultKey:USERINFO value:[[NSDictionary alloc] initWithObjectsAndKeys:
-//                                                      result[@"account"],@"account",
-//                                                      _passwordField.text,@"password",
-//                                                      result[@"id"],@"id",
-//                                                      result[@"phone"],@"phone",nil]];
-//            //存储用户验证信息
-//            [Public setUserDefaultKey:USERVERIFICATIONINFO value:[[NSDictionary alloc] initWithObjectsAndKeys:params[@"Account"],@"account",
-//                                                                  params[@"Password"],@"password", nil]];
-//            //跳转到下一步
-//            UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"ImproveStoreInformationViewController"];
-//            [self.navigationController pushViewController:viewController animated:YES];
-//        }else{
-//            [Public alertWithType:MozAlertTypeError msg:responseObject[@"message"]];
-//        }
-//    } failure:^(NSError *error) {
-//        [hud dismiss:YES];
-//        NSLog(@"error:%@",error);
-//    }];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                   _phoneNumber,@"phone",
+                                   _codesField.text,@"validateCode",
+                                   _passwordField.text,@"newPassword",
+                                   nil];
+    WKProgressHUD *hud = [WKProgressHUD showInView:self.view withText:nil animated:YES];
+    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/forgotPassword"] parameters:[Public getParams:params] success:^(id responseObject) {
+        [hud dismiss:YES];
+        if ([responseObject[@"success"] boolValue]) {
+            [Public alertWithType:MozAlertTypeSuccess msg:responseObject[@"message"]];
+            [self.navigationController popViewControllerAnimated:YES];
+        }else{
+            [Public alertWithType:MozAlertTypeError msg:responseObject[@"message"]];
+        }
+    } failure:^(NSError *error) {
+        [hud dismiss:YES];
+        NSLog(@"error:%@",error);
+    }];
 }
 
 //验证
 -(Boolean)verification{
-    
-    if ([_codesField.text isEqualToString:@""]) {
-        [Public alertWithType:MozAlertTypeError msg:@"验证码不能空"];
-        return false;
-    }
     if(_phoneNumber == nil){
         [Public alertWithType:MozAlertTypeError msg:@"请先获取手机验证码"];
+        return false;
+    }
+    if ([_codesField.text isEqualToString:@""]) {
+        [Public alertWithType:MozAlertTypeError msg:@"验证码不能空"];
         return false;
     }
     if ([_passwordField.text isEqualToString:@""]) {

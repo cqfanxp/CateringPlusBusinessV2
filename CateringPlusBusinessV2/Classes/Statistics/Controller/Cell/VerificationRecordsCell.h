@@ -13,4 +13,14 @@
 
 - (instancetype)cellWithTableView:(UITableView *)tableView;
 
+@property (weak, nonatomic) IBOutlet UIButton *activityIconImgView;
+
+@property (weak, nonatomic) IBOutlet UILabel *activityNameLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *numberLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *storesNameLabel;
+
 @end

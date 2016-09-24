@@ -10,6 +10,7 @@
 #import "BusinessSchoolCell.h"
 #import "PrefixHeader.h"
 #import "BusinessSchool.h"
+#import "NJKWebViewController.h"
 
 @interface BusinessSchoolViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSMutableArray *_dataResult;
@@ -46,6 +47,13 @@
     _dataResult = [[NSMutableArray alloc] init];
     
     [self loadNewData:nil];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]){
+        self.hidesBottomBarWhenPushed = NO;
+    }
+    return self;
 }
 
 //下拉刷新
@@ -191,12 +199,26 @@
 }
 #pragma mark 选中行事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    BusinessSchool *item = [_dataResult objectAtIndex:indexPath.row];
+    
+    NJKWebViewController *njkWeb = [[NJKWebViewController alloc] init];
+    njkWeb.webTitle = item.title;
+    njkWeb.url = [NSString stringWithFormat:@"%@/App/AppAction/BusExperience/%@",BASEURL,item.identifies];
+    [self.navigationController pushViewController:njkWeb animated:YES];
 }
 
 //分享
 -(void)share:(UIButton *)btn{
-    [Public share];
+    BusinessSchool *item = [_dataResult objectAtIndex:btn.tag];
+    
+    NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
+    [shareParams SSDKSetupShareParamsByText:item.summary
+//                                     images:@[[UIImage imageNamed:[BASEURL stringByAppendingString:item.mapUrl]]]
+                                     images:@[[UIImage imageNamed:@"logoShare.png"]]
+                                        url:[NSURL URLWithString:[NSString stringWithFormat:@"%@/App/AppAction/BusExperience/%@",BASEURL,item.identifies]]
+                                      title:item.title
+                                       type:SSDKContentTypeAuto];
+    [Public share:shareParams];
 }
 
 //点赞

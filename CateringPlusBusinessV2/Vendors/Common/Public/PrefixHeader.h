@@ -19,6 +19,7 @@
 #import "MJRefresh.h"
 #import "MHActionSheet.h"
 #import "ImgInfoView.h"
+#import "CKAlertViewController.h"
 
 #ifdef DEBUG //调试模式--模拟器
 

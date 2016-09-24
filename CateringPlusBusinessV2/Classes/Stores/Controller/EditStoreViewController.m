@@ -47,7 +47,7 @@
 }
 #pragma mark 初始化布局
 -(void)initLayout{
-    _imgHeight = _storesScroll.frame.size.height-10;
+    _imgHeight = 57-10;
     
     //初始化集合
     _storesList = [[NSMutableArray alloc] init];

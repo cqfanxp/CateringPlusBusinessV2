@@ -236,6 +236,7 @@
 		57A9A01C1D7EA881007E4AC1 /* SelectBankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A9A01B1D7EA881007E4AC1 /* SelectBankViewController.m */; };
 		57A9A0201D7EA9BC007E4AC1 /* SelectBankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A9A01E1D7EA9BC007E4AC1 /* SelectBankCell.m */; };
 		57A9A0211D7EA9BC007E4AC1 /* SelectBankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A9A01F1D7EA9BC007E4AC1 /* SelectBankCell.xib */; };
+		57C6BC091D95249F008CDD5C /* InitializationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C6BC081D95249F008CDD5C /* InitializationViewController.m */; };
 		57D00B5C1D8E6C4100739391 /* SelectActivityPriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D00B5A1D8E6C4100739391 /* SelectActivityPriceViewController.m */; };
 		57D00B5D1D8E6C4100739391 /* SelectActivityPriceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D00B5B1D8E6C4100739391 /* SelectActivityPriceViewController.xib */; };
 		57D00B611D8E850B00739391 /* HelpCutSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D00B5F1D8E850B00739391 /* HelpCutSettingsViewController.m */; };
@@ -257,6 +258,7 @@
 		57E213D71D6AA3B00003BB07 /* ActivityListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E213D51D6AA3B00003BB07 /* ActivityListCell.xib */; };
 		57E213DA1D6ACC780003BB07 /* CALayer+XibConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E213D91D6ACC780003BB07 /* CALayer+XibConfiguration.m */; };
 		57E213E01D6AEC4C0003BB07 /* FeaturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E213DF1D6AEC4C0003BB07 /* FeaturesViewController.m */; };
+		57E7828C1D965CBF00590553 /* CKAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E7828B1D965CBF00590553 /* CKAlertViewController.m */; };
 		57E875601D828B1700FAD67B /* EntityHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E8755F1D828B1700FAD67B /* EntityHelper.m */; };
 		57EB49281D791F58009B39C8 /* FAImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EB49191D791F58009B39C8 /* FAImageView.m */; };
 		57EB49291D791F58009B39C8 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57EB491A1D791F58009B39C8 /* FontAwesome.ttf */; };
@@ -647,6 +649,8 @@
 		57A9A01D1D7EA9BC007E4AC1 /* SelectBankCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBankCell.h; sourceTree = "<group>"; };
 		57A9A01E1D7EA9BC007E4AC1 /* SelectBankCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectBankCell.m; sourceTree = "<group>"; };
 		57A9A01F1D7EA9BC007E4AC1 /* SelectBankCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectBankCell.xib; sourceTree = "<group>"; };
+		57C6BC071D95249F008CDD5C /* InitializationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitializationViewController.h; sourceTree = "<group>"; };
+		57C6BC081D95249F008CDD5C /* InitializationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitializationViewController.m; sourceTree = "<group>"; };
 		57D00B591D8E6C4100739391 /* SelectActivityPriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectActivityPriceViewController.h; sourceTree = "<group>"; };
 		57D00B5A1D8E6C4100739391 /* SelectActivityPriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectActivityPriceViewController.m; sourceTree = "<group>"; };
 		57D00B5B1D8E6C4100739391 /* SelectActivityPriceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectActivityPriceViewController.xib; sourceTree = "<group>"; };
@@ -680,6 +684,8 @@
 		57E213D91D6ACC780003BB07 /* CALayer+XibConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+XibConfiguration.m"; sourceTree = "<group>"; };
 		57E213DE1D6AEC4C0003BB07 /* FeaturesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeaturesViewController.h; sourceTree = "<group>"; };
 		57E213DF1D6AEC4C0003BB07 /* FeaturesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeaturesViewController.m; sourceTree = "<group>"; };
+		57E7828A1D965CBF00590553 /* CKAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKAlertViewController.h; sourceTree = "<group>"; };
+		57E7828B1D965CBF00590553 /* CKAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKAlertViewController.m; sourceTree = "<group>"; };
 		57E8755E1D828B1700FAD67B /* EntityHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityHelper.h; sourceTree = "<group>"; };
 		57E8755F1D828B1700FAD67B /* EntityHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityHelper.m; sourceTree = "<group>"; };
 		57EB49181D791F58009B39C8 /* FAImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAImageView.h; sourceTree = "<group>"; };
@@ -1253,6 +1259,8 @@
 		578E933A1D8259C8001A0A70 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				57E7828A1D965CBF00590553 /* CKAlertViewController.h */,
+				57E7828B1D965CBF00590553 /* CKAlertViewController.m */,
 				578E933B1D8259EA001A0A70 /* ImgInfoView.h */,
 				578E933C1D8259EA001A0A70 /* ImgInfoView.m */,
 				578E933E1D825A23001A0A70 /* ImgInfoView.xib */,
@@ -1377,6 +1385,8 @@
 				57A7B7981D5C297400BF2928 /* LoginViewController.m */,
 				572ACA061D61609F00FDD68B /* ForgotPasswordViewController.h */,
 				572ACA071D61609F00FDD68B /* ForgotPasswordViewController.m */,
+				57C6BC071D95249F008CDD5C /* InitializationViewController.h */,
+				57C6BC081D95249F008CDD5C /* InitializationViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2290,6 +2300,7 @@
 				57A7B7E11D5EB70400BF2928 /* MSSBrowseModel.m in Sources */,
 				57A7B7E51D5EB70400BF2928 /* UIImage+MSSScale.m in Sources */,
 				57A7B7BB1D5DAC8200BF2928 /* MHSheetView.m in Sources */,
+				57E7828C1D965CBF00590553 /* CKAlertViewController.m in Sources */,
 				57E213E01D6AEC4C0003BB07 /* FeaturesViewController.m in Sources */,
 				57FB28061D71872200E7FDB8 /* ActivityEditViewController.m in Sources */,
 				57A7B7E31D5EB70400BF2928 /* MSSBrowseRemindView.m in Sources */,
@@ -2298,6 +2309,7 @@
 				570DF8661D8CF14700010A98 /* HRColorPickerView.m in Sources */,
 				57FC39221D66DAEA009A6C9C /* StoreManagementCell.m in Sources */,
 				574A72E71D73D21C0014CC8C /* TableGroupAttributes.m in Sources */,
+				57C6BC091D95249F008CDD5C /* InitializationViewController.m in Sources */,
 				570DF8641D8CF14700010A98 /* HRCgUtil.m in Sources */,
 				57FC38F21D658691009A6C9C /* HomeViewController.m in Sources */,
 				570DF8691D8CF14700010A98 /* ZSSBarButtonItem.m in Sources */,
@@ -2496,6 +2508,7 @@
 			baseConfigurationReference = 844ED9BF2671BA608D20DA5B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = E5DFU73F22;
@@ -2524,6 +2537,7 @@
 			baseConfigurationReference = 7BA17BE28F1B5BDCC19BBD13 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = E5DFU73F22;

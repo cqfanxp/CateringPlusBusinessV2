@@ -10,6 +10,7 @@
 #import "MHActionSheet.h"
 #import "MSSBrowseDefine.h"
 #import "MainViewController.h"
+#import "NJKWebViewController.h"
 
 @interface SubmitQualificationViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
     UIImageView *_businessLicenseImg;//营业执照（添加）
@@ -45,6 +46,10 @@
     self.navigationItem.rightBarButtonItem = rightBtn;
     
     [self initLayout];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 #pragma mark 初始化布局
@@ -248,8 +253,20 @@
 
 //开店手册
 -(void)shopmanualBtnClick{
-    
+    NJKWebViewController *njkWeb = [[NJKWebViewController alloc] init];
+    njkWeb.webTitle = @"开店手册";
+    njkWeb.url = [BASEURL stringByAppendingString:@"/App/AppAction/OpenStore"];
+    [self.navigationController pushViewController:njkWeb animated:YES];
 }
+
+//商户协议
+- (IBAction)protocolBtnClick:(id)sender {
+    NJKWebViewController *njkWeb = [[NJKWebViewController alloc] init];
+    njkWeb.webTitle = @"参+商户协议";
+    njkWeb.url = [BASEURL stringByAppendingString:@"/App/AppAction/BusContract"];
+    [self.navigationController pushViewController:njkWeb animated:YES];
+}
+
 
 //提交审核
 - (IBAction)checkBtnClick:(id)sender {

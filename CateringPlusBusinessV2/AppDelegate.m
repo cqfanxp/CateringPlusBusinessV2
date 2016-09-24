@@ -22,6 +22,7 @@
 #import "SelectStartAndEndTimeViewController.h"
 #import "SelectActivityPriceViewController.h"
 #import "HelpCutSettingsViewController.h"
+#import "InitializationViewController.h"
 
 @interface AppDelegate ()
 
@@ -46,10 +47,13 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
 //    UIViewController *viewController = [Public getStoryBoardByController:@"OAuth" storyboardId:@"LoginViewController"];
-    MainViewController *viewController = [[MainViewController alloc] init];
+//    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:viewController];
+//    MainViewController *viewController = [[MainViewController alloc] init];
 //    HelpCutSettingsViewController *viewController = [[HelpCutSettingsViewController alloc] init];
 //    SelectStartAndEndTimeViewController *viewController = [[SelectStartAndEndTimeViewController alloc] init];
-//    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:viewController];
+    
+    
+    InitializationViewController *viewController = [[InitializationViewController alloc] init];
     
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];

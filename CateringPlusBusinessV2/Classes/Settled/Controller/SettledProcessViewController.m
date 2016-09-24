@@ -8,6 +8,7 @@
 
 #import "SettledProcessViewController.h"
 #import <JavaScriptCore/JavaScriptCore.h>
+#import "NJKWebViewController.h"
 
 @interface SettledProcessViewController ()<UIWebViewDelegate>
 
@@ -84,7 +85,10 @@
 
 //开店手册
 -(void)shopmanualBtnClick{
-    
+    NJKWebViewController *njkWeb = [[NJKWebViewController alloc] init];
+    njkWeb.webTitle = @"开店手册";
+    njkWeb.url = [BASEURL stringByAppendingString:@"/App/AppAction/OpenStore"];
+    [self.navigationController pushViewController:njkWeb animated:YES];
 }
 /*
 #pragma mark - Navigation

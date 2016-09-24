@@ -110,7 +110,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTW-sD-Rk6" userLabel="View2">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提醒：今日已完成8个订单验证" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHN-GV-NWw">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提醒：今日已完成0个订单验证" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHN-GV-NWw">
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -161,6 +161,8 @@
                     </view>
                     <connections>
                         <outlet property="appCollectionView" destination="Hp9-24-t53" id="eE5-5T-sIe"/>
+                        <outlet property="codeField" destination="Zou-Kd-tMK" id="l8H-vK-sc5"/>
+                        <outlet property="tipLabel" destination="KHN-GV-NWw" id="Jtx-RW-uRO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TjP-Tb-NEL" userLabel="First Responder" sceneMemberID="firstResponder"/>

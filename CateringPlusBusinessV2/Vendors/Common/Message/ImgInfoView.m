@@ -38,8 +38,8 @@
             self.reloadBtn.hidden = NO;
             break;
         case NoData://无数据
-            self.titleLabel.text = @"木有数据";
-            self.contentLabel.text = @"还木有数据";
+            self.titleLabel.text = @"没有数据";
+            self.contentLabel.text = @"没有有数据";
             self.iconImgView.image = [UIImage imageNamed:@"data"];
             self.reloadBtn.hidden = YES;
             break;

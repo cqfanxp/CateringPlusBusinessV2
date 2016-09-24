@@ -127,17 +127,17 @@
 }
 
 
-+(void)share{
++(void)share:(NSMutableDictionary *)shareParams{
     //1、创建分享参数
-    NSArray* imageArray = @[[UIImage imageNamed:@"logoShare.png"]];
+//    NSArray* imageArray = @[[UIImage imageNamed:@"logoShare.png"]];
 //    （注意：图片必须要在Xcode左边目录里面，名称必须要传正确，如果要分享网络图片，可以这样传iamge参数 images:@[@"http://mob.com/Assets/images/logo.png?v=20150320"]）
-    if (imageArray) {
-        NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
-        [shareParams SSDKSetupShareParamsByText:@"参+：【互联网推广专家】——吃喝玩乐折扣大平台，帮所有入驻平台商家参谋，急商家所急！解商家所难！参+平台为商家推广宣传引流用户，实现马上盈利，持续盈利！现在入驻可享前3个月免费推广期！参+免费帮您建设专属自己的网店！"
-                                         images:imageArray
-                                            url:[NSURL URLWithString:@"http://mob.com"]
-                                          title:@"参+【互联网推广专家】"
-                                           type:SSDKContentTypeAuto];
+    if (shareParams) {
+//        NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
+//        [shareParams SSDKSetupShareParamsByText:@"参+：【互联网推广专家】——吃喝玩乐折扣大平台，帮所有入驻平台商家参谋，急商家所急！解商家所难！参+平台为商家推广宣传引流用户，实现马上盈利，持续盈利！现在入驻可享前3个月免费推广期！参+免费帮您建设专属自己的网店！"
+//                                         images:imageArray
+//                                            url:[NSURL URLWithString:@"http://mob.com"]
+//                                          title:@"参+【互联网推广专家】"
+//                                           type:SSDKContentTypeAuto];
         
         //2、分享（可以弹出我们的分享菜单和编辑界面）
         [ShareSDK showShareActionSheet:nil //要显示菜单的视图, iPad版中此参数作为弹出菜单的参照视图，只有传这个才可以弹出我们的分享菜单，可以传分享的按钮对象或者自己创建小的view 对象，iPhone可以传nil不会影响

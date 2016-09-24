@@ -42,5 +42,5 @@
 +(Boolean)isNetWork;
 
 //分享
-+(void)share;
++(void)share:(NSMutableDictionary *)shareParams;
 @end
