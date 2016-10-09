@@ -350,12 +350,12 @@
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="35r-tj-mQw" firstAttribute="leading" secondItem="Ttv-CN-mUP" secondAttribute="leading" id="0Bh-du-jUc"/>
-                                                            <constraint firstItem="35r-tj-mQw" firstAttribute="trailing" secondItem="Ttv-CN-mUP" secondAttribute="trailing" id="2Qd-ZM-hG8"/>
                                                             <constraint firstItem="35r-tj-mQw" firstAttribute="top" secondItem="Ttv-CN-mUP" secondAttribute="top" id="5Cx-Cb-Gox"/>
                                                             <constraint firstItem="hMq-tN-3Uq" firstAttribute="centerY" secondItem="5uF-45-DGN" secondAttribute="centerY" id="7mn-ZR-Jbx"/>
                                                             <constraint firstItem="OS1-u4-GnQ" firstAttribute="centerY" secondItem="5uF-45-DGN" secondAttribute="centerY" id="9KZ-aj-ZRL"/>
+                                                            <constraint firstAttribute="trailing" secondItem="35r-tj-mQw" secondAttribute="trailing" id="FOV-B2-a2p"/>
                                                             <constraint firstItem="Ttv-CN-mUP" firstAttribute="top" secondItem="5uF-45-DGN" secondAttribute="top" id="G49-NK-4iq"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Ttv-CN-mUP" secondAttribute="trailing" id="Re0-4r-fG6"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Ttv-CN-mUP" secondAttribute="trailing" constant="30" id="Re0-4r-fG6"/>
                                                             <constraint firstItem="35r-tj-mQw" firstAttribute="bottom" secondItem="Ttv-CN-mUP" secondAttribute="bottom" id="fOA-U9-UT8"/>
                                                             <constraint firstAttribute="trailing" secondItem="OS1-u4-GnQ" secondAttribute="trailing" constant="12" id="oIq-SO-4C2"/>
                                                             <constraint firstAttribute="bottom" secondItem="Ttv-CN-mUP" secondAttribute="bottom" id="rd3-jk-DqI"/>

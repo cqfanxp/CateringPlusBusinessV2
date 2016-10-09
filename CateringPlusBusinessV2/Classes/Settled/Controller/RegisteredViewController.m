@@ -41,7 +41,6 @@
 
 #pragma mark 立即注册
 - (IBAction)submitRegistration:(id)sender {
-    
     if (![self verification]) {
         return;
     }
@@ -67,7 +66,7 @@
             [Public setUserDefaultKey:USERVERIFICATIONINFO value:[[NSDictionary alloc] initWithObjectsAndKeys:params[@"Account"],@"account",
                                                                   params[@"Password"],@"password", nil]];
             //跳转到下一步
-            UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"ImproveStoreInformationViewController"];
+            UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"SubmitQualificationViewController"];
             [self.navigationController pushViewController:viewController animated:YES];
         }else{
             [Public alertWithType:MozAlertTypeError msg:responseObject[@"message"]];

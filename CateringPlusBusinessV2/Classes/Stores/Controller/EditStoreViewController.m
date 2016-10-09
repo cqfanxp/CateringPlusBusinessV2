@@ -366,13 +366,11 @@
                                    tempEnvironmentMap,@"environmentMap",
                                    [[NSDecimalNumber alloc] initWithFloat:_store.latitude],@"latitude",
                                    [[NSDecimalNumber alloc] initWithFloat:_store.longitude],@"longitude",
-                                   _store.district,@"district",
                                    _mainPhoneField.text,@"mainPhone",
                                    _otherPhoneField.text,@"otherPhone",
+                                   _store.district,@"district",
                                    nil];
-    if (_store.storeId == nil) {
-        params[@"storeId"] = _store.storeId;
-    }
+    
     WKProgressHUD *hud = [WKProgressHUD showInView:self.view withText:nil animated:YES];
     [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/stores/store/insertOrUpdateStoer"] parameters:[Public getParams:params] success:^(id responseObject) {
         [hud dismiss:YES];

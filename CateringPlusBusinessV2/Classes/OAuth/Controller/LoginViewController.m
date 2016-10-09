@@ -76,16 +76,16 @@
 #pragma mark 申请入驻
 - (IBAction)applicationSettled:(id)sender {
     //用户信息
-    NSDictionary *userInfo = [Public getUserDefaultKey:USERINFO];
+//    NSDictionary *userInfo = [Public getUserDefaultKey:USERINFO];
     
     //用户没注册前 按顺序  用户注册后跳到添加门店
-    if (!userInfo) {
-        UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"SettledProcessViewController"];
-        [self.navigationController pushViewController:viewController animated:YES];
-    }else{
-        UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"ImproveStoreInformationViewController"];
-        [self.navigationController pushViewController:viewController animated:YES];
-    }
+//    if (!userInfo) {
+    UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"SettledProcessViewController"];
+    [self.navigationController pushViewController:viewController animated:YES];
+//    }else{
+//        UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"ImproveStoreInformationViewController"];
+//        [self.navigationController pushViewController:viewController animated:YES];
+//    }
 }
 
 //修改头部logo约束
@@ -100,6 +100,10 @@
 //登录
 - (IBAction)loginBtnClick:(id)sender {
     [self.view endEditing:YES];
+    //判断网络
+    if (![Public isNetWork]) {
+        [Public alertWithType:MozAlertTypeError msg:@"请检查你的网络设置！"];
+    }
     if (![self verification]) {
         return;
     }

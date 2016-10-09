@@ -174,9 +174,22 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     ActivityModel *item = [_dataResult objectAtIndex:indexPath.row];
     
-    ActivityListCell *cell = [[ActivityListCell alloc] cellWithTableView:tableView];;
+    ActivityListCell *cell = [[ActivityListCell alloc] cellWithTableView:tableView];
     cell.titleLabel.text = item.title;
     cell.stateLabel.text = item.stateValue;
+    
+    //已审核
+    if ([item.state isEqualToString:@"10091004"]) {
+        cell.stateLabel.text = @"";
+    }
+    //审核中
+    if ([item.state isEqualToString:@"10091003"]) {
+        cell.titleLabel.backgroundColor = RGB(36, 116, 235);
+    }
+    //审核失败
+    if ([item.state isEqualToString:@"10091002"]) {
+        cell.titleLabel.backgroundColor = [UIColor redColor];
+    }
     
     cell.useNumberLabel.text = [NSString stringWithFormat:@"已领：%ld次",item.useNumber];
     [cell.firstMapImgView sd_setImageWithURL:[NSURL URLWithString:[BASEURL stringByAppendingString:item.image]] placeholderImage:[UIImage imageNamed:@"img_false"]];

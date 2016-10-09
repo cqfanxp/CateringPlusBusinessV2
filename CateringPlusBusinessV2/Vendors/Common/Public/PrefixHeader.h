@@ -81,7 +81,9 @@
 #define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
 
 //数据地址
-#define BASEURL @"http://192.168.1.124"
+//#define BASEURL @"http://192.168.1.124"
+#define BASEURL @"http://www.canjia111.com"
+//#define BASEURL @"http://153899lv37.iask.in"
 
 //NSUserDefaults Key
 #define USERVERIFICATIONINFO @"userVerificationInfo"//用户登录信息

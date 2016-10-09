@@ -63,7 +63,7 @@
 			<key>type</key>
 			<string>select</string>
 			<key>value</key>
-			<string></string>
+			<string>	&lt;div style=&quot;padding:5px;line-height:1.6; color:#333;font-size:14px;&quot;&gt;		由商家发起砍价活动，选择可参与活动的产品并设置产品底价。用户参与通过分享QQ、微信朋友圈等方式邀请好友帮忙砍价。&lt;br /&gt;		砍价流程：提交砍价申请&gt;邀请好友砍价&gt;到达成交时间（最终消费成交价格以每个用户实际砍价为准）；	&lt;/div&gt;</string>
 			<key>key</key>
 			<string>content</string>
 			<key>placeholder</key>
@@ -121,7 +121,7 @@
 			<key>type</key>
 			<string>select</string>
 			<key>value</key>
-			<string></string>
+			<string>	&lt;div style=&quot;padding:5px;line-height:1.6; color:#333;font-size:14px;&quot;&gt;		&amp;bull; 同一用户在同一商户仅可享受底价优惠1次&lt;br /&gt;		&amp;bull; 不与店内其他优惠同享&lt;br /&gt;		&amp;bull; 本优惠券仅支持到店就餐，不能用于送餐服务	&lt;/div&gt;</string>
 			<key>key</key>
 			<string>limitations</string>
 			<key>placeholder</key>

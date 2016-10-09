@@ -63,7 +63,7 @@
 			<key>type</key>
 			<string>select</string>
 			<key>value</key>
-			<string></string>
+			<string>	&lt;div style=&quot;padding:5px;line-height:1.6; color:#333;font-size:14px;&quot;&gt;		由商家发起限时优惠活动，选择可参与活动的产品并设置折扣价、可抢购的产品数量以及活动具体时间段；	&lt;/div&gt;</string>
 			<key>key</key>
 			<string>content</string>
 			<key>placeholder</key>
@@ -105,7 +105,7 @@
 			<key>type</key>
 			<string>select</string>
 			<key>value</key>
-			<string></string>
+			<string>	&lt;div style=&quot;padding:5px;line-height:1.6; color:#333;font-size:14px;&quot;&gt;		&amp;bull; 须在规定时间段内进行消费，过期作废&lt;br /&gt;		&amp;bull; 恕不与新客优惠券或其他优惠共同使用&lt;br /&gt;		&amp;bull; 本优惠券仅支持到店就餐，不能用于送餐服务	&lt;/div&gt;</string>
 			<key>key</key>
 			<string>limitations</string>
 			<key>placeholder</key>

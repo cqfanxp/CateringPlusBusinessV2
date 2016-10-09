@@ -18,7 +18,7 @@
 .btn-lg{padding:8px 0;width:100%;font-size:1.35em;}
 
 /* process */
-.process{margin-bottom:5%;padding-top:8%;background:url(../images/process.png) center top no-repeat;background-size:69.6% auto;overflow:hidden;}
+.process{margin-bottom:5%;padding-top:8%;background:url(process.png) center top no-repeat;background-size:69.6% auto;overflow:hidden;}
 .process .tip{padding-left:.5em;}
 .process .tip:before{content:' ';display:inline-block;margin-right:.3em;width:4px;height:4px;background:#999;border-radius:100%;vertical-align:middle;}
 .bit{padding-left:1em;}

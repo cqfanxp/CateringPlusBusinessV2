@@ -8,11 +8,13 @@
 
 #import "InitializationViewController.h"
 #import "PrefixHeader.h"
+#import "MainViewController.h"
 
 @interface InitializationViewController ()<UIScrollViewDelegate>{
     UIPageControl *_pageControl;
     UIButton *_tryNowBtn;
     int _pageNumber;
+    NSDictionary *_userInfo;
 }
 
 @end
@@ -22,7 +24,66 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self guidePages];
+    [self initLayout];
+    
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstStart"]){
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstStart"];
+        //加载启动页
+        [self guidePages];
+    }else{
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            //参数
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            _userInfo = [defaults objectForKey:USERINFO];
+            
+            if (_userInfo != nil) {
+                [self verifyLogin];
+            }else{
+                [self skipLogin];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+            });
+        });
+    }
+}
+
+
+-(void)initLayout{
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screen_width, screen_height)];
+    imgView.image = [UIImage imageNamed:@"loadingImg"];
+    [self.view addSubview:imgView];
+}
+
+#pragma mark 验证登录
+-(void)verifyLogin{
+    //判断网络
+    if (![Public isNetWork]) {
+        [self skipLogin];
+    }
+    //当前时间戳
+    NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
+    NSTimeInterval a=[dat timeIntervalSince1970]*1000;
+    NSString *timeString = [NSString stringWithFormat:@"%f", a];
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                   _userInfo[@"account"],@"account",
+                                   _userInfo[@"password"],@"password",
+                                   [[UIDevice currentDevice].identifierForVendor UUIDString],@"uniqueIdentifier",
+                                   [[UIDevice currentDevice] systemName],@"systemName",
+                                   [[UIDevice currentDevice] systemVersion],@"systemVersion",
+                                   timeString,@"timestamp",
+                                   nil];
+    
+    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/userLogin"] parameters:[Public getParams:params] success:^(id responseObject) {
+        if ([responseObject[@"success"] boolValue]) {
+            MainViewController *mainViwe = [[MainViewController alloc] init];
+            [self presentViewController:mainViwe animated:NO completion:nil];
+        }else{
+            [self skipLogin];
+        }
+    } failure:^(NSError *error) {
+        [self skipLogin];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -78,11 +139,15 @@
 
 -(void)tryNotClick{
     if (_pageNumber ==2) {
-        
-        UIViewController  *viewController = [Public getStoryBoardByController:@"OAuth" storyboardId:@"LoginViewController"];
-        UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:viewController];
-        [self presentViewController:navigation animated:NO completion:nil];
+        [self skipLogin];
     }
+}
+
+//跳转到登录
+-(void)skipLogin{
+    UIViewController  *viewController = [Public getStoryBoardByController:@"OAuth" storyboardId:@"LoginViewController"];
+    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [self presentViewController:navigation animated:NO completion:nil];
 }
 
 /*

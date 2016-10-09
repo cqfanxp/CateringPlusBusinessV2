@@ -183,14 +183,14 @@
                                                             <constraint firstItem="bRR-XL-aMO" firstAttribute="top" secondItem="O89-bq-n5X" secondAttribute="top" id="2S3-ah-Jrp"/>
                                                             <constraint firstItem="Qv0-zV-XS1" firstAttribute="centerY" secondItem="7ME-1h-gsu" secondAttribute="centerY" id="79S-qH-c6k"/>
                                                             <constraint firstAttribute="bottom" secondItem="O89-bq-n5X" secondAttribute="bottom" id="89E-8s-AQr"/>
-                                                            <constraint firstItem="bRR-XL-aMO" firstAttribute="trailing" secondItem="O89-bq-n5X" secondAttribute="trailing" id="9nw-bB-lUw"/>
                                                             <constraint firstAttribute="trailing" secondItem="FzS-Xp-ox3" secondAttribute="trailing" constant="12" id="AIH-C4-2gv"/>
                                                             <constraint firstAttribute="height" constant="50" id="FYf-gp-oEE"/>
+                                                            <constraint firstAttribute="trailing" secondItem="bRR-XL-aMO" secondAttribute="trailing" id="IlB-8v-uHC"/>
                                                             <constraint firstItem="bRR-XL-aMO" firstAttribute="bottom" secondItem="O89-bq-n5X" secondAttribute="bottom" id="Rmm-je-aal"/>
                                                             <constraint firstItem="bRR-XL-aMO" firstAttribute="leading" secondItem="O89-bq-n5X" secondAttribute="leading" id="SHi-5P-kPJ"/>
                                                             <constraint firstItem="O89-bq-n5X" firstAttribute="top" secondItem="7ME-1h-gsu" secondAttribute="top" id="T3E-Rj-3md"/>
                                                             <constraint firstItem="FzS-Xp-ox3" firstAttribute="centerY" secondItem="7ME-1h-gsu" secondAttribute="centerY" id="Xs8-J1-RWt"/>
-                                                            <constraint firstAttribute="trailing" secondItem="O89-bq-n5X" secondAttribute="trailing" id="sJr-8h-3u5"/>
+                                                            <constraint firstAttribute="trailing" secondItem="O89-bq-n5X" secondAttribute="trailing" constant="30" id="sJr-8h-3u5"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>

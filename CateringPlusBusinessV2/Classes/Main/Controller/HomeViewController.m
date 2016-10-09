@@ -249,7 +249,7 @@
     } failure:^(NSError *error) {
         [hud dismiss:YES];
         NSLog(@"error:%@",error);
-        [Public alertWithType:MozAlertTypeError msg:[NSString stringWithFormat:@"%@",error]];
+        [Public alertWithType:MozAlertTypeError msg:@"订单验证错误"];
     }];
 
 }

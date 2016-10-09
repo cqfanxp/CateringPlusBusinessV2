@@ -452,9 +452,10 @@
                                             <constraint firstItem="4j0-JG-pPR" firstAttribute="leading" secondItem="xBq-0E-T05" secondAttribute="leading" id="8UF-E7-ggv"/>
                                             <constraint firstItem="6KV-Io-L8O" firstAttribute="centerY" secondItem="YO1-YN-F3V" secondAttribute="centerY" id="GCM-Dg-jP9"/>
                                             <constraint firstItem="4j0-JG-pPR" firstAttribute="bottom" secondItem="xBq-0E-T05" secondAttribute="bottom" id="SiO-M1-j2c"/>
-                                            <constraint firstItem="4j0-JG-pPR" firstAttribute="trailing" secondItem="xBq-0E-T05" secondAttribute="trailing" id="X81-ZI-iL8"/>
                                             <constraint firstAttribute="bottom" secondItem="xBq-0E-T05" secondAttribute="bottom" id="eek-IM-tg6"/>
+                                            <constraint firstItem="4Mz-qS-toA" firstAttribute="leading" secondItem="xBq-0E-T05" secondAttribute="trailing" constant="15" id="eyo-N2-cPw"/>
                                             <constraint firstItem="4Mz-qS-toA" firstAttribute="centerY" secondItem="YO1-YN-F3V" secondAttribute="centerY" id="hQn-kc-OrE"/>
+                                            <constraint firstAttribute="trailing" secondItem="4j0-JG-pPR" secondAttribute="trailing" id="jr6-fC-SFZ"/>
                                             <constraint firstItem="xBq-0E-T05" firstAttribute="top" secondItem="YO1-YN-F3V" secondAttribute="top" id="o6d-Dp-QhW"/>
                                             <constraint firstAttribute="trailing" secondItem="4Mz-qS-toA" secondAttribute="trailing" constant="12" id="tMm-HT-Ecd"/>
                                         </constraints>
@@ -480,7 +481,6 @@
                                     <constraint firstAttribute="trailing" secondItem="Sa6-46-Rcu" secondAttribute="trailing" id="Yv1-s7-Bqw"/>
                                     <constraint firstItem="t0M-4F-5jy" firstAttribute="trailing" secondItem="Sa6-46-Rcu" secondAttribute="trailing" id="byJ-Lg-9Fc"/>
                                     <constraint firstItem="Sa6-46-Rcu" firstAttribute="bottom" secondItem="EIC-40-hwA" secondAttribute="bottom" id="chV-QH-rIE"/>
-                                    <constraint firstItem="xBq-0E-T05" firstAttribute="trailing" secondItem="6ga-Y9-yik" secondAttribute="trailing" id="dzt-2l-nWl"/>
                                     <constraint firstItem="xBq-0E-T05" firstAttribute="leading" secondItem="6ga-Y9-yik" secondAttribute="leading" id="lCK-MU-TKL"/>
                                     <constraint firstItem="khe-My-Lxp" firstAttribute="top" secondItem="EIC-40-hwA" secondAttribute="bottom" id="mNT-kd-sLq"/>
                                     <constraint firstItem="EIC-40-hwA" firstAttribute="top" secondItem="DAX-XJ-fGB" secondAttribute="top" id="q4E-AW-vnZ"/>

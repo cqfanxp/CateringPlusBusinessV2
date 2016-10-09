@@ -70,73 +70,90 @@
         NSString *path = [[NSBundle mainBundle] pathForResource:_plistName ofType:@"plist"];
         NSArray *tempArr = [[NSArray alloc] initWithContentsOfFile:path];
         
-        for (NSArray *array in tempArr) {
-            NSMutableArray *tempArray = [[NSMutableArray alloc] init];
-            for (NSDictionary *dic in array) {
-                ActivityDisplayField *model = [[ActivityDisplayField alloc] initWithDic:dic];
-                if (_activityModel &&model.key != nil) {
-                    NSUInteger index = [_selectTypeArray indexOfObject:model.selectType];
-                    
-
-                    switch (index) {
-                            case 0:{
-                                NSMutableString *tempStoerStr = [[NSMutableString alloc] init];
-                                for (NSDictionary *stoerDic in _activityModel.storeList) {
-                                    [tempStoerStr appendFormat:@"%@  ",[stoerDic objectForKey:@"busName"]];
-                                }
-                                model.value = tempStoerStr;
-                            }
-                            break;
-                            case 1:
-                                model.value = _activityModel.packages[@"packageName"];
-                            break;
-                            case 2:{
-                                    NSString *tempValue = [_activityModel valueForKey:model.key];
-                                    if (![self isNull:tempValue]) {
-                                        model.value = @"已添加";
-                                    }
-                            }
-                            break;
-                            case 3:{
-                                if (_activityModel.fiendsHelpSpreads && [_activityModel.fiendsHelpSpreads count] > 0) {
-                                    NSMutableArray *tempHelpCutArr = [[NSMutableArray alloc] init];
-                                    for (NSDictionary *dic in _activityModel.fiendsHelpSpreads) {
-                                        HelpCutModel *tempHelpCut = [HelpCutModel new];
-                                        tempHelpCut.price = dic[@"price"];
-                                        tempHelpCut.peopleNumber = dic[@"peopleNumber"];
-                                        
-                                        [tempHelpCutArr addObject:tempHelpCut];
-                                    }
-                                    _activityModel.settingNumberActivities = tempHelpCutArr;
-                                    model.value = @"已添加";
-                                }
-                            }
-                            break;
-                            case 4:
-                                model.value = [NSString stringWithFormat:@"%@ - %@",_activityModel.starTime,_activityModel.overTime];
-                            break;
-                            case 5:
-                                if ([_activityModel.type boolValue]) {
-                                    model.value = [NSString stringWithFormat:@"消费满%@减%@(上限%@元)",_activityModel.howFull,_activityModel.howLess,_activityModel.capAmount];
-                                }else{
-                                    model.value = [NSString stringWithFormat:@"消费满%@减%@",_activityModel.howFull,_activityModel.howLess];
-                                }
-                            break;
-                        default:
-                            model.value = [NSString stringWithFormat:@"%@",[_activityModel valueForKey:model.key]];
-                            break;
+        if (_activityModel) {
+            for (NSArray *array in tempArr) {
+                NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+                for (NSDictionary *dic in array) {
+                    ActivityDisplayField *model = [[ActivityDisplayField alloc] initWithDic:dic];
+                    if (_activityModel && model.key != nil) {
+                        [self activityDisplayFieldAssignment:model.selectType activityDisplayField:model];
                     }
+                    [tempArray addObject:model];
                 }
-                [tempArray addObject:model];
+                [_activityData addObject:tempArray];
             }
-            [_activityData addObject:tempArray];
+        }else{
+            for (NSArray *array in tempArr) {
+                NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+                for (NSDictionary *dic in array) {
+                    ActivityDisplayField *model = [[ActivityDisplayField alloc] initWithDic:dic];
+                    if (model.key != nil && [model.selectType isEqualToString:@"selectHtmlContent"]) {
+                        [self.activityModel setValue:model.value forKey:model.key];
+                        model.value = @"已添加";
+                    }
+                    [tempArray addObject:model];
+                }
+                [_activityData addObject:tempArray];
+            }
         }
-        
+
         dispatch_async(dispatch_get_main_queue(), ^{
             [_tableView reloadData];
-//            self.selectStoresView.hidden = NO;
         });
     });
+}
+
+-(void)activityDisplayFieldAssignment:(NSString *)selectType activityDisplayField:(ActivityDisplayField *) model{
+    NSUInteger index = [_selectTypeArray indexOfObject:selectType];
+    
+    switch (index) {
+        case 0:{
+            NSMutableString *tempStoerStr = [[NSMutableString alloc] init];
+            for (NSDictionary *stoerDic in _activityModel.storeList) {
+                [tempStoerStr appendFormat:@"%@  ",[stoerDic objectForKey:@"busName"]];
+            }
+            model.value = tempStoerStr;
+        }
+            break;
+        case 1:
+            model.value = _activityModel.packages[@"packageName"];
+            break;
+        case 2:{
+            NSString *tempValue = [_activityModel valueForKey:model.key];
+            if (![self isNull:tempValue]) {
+                model.value = @"已添加";
+            }
+        }
+            break;
+        case 3:{
+            if (_activityModel.fiendsHelpSpreads && [_activityModel.fiendsHelpSpreads count] > 0) {
+                NSMutableArray *tempHelpCutArr = [[NSMutableArray alloc] init];
+                for (NSDictionary *dic in _activityModel.fiendsHelpSpreads) {
+                    HelpCutModel *tempHelpCut = [HelpCutModel new];
+                    tempHelpCut.price = dic[@"price"];
+                    tempHelpCut.peopleNumber = dic[@"peopleNumber"];
+                    
+                    [tempHelpCutArr addObject:tempHelpCut];
+                }
+                _activityModel.settingNumberActivities = tempHelpCutArr;
+                model.value = @"已添加";
+            }
+        }
+            break;
+        case 4:
+            model.value = [NSString stringWithFormat:@"%@ - %@",_activityModel.starTime,_activityModel.overTime];
+            break;
+        case 5:
+            if ([_activityModel.type boolValue]) {
+                model.value = [NSString stringWithFormat:@"消费满%@减%@(上限%@元)",_activityModel.howFull,_activityModel.howLess,_activityModel.capAmount];
+            }else{
+                model.value = [NSString stringWithFormat:@"消费满%@减%@",_activityModel.howFull,_activityModel.howLess];
+            }
+            break;
+        default:
+            model.value = [NSString stringWithFormat:@"%@",[_activityModel valueForKey:model.key]];
+            break;
+    }
 }
 
 -(Boolean )isNull:(id)value{
@@ -612,7 +629,7 @@
             [Public alertWithType:MozAlertTypeError msg:@"请选择有效期"];
             return false;
         }
-        if ([self isNull:self.activityModel.howLess]) {
+        if (self.activityModel.howLess == 0) {
             [Public alertWithType:MozAlertTypeError msg:@"请设置活动价格"];
             return false;
         }
@@ -623,7 +640,7 @@
             [Public alertWithType:MozAlertTypeError msg:@"请选择套餐"];
             return false;
         }
-        if ([self isNull:self.activityModel.price]) {
+        if (self.activityModel.price == 0) {
             [Public alertWithType:MozAlertTypeError msg:@"请输入优惠价格"];
             return false;
         }
@@ -634,7 +651,7 @@
     }
     //抵扣券
     if ([type isEqualToString:@"volumeDeductible"]) {
-        if ([self isNull:self.activityModel.price]) {
+        if (self.activityModel.price == 0) {
             [Public alertWithType:MozAlertTypeError msg:@"请输入抵扣面值"];
             return false;
         }
@@ -645,7 +662,7 @@
     }
     //折扣劵
     if ([type isEqualToString:@"volumeDiscounts"]) {
-        if ([self isNull:self.activityModel.discount]) {
+        if (self.activityModel.discount == 0) {
             [Public alertWithType:MozAlertTypeError msg:@"请输入折扣比例"];
             return false;
         }
@@ -660,11 +677,11 @@
             [Public alertWithType:MozAlertTypeError msg:@"请选择套餐"];
             return false;
         }
-        if ([self isNull:self.activityModel.price]) {
+        if (self.activityModel.price == 0) {
             [Public alertWithType:MozAlertTypeError msg:@"请输入拼团价格"];
             return false;
         }
-        if ([self isNull:self.activityModel.peoNumber]) {
+        if (self.activityModel.peoNumber == 0) {
             [Public alertWithType:MozAlertTypeError msg:@"请输入拼团人数"];
             return false;
         }

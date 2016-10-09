@@ -49,7 +49,7 @@
 			<key>type</key>
 			<string>select</string>
 			<key>value</key>
-			<string></string>
+			<string>	&lt;div style=&quot;padding:5px;line-height:1.6; color:#333;font-size:14px;&quot;&gt;		由商家发起消费满减活动，设置消费满减的条件以及金额。	&lt;/div&gt;</string>
 			<key>key</key>
 			<string>content</string>
 			<key>placeholder</key>
@@ -93,7 +93,7 @@
 			<key>type</key>
 			<string>select</string>
 			<key>value</key>
-			<string></string>
+			<string>	&lt;div style=&quot;padding:5px;line-height:1.6; color:#333;font-size:14px;&quot;&gt;		&amp;bull; 可叠加使用&lt;br /&gt;		&amp;bull; 不与店内其他优惠同享&lt;br /&gt;		&amp;bull; 本优惠券仅支持到店就餐，不能用于送餐服务	&lt;/div&gt;</string>
 			<key>key</key>
 			<string>limitations</string>
 			<key>placeholder</key>

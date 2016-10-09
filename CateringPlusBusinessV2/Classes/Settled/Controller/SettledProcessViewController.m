@@ -60,7 +60,7 @@
     
     context[@"nowSettled"] = ^{
         dispatch_async(dispatch_get_main_queue(), ^{
-            UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"SelectInnerProductViewController"];
+            UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"RegisteredViewController"];
             [self.navigationController pushViewController:viewController animated:YES];
         });
     };
@@ -70,12 +70,12 @@
     [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
-#pragma mark 立即入驻
-- (IBAction)nextBtn:(id)sender {
-    UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"SelectInnerProductViewController"];
-    
-    [self.navigationController pushViewController:viewController animated:YES];
-}
+//#pragma mark 立即入驻
+//- (IBAction)nextBtn:(id)sender {
+//    UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"SelectInnerProductViewController"];
+//    
+//    [self.navigationController pushViewController:viewController animated:YES];
+//}
 
 
 - (void)didReceiveMemoryWarning {

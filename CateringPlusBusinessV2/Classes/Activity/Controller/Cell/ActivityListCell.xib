@@ -106,6 +106,7 @@
                     <constraint firstItem="dpA-bm-KVd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="QgU-vI-Hva"/>
                     <constraint firstItem="NrR-uD-x9u" firstAttribute="bottom" secondItem="dpA-bm-KVd" secondAttribute="bottom" id="VMz-Ni-SYb"/>
                     <constraint firstItem="aHX-ID-E80" firstAttribute="top" secondItem="vpm-9O-zvO" secondAttribute="top" id="XWl-zp-6gQ"/>
+                    <constraint firstItem="VGy-ai-8rv" firstAttribute="trailing" secondItem="d9O-eN-IK3" secondAttribute="trailing" constant="60" id="a9b-vY-jW8"/>
                     <constraint firstAttribute="trailing" secondItem="aHX-ID-E80" secondAttribute="trailing" id="bIj-WV-XHq"/>
                     <constraint firstAttribute="bottom" secondItem="H1W-Jg-F13" secondAttribute="bottom" id="clQ-oE-gn2"/>
                     <constraint firstItem="VGy-ai-8rv" firstAttribute="top" secondItem="d9O-eN-IK3" secondAttribute="top" id="hiO-Ev-uXF"/>

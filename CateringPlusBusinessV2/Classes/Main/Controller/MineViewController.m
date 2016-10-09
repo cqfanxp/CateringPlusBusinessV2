@@ -125,7 +125,7 @@
         NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
         [shareParams SSDKSetupShareParamsByText:@"参+：【互联网推广专家】——吃喝玩乐折扣大平台，帮所有入驻平台商家参谋，急商家所急！解商家所难！参+平台为商家推广宣传引流用户，实现马上盈利，持续盈利！现在入驻可享前3个月免费推广期！参+免费帮您建设专属自己的网店！"
                                          images:@[[UIImage imageNamed:@"logoShare.png"]]
-                                            url:[NSURL URLWithString:@"http://www.canjia111.com"]
+                                            url:[NSURL URLWithString:[NSString stringWithFormat:@"%@/App/AppAction/ShareApp",BASEURL]]
                                           title:@"参+【互联网推广专家】"
                                            type:SSDKContentTypeAuto];
         [Public share:shareParams];

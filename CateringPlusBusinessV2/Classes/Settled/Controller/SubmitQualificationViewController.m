@@ -74,10 +74,13 @@
 //上传图片
 -(void)uploadImage:(NSData *)imageData type:(NSString *) type{
     
+    WKProgressHUD *hud = [WKProgressHUD showInView:self.view withText:nil animated:YES];
     [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/uplodStoreImage"] imageData:imageData parameters:[Public getParams:nil] success:^(id responseObject) {
         NSLog(@"%@",responseObject);
+        [hud dismiss:YES];
         if ([responseObject[@"success"] boolValue]) {
             NSString *tempPath = responseObject[@"result"];
+            
             if ([type isEqualToString:@"businessLincense"]) {
                 _businessLicensePath = tempPath;
             }else if([type isEqualToString:@"photoIDCardPositive"]){
@@ -88,6 +91,7 @@
         }
     } failure:^(NSError *error) {
         NSLog(@"error:%@",error);
+        [hud dismiss:YES];
     }];
 }
 
@@ -341,7 +345,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
