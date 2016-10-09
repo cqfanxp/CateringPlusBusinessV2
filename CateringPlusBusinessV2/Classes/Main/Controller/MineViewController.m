@@ -144,6 +144,15 @@
         njkWeb.url = [BASEURL stringByAppendingString:@"/App/AppAction/AboutUs"];
         [self.navigationController pushViewController:njkWeb animated:YES];
     }
+    if ([title isEqualToString:@"退出登录"]) {
+        //清除登录信息
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults removeObjectForKey:USERINFO];
+        
+        UIViewController  *viewController = [Public getStoryBoardByController:@"OAuth" storyboardId:@"LoginViewController"];
+        UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:viewController];
+        [self presentViewController:navigation animated:NO completion:nil];
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

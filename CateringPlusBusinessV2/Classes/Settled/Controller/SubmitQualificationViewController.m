@@ -289,10 +289,10 @@
                                    _businessLicensePath,@"BusinessLicensePhoto",
                                    _photoIDCardPositivePath,@"HandheldID",
                                    _photoIDCardRearPath,@"HandheldIDC",
-                                   _storeId,@"longStoreId",
+//                                   _storeId,@"longStoreId",
                                    nil];
     WKProgressHUD *hud = [WKProgressHUD showInView:self.view withText:nil animated:YES];
-    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/updateBusUserByUserId"] parameters:[Public getParams:params] success:^(id responseObject) {
+    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/v2/businesses/business/submitQualification"] parameters:[Public getParams:params] success:^(id responseObject) {
         [hud dismiss:YES];
         if ([responseObject[@"success"] boolValue]) {
             MainViewController *mainViwe = [[MainViewController alloc] init];

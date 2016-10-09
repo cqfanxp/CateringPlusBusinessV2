@@ -50,9 +50,10 @@
                             _confirmPasswordField.text,@"ConfirmPassword",
                             _phoneNumber,@"PhoneNumber",
                             _codesField.text,@"UserCode",
+                            _invitationCodeField.text,@"invitationCode",
                             nil];
     WKProgressHUD *hud = [WKProgressHUD showInView:self.view withText:nil animated:YES];
-    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/register"] parameters:[Public getParams:params] success:^(id responseObject) {
+    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/v2/businesses/business/register"] parameters:[Public getParams:params] success:^(id responseObject) {
         [hud dismiss:YES];
         if ([responseObject[@"success"] boolValue]) {
             NSDictionary *result = responseObject[@"result"];
@@ -73,6 +74,7 @@
         }
     } failure:^(NSError *error) {
         [hud dismiss:YES];
+        [Public alertWithType:MozAlertTypeError msg:@"服务器错误，请稍后再试！"];
         NSLog(@"error:%@",error);
     }];
 
@@ -80,10 +82,10 @@
 
 //验证
 -(Boolean)verification{
-//    if ([_invitationCodeField.text isEqualToString:@""]) {
-//        [Public alertWithType:MozAlertTypeError msg:@"邀请码不能为空"];
-//        return false;
-//    }
+    if ([_invitationCodeField.text isEqualToString:@""]) {
+        [Public alertWithType:MozAlertTypeError msg:@"邀请码不能为空"];
+        return false;
+    }
     if ([_accountNumberField.text isEqualToString:@""]) {
         [Public alertWithType:MozAlertTypeError msg:@"账号不能为空"];
         return false;

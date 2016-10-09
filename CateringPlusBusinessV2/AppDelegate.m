@@ -41,16 +41,16 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"SubmitQualificationViewController"];
-    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:viewController];
+//    UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"SubmitQualificationViewController"];
+//    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:viewController];
 //    MainViewController *viewController = [[MainViewController alloc] init];
 //    HelpCutSettingsViewController *viewController = [[HelpCutSettingsViewController alloc] init];
 //    SelectStartAndEndTimeViewController *viewController = [[SelectStartAndEndTimeViewController alloc] init];
     
     
-//    InitializationViewController *viewController = [[InitializationViewController alloc] init];
+    InitializationViewController *viewController = [[InitializationViewController alloc] init];
     
-    self.window.rootViewController = navigation;
+    self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
     
     //设置UINavigationBar样式

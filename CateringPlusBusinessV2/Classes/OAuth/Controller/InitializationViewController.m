@@ -74,10 +74,16 @@
                                    timeString,@"timestamp",
                                    nil];
     
-    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/userLogin"] parameters:[Public getParams:params] success:^(id responseObject) {
+    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/v2/businesses/business/userLogin"] parameters:[Public getParams:params] success:^(id responseObject) {
         if ([responseObject[@"success"] boolValue]) {
-            MainViewController *mainViwe = [[MainViewController alloc] init];
-            [self presentViewController:mainViwe animated:NO completion:nil];
+            NSDictionary *result = responseObject[@"result"];
+            //登录成功
+            if ([result[@"loginState"] isEqualToString:@"10161001"]) {
+                MainViewController *mainViwe = [[MainViewController alloc] init];
+                [self presentViewController:mainViwe animated:YES completion:nil];
+            }else{
+                [self skipLogin];
+            }
         }else{
             [self skipLogin];
         }

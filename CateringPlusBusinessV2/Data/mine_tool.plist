@@ -61,6 +61,14 @@
 			<key>controller</key>
 			<string></string>
 		</dict>
+		<dict>
+			<key>icon</key>
+			<string>about</string>
+			<key>name</key>
+			<string>退出登录</string>
+			<key>controller</key>
+			<string></string>
+		</dict>
 	</array>
 </array>
 </plist>

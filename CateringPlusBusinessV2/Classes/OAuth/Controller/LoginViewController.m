@@ -122,7 +122,7 @@
                                    nil];
     
     WKProgressHUD *hud = [WKProgressHUD showInView:self.view withText:nil animated:YES];
-    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/businesses/business/userLogin"] parameters:[Public getParams:params] success:^(id responseObject) {
+    [NetWorkUtil post:[BASEURL stringByAppendingString:@"/api/v2/businesses/business/userLogin"] parameters:[Public getParams:params] success:^(id responseObject) {
         [hud dismiss:YES];
         if ([responseObject[@"success"] boolValue]) {
             NSDictionary *result = responseObject[@"result"];
@@ -132,9 +132,21 @@
                                                       _passwordField.text,@"password",
                                                       result[@"id"],@"id",
                                                       result[@"phone"],@"phone",nil]];
-            
-            MainViewController *mainViwe = [[MainViewController alloc] init];
-            [self presentViewController:mainViwe animated:YES completion:nil];
+            //登录成功
+            if ([result[@"loginState"] isEqualToString:@"10161001"]) {
+                MainViewController *mainViwe = [[MainViewController alloc] init];
+                [self presentViewController:mainViwe animated:YES completion:nil];
+            }
+            //登录失败
+            if ([result[@"loginState"] isEqualToString:@"10161002"]) {
+                [Public alertWithType:MozAlertTypeError msg:responseObject[@"message"]];
+            }
+            //没有提交资质
+            if ([result[@"loginState"] isEqualToString:@"10161003"]) {
+                UIViewController *viewController = [Public getStoryBoardByController:@"Settled" storyboardId:@"SubmitQualificationViewController"];
+                
+                [self.navigationController pushViewController:viewController animated:YES];
+            }
         }else{
             [Public alertWithType:MozAlertTypeError msg:responseObject[@"message"]];
         }
